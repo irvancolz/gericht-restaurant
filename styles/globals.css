@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,400;1,300;1,400&display=swap');
 :root{
   font-size: 16px;
-
+  --gold-col-1: hsl(47,55,70,100%);
+  --gold-col-2: #f5efdb;
+  --gold-col3: hsl(47,55,70,20%);
+  --dark-col1: hsl(45,20,4,100%);
+  --dark-col2: hsl(0,0,2,100%);
+  --dark-col3: hsl(0,1,15,100%);
+  --gray-col1: hsl(0,0,65,100%);
+  --gray-col2: hsl(0,0,67,100%);
 }
 *{
   padding: 0;
