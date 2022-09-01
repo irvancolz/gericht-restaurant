@@ -1,11 +1,13 @@
-import type { NextPage } from 'next'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import { Layout, Navigation } from '../components';
+import styles from '../styles/Home.module.css';
+
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <h1>gericht pages</h1>
-    </div>
+    <>
+        <Navigation />
+    </>
   )
 }
 

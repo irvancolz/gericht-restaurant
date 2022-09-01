@@ -1,0 +1,9 @@
+.container{
+    position: relative;
+    max-width: 1920px;
+    width: 100vw;
+    margin: auto;
+}
+.mainBg{
+    filter: brightness(.6);
+}
