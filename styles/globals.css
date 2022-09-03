@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,300;1,400;1,600&family=Roboto:wght@300;400;500&display=swap');
 :root{
   font-size: 16px;
   --gold-col-1: #ddca87;
@@ -16,6 +16,7 @@
   --normal-size: 16px;
   --title-font: 'Cormorant Upright', sans-serif;
   --desc-font: 'Open Sans', sans-serif;
+  --body-font: 'Roboto', sans-serif;
 }
 
 *{

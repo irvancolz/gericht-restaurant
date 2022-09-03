@@ -1,17 +1,20 @@
 import styles from './layout.module.css';
-import type { FC } from 'react';
-import mainBg from '../../public/assets/global/main-bg.webp'
-import Image from 'next/image';
+import {Topnav} from '../topnav'
 
 interface layoutProps{
     children?: JSX.Element,
-    class?: string;
 }
-export function Layout<FC>(props: layoutProps) {
+export function Layout(props: layoutProps) {
   return (
     <div 
     className={styles.container}>
-      {props.children}
+      <header>
+        <Topnav />
+      </header>
+      <main>
+        {props.children}
+      </main>
+      <footer></footer>
     </div>
   )
 }
