@@ -1,50 +1,87 @@
+.logoC {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+.logoC .regs,
+.logoC .toggleI {
+  display: none;
+}
+.link {
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease-in;
+  font-family: var(--desc-font);
+  font-size: 1rem;
+}
+.regs .link {
+  padding: 0.5rem 3.1rem;
+  font-weight: 500;
+}
+.regs {
+  justify-content: center;
+  align-items: center;
+}
+.mainC {
+  display: flex;
+  transition: height 1s ease-in-out;
+  background-color: var(--dark-col1);
+  overflow: hidden;
+  height: fit-content;
+  flex-grow: 1;
+}
 .toggleI{
-    cursor: pointer;
+    font-size: 1.75rem;
+}
+@media (max-width: 900px) {
+  .logoC {
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+  .logoC .regs {
+    display: flex;
+  }
+  .logoC .regs,
+  .logoC .toggleI {
+    display: block;
+  }
+  .mainC {
+    flex-basis: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 0;
+    width: 100%;
+  }
+  .mainC.open {
+    height: 100vh;
+  }
+  .mainC .regs {
     display: none;
-    font-size: 1.45rem;
+  }
+  .mainC .link, .regs .link{
+    display: block;
+    padding: .5rem 2rem;
+  }
 }
-.link{
-    font-family: var(--desc-font);
-    padding: .5rem 1rem;
+@media (max-width: 600px) {
+  .logoC .regs {
+    display: none;
+  }
+  .mainC {
+    flex-direction: column;
+  }
+  .mainC .regs {
+    display: flex;
+  }
+  .regs {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
-@media(max-width: 900px){
-    .logoC{
-        order: 1;
-    }
-    .regsC{
-        order: 2;
-        flex-basis: 50%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .regsC .toggleI{
-        display: block;
-    }
-    .mainC{
-        order: 3;
-        flex-basis: 100%;
-    }
-}
-@media(max-width: 600px){
-    .logoC{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-basis: 100%;
-    }
-    .regsC{
-        flex-basis: 100%;
-    }
-    .logoC .toggleI{
-        display: block;
-    }
-    .regsC .toggleI{
-        display: none;
-    }
-}
-@media(hover: hover){
-    .link:hover a{
-        color: var(--gold-col-1);
-    }
+@media (hover: hover) {
+  .link:hover a,
+  .link:hover {
+    color: var(--gold-col-1);
+  }
 }
