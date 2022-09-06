@@ -1,5 +1,6 @@
 import styles from './layout.module.css';
-import {Topnav} from '../topnav'
+import {Topnav} from '../topnav';
+import {Footer} from '../footer';
 
 interface layoutProps{
     children?: JSX.Element,
@@ -14,7 +15,9 @@ export function Layout(props: layoutProps) {
       <main>
         {props.children}
       </main>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   )
 }

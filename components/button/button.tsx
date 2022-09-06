@@ -3,6 +3,7 @@ interface buttonProps {
   variant?: string;
   children?: string | JSX.Element[] | JSX.Element;
   onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset'; 
 }
 const buttonDefaultProps: buttonProps = {
   variant: "primary",
@@ -14,12 +15,13 @@ const buttonDefaultProps: buttonProps = {
 export function Button(props: buttonProps = buttonDefaultProps) {
   return (
     <button
+      type={props.type}
       className={`${styles.btn} ${
         props.variant === "primary"
           ? styles.primary
           : props.variant === "secondary"
           ? styles.secondary
-          : styles.primary
+          : styles.ternary
       }`}
       onClick={() => props.onClick?.()}
     >

@@ -10,7 +10,7 @@
 }
 .link {
   padding: 0.5rem 1rem;
-  transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in-out;
   font-family: var(--desc-font);
   font-size: 1rem;
 }

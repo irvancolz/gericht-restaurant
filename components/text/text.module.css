@@ -1,0 +1,18 @@
+.text{
+    display: block;
+    overflow: hidden;
+}
+.body{
+    font-size: var(--normal-size);
+    font-family: var(--body-font);
+}
+.title{
+    font-size: var(--title-size);
+    font-family: var(--title-font);
+    color: var(--gold-col-1);
+    font-weight: 700;
+}
+.desc{
+    font-family: var(--desc-font);
+    font-size: var(--desc-size);
+}
