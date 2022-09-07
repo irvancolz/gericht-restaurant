@@ -1,6 +1,6 @@
 import styles from "./footer.module.css";
 import formCss from "./fotrfrm.module.css";
-import { Text } from "../text";
+import Text from "../text";
 import spoon from "../../public/assets/global/spoon-logo.svg";
 import Image from "next/image";
 import { Button } from "../button";
@@ -26,7 +26,7 @@ export function FooterForm() {
       </div>
       <div className={formCss.formC}>
         <form className={formCss.form} onSubmit={(e) => handleSubmit(e)}>
-          <input type="text" placeholder="Email Adress" />
+          <input type="email" required placeholder="Email Adress" />
           <Button variant="primary" type="submit">
             Subscribe
           </Button>

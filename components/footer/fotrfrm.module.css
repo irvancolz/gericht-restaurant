@@ -25,3 +25,9 @@
 .formC{
     margin-top: 4rem;
 }
+.form input:invalid{
+    border-color: rgb(197, 34, 34);
+}
+.form input:placeholder-shown{
+    border-color: var(--text-col);
+}

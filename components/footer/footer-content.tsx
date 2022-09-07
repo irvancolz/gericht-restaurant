@@ -1,6 +1,6 @@
 import styles from "./footer.module.css";
 import ctntCss from "./fotrctnt.module.css";
-import { Text } from "../text";
+import Text from "../text";
 import { Copyright } from "../copyright";
 import Image from "next/image";
 import logo from "../../public/assets/global/web-logo-footer.svg";
@@ -25,7 +25,7 @@ export function FooterContent() {
             <Image src={logo} layout="fixed" alt="gericht" priority />
           </span>
           <div className={ctntCss.body}>
-            <Text>"The best way to find yourself is to lose yourself in the service of others.”</Text>
+            <Text>&ldquo; The best way to find yourself is to lose yourself in the service of others. &rdquo;</Text>
             <div>
 
             </div>

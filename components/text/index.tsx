@@ -9,7 +9,7 @@ interface textProps {
   col?: string;
 }
 
-export const Text = forwardRef<HTMLParagraphElement, textProps>((props, ref) => {
+const Text = forwardRef<HTMLParagraphElement, textProps>((props, ref) => {
   return (
     <span className={styles.text}>
       <p
@@ -32,3 +32,6 @@ export const Text = forwardRef<HTMLParagraphElement, textProps>((props, ref) => 
     </span>
   );
 });
+
+Text.displayName = 'Text';
+export default Text
