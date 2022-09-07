@@ -6,6 +6,7 @@ interface textProps {
   fS?: string;
   fF?: string;
   variant?: string;
+  col?: string;
 }
 
 export const Text = forwardRef<HTMLParagraphElement, textProps>((props, ref) => {
@@ -16,6 +17,7 @@ export const Text = forwardRef<HTMLParagraphElement, textProps>((props, ref) => 
       style={{
          fontSize : props.fS,
          fontFamily: props.fF,
+         color: props.col,
       }}
         className={`${
           props.variant === "desc"

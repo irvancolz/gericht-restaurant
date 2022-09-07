@@ -1,0 +1,27 @@
+.form input{
+    border: 1px solid var(--gray-col3);
+    font-size: 1rem;
+    background-color: var(--dark-col1);
+    color: var(--text-col);
+    font-family: var(--title-font);
+    padding: 1rem 1.25rem;
+    outline: none;
+    width: 37rem;
+}
+.form{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.form input:focus{
+    border: 1px solid var(--text-col);
+}
+.header span:nth-child(2){
+    margin-top: .5rem;
+}
+.body span:nth-child(2){
+    margin-top: 1.5rem;
+}
+.formC{
+    margin-top: 4rem;
+}

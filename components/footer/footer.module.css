@@ -1,27 +1,17 @@
 .container{
     flex-basis: 70%;
     align-self: center;
-    padding: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .container:first-child{
+    padding: 4rem;
     background-color: var(--dark-col4);
     border: 1px solid var(--gray-col3);
     box-shadow: 22px 30px 95px 1px rgba(0, 0, 0, 0.7);
 }
-.header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-}
-.header > span:nth-child(4){
-    margin-top: 1rem;
-}
-.header > input{
-    margin-top: 3.5rem;
+.container > *{
+    text-align: center;
 }
