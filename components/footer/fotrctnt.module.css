@@ -22,3 +22,24 @@
 .socialC span{
     margin-right: 1rem;
 }
+@media(max-width: 900px){
+    .contentC{
+        flex-wrap: wrap;
+    }
+    .content{
+        flex-basis: 50%;
+    }
+    .content:nth-child(2){
+        margin-top: 3rem;
+        flex-basis: 100%;
+        order: 3;
+    }
+}
+@media(max-width: 600px){
+    .content{
+        flex-basis: 100%;
+    }
+    .logo:first-child span{
+        transform: scale(.7);
+    }
+}

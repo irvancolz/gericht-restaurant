@@ -16,3 +16,13 @@
     font-family: var(--desc-font);
     font-size: var(--desc-size);
 }
+@media(max-width: 900px){
+    .title{
+        font-size: 3rem;
+    }
+}
+@media(max-width: 600px){
+    .title{
+        font-size: 2rem;
+    }
+}

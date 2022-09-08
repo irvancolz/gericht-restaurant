@@ -4,9 +4,18 @@
     font-size: 1rem;
     line-height: 28px;
     font-family: var(--desc-font);
-    transform: translateX(2rem);
 }
 .container{
     width: 100%;
     padding: 1rem;
+}
+@media(max-width: 900px){
+    .container{
+        padding-bottom: 2rem;
+    }
+}
+@media(max-width: 600px){
+    .container{
+        padding-bottom: 2.25rem;
+    }
 }

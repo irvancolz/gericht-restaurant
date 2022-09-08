@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 .container:first-child{
     padding: 4rem;
@@ -14,4 +15,9 @@
 }
 .container > *{
     text-align: center;
+}
+@media(max-width: 600px){
+    .container:first-child{
+        padding: 1.5rem;
+    }
 }

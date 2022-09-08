@@ -20,11 +20,11 @@ const Text = forwardRef<HTMLParagraphElement, textProps>((props, ref) => {
          color: props.col,
       }}
         className={`${
-          props.variant === "desc"
-            ? styles.desc
+          props.variant === "body"
+            ? styles.body
             : props.variant === "title"
             ? styles.title
-            : styles.body
+            : styles.desc
         }`}
       >
         {props.children}

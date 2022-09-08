@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { CSSProperties, useState } from "react";
 import { Section } from "../section";
 import styles from "./topnav.module.css";
 import webLogo from "../../public/assets/global/web-logo.svg";
@@ -67,7 +67,11 @@ export function Topnav() {
         <nav>
           {navigationLinks.map((item) => {
             return (
-              <span key={item.id} className={styles.link}>
+              <span key={item.id}
+              style={{
+                '--delay' : item.id,
+              } as CSSProperties}
+              className={styles.link}>
                 <Link href={item.link}>{item.label}</Link>
               </span>
             );

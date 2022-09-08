@@ -32,3 +32,13 @@
 .form input:placeholder-shown{
     border-color: var(--text-col);
 }
+@media(max-width: 900px){
+    .form input{
+        width: 100%;
+    }
+}
+@media(max-width: 600px){
+    .form{
+        flex-direction: column;
+    }
+}
