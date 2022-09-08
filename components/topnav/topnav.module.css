@@ -24,11 +24,16 @@
 }
 .mainC {
   display: flex;
+  justify-content: space-between;
   transition: height 1s ease-in-out;
   background-color: var(--dark-col1);
   overflow: hidden;
   height: fit-content;
   flex-grow: 1;
+}
+.mainC nav{
+  border: 1px dashed #eee;
+  margin: auto;
 }
 .toggleI{
     font-size: 1.75rem;

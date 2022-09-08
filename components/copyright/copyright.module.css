@@ -1,4 +1,12 @@
 .container p{
     font-size: 1rem;
     color: var(--gray-col2);
+    font-size: 1rem;
+    line-height: 28px;
+    font-family: var(--desc-font);
+    transform: translateX(2rem);
+}
+.container{
+    width: 100%;
+    padding: 1rem;
 }

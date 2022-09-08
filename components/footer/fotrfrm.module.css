@@ -21,6 +21,7 @@
 }
 .body span:nth-child(2){
     margin-top: 1.5rem;
+    letter-spacing: 0.04em;
 }
 .formC{
     margin-top: 4rem;

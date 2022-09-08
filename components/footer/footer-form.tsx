@@ -22,7 +22,7 @@ export function FooterForm() {
       </div>
       <div className={formCss.body}>
         <Text variant="title">Subscribe To Our Newsletter</Text>
-        <Text>And never miss latest updates!</Text>
+        <Text variant='desc'>And never miss latest Updates!</Text>
       </div>
       <div className={formCss.formC}>
         <form className={formCss.form} onSubmit={(e) => handleSubmit(e)}>

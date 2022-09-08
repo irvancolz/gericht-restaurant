@@ -1,9 +1,15 @@
 .container{
-    position: relative;
     max-width: 1920px;
     width: 100vw;
     margin: auto;
 }
-.mainBg{
+.mainImg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     filter: brightness(.6);
+    z-index: -1;
+    overflow: hidden;
 }

@@ -2,9 +2,23 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border: 1px solid var(--gray-col3);
     width: 100%;
 }
-.content{
-    border: 1px dashed #fff;
+.content span:first-child{
+    margin-top: 1.5rem;
+}
+.content:nth-child(2) span:first-child{
+    margin-top: 2rem;
+    max-width: 415px;
+}
+.body{
+    line-height: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.socialC span{
+    margin-right: 1rem;
 }

@@ -1,8 +1,8 @@
-import { forwardRef } from "react";
+import { forwardRef, ReactNode } from "react";
 import styles from "./text.module.css";
 
 interface textProps {
-  children?: string | JSX.Element[];
+  children?: ReactNode;
   fS?: string;
   fF?: string;
   variant?: string;

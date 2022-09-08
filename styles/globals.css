@@ -15,7 +15,7 @@
   --main-size: 90px;
   --title-size: 64px;
   --subtitle-size: 23px;
-  --normal-size: 16px;
+  --desc-size: 16px;
   --title-font: 'Cormorant Upright', sans-serif;
   --desc-font: 'Open Sans', sans-serif;
   --body-font: 'Roboto', sans-serif;
@@ -26,17 +26,20 @@
   margin: 0;
   box-sizing: border-box;
 }
-html{
-  background: url(../public/assets/global/main-bg.webp) no-repeat center center fixed;
+ html{
+/*  background: url('../public/assets/global/main-bg.webp') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+  */
+  background-color: var(--dark-col1);
+} 
 body{
   font-family: 'Cormorant Upright', sans-serif;
   color: var(--text-col);
-  font-size: var(--normal-size);
+  font-size: var(--desc-size);
+  letter-spacing: 0.04em;
 }
 
 a {
