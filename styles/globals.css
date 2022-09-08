@@ -27,7 +27,7 @@
   box-sizing: border-box;
 }
 html{
-  background: url('../public/assets/global/main-bg.webp') no-repeat center center fixed;
+  background: url(../public/assets/global/main-bg.webp) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
