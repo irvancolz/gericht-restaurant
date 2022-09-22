@@ -1,12 +1,12 @@
 import type { ReactElement } from 'react';
-import { NestedLayout } from '../components/layout nested';
+import { NestedLayout } from '../components/layout nested';``
 import { NextPageWithLayout } from './_app';
 
 
 const Home: NextPageWithLayout = () => {
   return (
     <>
-      <h1>home</h1>
+      <h1>hello world</h1>
     </>
   )
 }
