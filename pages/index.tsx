@@ -1,8 +1,9 @@
-import type { NextPage } from 'next';
-import styles from '../styles/Home.module.css';
+import type { ReactElement } from 'react';
+import { NestedLayout } from '../components/layout nested';
+import { NextPageWithLayout } from './_app';
 
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <h1>home</h1>
@@ -10,4 +11,10 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+Home.getLayout = function getLayout(page : ReactElement){
+  return(
+      <NestedLayout>{page}</NestedLayout>
+  )
+}
+
+export default Home;

@@ -3,9 +3,11 @@ import { Topnav } from "../topnav";
 import { Footer } from "../footer";
 import Image from "next/image";
 import pageImg from "../../public/assets/global/main-bg.webp";
+import { ReactNode } from "react";
+import { Copyright } from "../copyright";
 
 interface layoutProps {
-  children?: JSX.Element;
+  children?: ReactNode;
 }
 export function Layout(props: layoutProps) {
   return (
@@ -14,10 +16,8 @@ export function Layout(props: layoutProps) {
         <header>
           <Topnav />
         </header>
-        <main>{props.children}</main>
-        <footer>
-          <Footer />
-        </footer>
+        <div>{props.children}</div>
+        <Copyright />
       </div>
       <span className={styles.mainImg}>
         <Image src={pageImg} alt="page" layout="fixed" priority />
