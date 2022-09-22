@@ -11,6 +11,9 @@
     margin-top: 2rem;
     max-width: 415px;
 }
+.content:not(:nth-child(2)){
+    flex-basis: 30%;
+}
 .body{
     line-height: 28px;
     display: flex;
@@ -26,7 +29,7 @@
     .contentC{
         flex-wrap: wrap;
     }
-    .content{
+    .content,.content:not(:nth-child(2)){
         flex-basis: 50%;
     }
     .content:nth-child(2){
@@ -36,7 +39,7 @@
     }
 }
 @media(max-width: 600px){
-    .content{
+    .content, .content:not(:nth-child(2)){
         flex-basis: 100%;
     }
     .logo:first-child span{

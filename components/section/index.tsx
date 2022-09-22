@@ -7,6 +7,7 @@ interface sectionProps{
     paddingX?: string,
     overflow?: string,
     justify?: string,
+    gap?: string,
 }
 
 const defaultSectionProps: sectionProps ={
@@ -22,7 +23,8 @@ export function Section(props: sectionProps = defaultSectionProps){
             className={styles.container}
             style={{
                 padding: `${props.paddingX && props.paddingY ? `${props.paddingY} ${props.paddingX}` : `${props.padding}`}`,
-                justifyContent: `${props.justify}`
+                justifyContent: `${props.justify}`,
+                gap: `${props.gap}`
             }}>
             {props.children}
         </section>

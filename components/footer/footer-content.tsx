@@ -1,7 +1,6 @@
 import styles from "./footer.module.css";
 import ctntCss from "./fotrctnt.module.css";
 import Text from "../text";
-import { Copyright } from "../copyright";
 import Image from "next/image";
 import logo from "../../public/assets/global/web-logo-footer.svg";
 import spoon from "../../public/assets/global/spoon-logo.svg";
@@ -73,7 +72,6 @@ export function FooterContent() {
           </div>
         </div>
       </div>
-      <Copyright />
     </section>
   );
 }
