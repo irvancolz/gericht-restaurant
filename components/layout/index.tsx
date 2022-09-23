@@ -19,9 +19,9 @@ export function Layout(props: layoutProps) {
         <div>{props.children}</div>
         <Copyright />
       </div>
-      <span className={styles.mainImg}>
+      {/* <span className={styles.mainImg}>
         <Image src={pageImg} alt="page" layout="fixed" priority />
-      </span>
+      </span> */}
     </>
   );
 }

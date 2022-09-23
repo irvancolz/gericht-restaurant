@@ -16,7 +16,6 @@ const Text = forwardRef<HTMLParagraphElement, textProps>((props, ref) => {
       ref={ref}
       style={{
          fontSize : props.fS,
-         fontFamily: props.fF,
          color: props.col,
       }}
         className={`${
