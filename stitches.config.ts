@@ -6,6 +6,7 @@ export const { styled, getCssText } = createStitches({
       cormorant: 'Cormorant Upright, serif',
       sourceSans: 'Source Sans Pro , sans-serif',
       openSans : 'Open Sans, sans-serif',
+      lato: 'Lato, sans-serif',
     },
     colors: {
       goldCol1: "#ddca87",
@@ -22,10 +23,10 @@ export const { styled, getCssText } = createStitches({
       textCol: "white",
     },
     fontSizes: {
-      1: "16px",
-      2: "23px",
-      3: "64px",
-      4: "90px",
+      'sm': "16px",
+      'md': "23px",
+      'lg': "64px",
+      'xl': "90px",
     },
     space: {
       1: "8px",
@@ -46,26 +47,16 @@ export const { styled, getCssText } = createStitches({
       4: "1000",
       5: "10000",
     },
-    shadows: {
-      s: ""
-    }
   },
 });
 
 export const globalStyles = globalCss({
-  "@font-face": [
-    {
-      fontFamily: "cormorant",
-      src: "https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap",
-    },
-    {
-      fontFamily: "openSans",
-      src: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap",
-    },
-    {
-      fontFamily: "sansPro",
-      src: "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap",
-    },
+  "@import": [
+    'url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap")',
+    'url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap")',
+    'url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap")',
+    'url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap")',
+
   ],
   '*' :{
     margin : '0',
@@ -73,10 +64,8 @@ export const globalStyles = globalCss({
     boxSizing: 'border-box',
   },
   'html' :{
-    backgroundColor : '$textCol',
-  },
-  'body' :{
-    fontFamily: "$cormorant",
+    backgroundColor : '$darkCol1',
+    color: '$textCol',
   },
   'a' :{
     color: 'inherit',

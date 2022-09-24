@@ -16,7 +16,7 @@ export function Layout(props: layoutProps) {
         <header>
           <Topnav />
         </header>
-        <div>{props.children}</div>
+        <section>{props.children}</section>
         <Copyright />
       </div>
       {/* <span className={styles.mainImg}>

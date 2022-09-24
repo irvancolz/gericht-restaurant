@@ -1,36 +1,30 @@
 import { forwardRef, ReactNode } from "react";
-import styles from "./text.module.css";
+import { TextStyles, TextStylesVariant } from "./text.style";
 
-interface textProps {
+interface TextProps extends TextStylesVariant {
   children?: ReactNode;
-  fS?: string;
-  fF?: string;
-  variant?: string;
-  col?: string;
+  class?: string;
 }
 
-const Text = forwardRef<HTMLParagraphElement, textProps>((props, ref) => {
+const TextDefaultProps : TextProps ={
+  size : "lg",
+  color: "normal",
+  family: "open",
+}
+
+const textClassName = "custom-text";
+const Text = forwardRef<HTMLParagraphElement, TextProps>((props = TextDefaultProps, ref) => {
   return (
-    <span className={styles.text}>
-      <p
+    <TextStyles
       ref={ref}
-      style={{
-         fontSize : props.fS,
-         color: props.col,
-      }}
-        className={`${
-          props.variant === "body"
-            ? styles.body
-            : props.variant === "title"
-            ? styles.title
-            : styles.desc
-        }`}
-      >
-        {props.children}
-      </p>
-    </span>
+      size={props.size}
+      color={props.color}
+      family={props.family}
+    >
+      {props.children}
+    </TextStyles>
   );
 });
 
-Text.displayName = 'Text';
-export default Text
+Text.displayName = "Text";
+export default Text;

@@ -1,12 +1,13 @@
 import type { ReactElement } from 'react';
 import { NestedLayout } from '../components/layout nested';``
 import { NextPageWithLayout } from './_app';
+import Text from '../components/text';
 
 
 const Home: NextPageWithLayout = () => {
   return (
     <>
-      <h1>Hamburgervons</h1>
+      <Text size='xl' color='gold' family='open'>hamburgervons</Text>
     </>
   )
 }

@@ -8,9 +8,9 @@ interface NestedLayoutProps {
 export function NestedLayout(props: NestedLayoutProps) {
   return (
     <Layout>
-        <main>
+        <section>
             {props.children}
-        </main>
+        </section>
       <footer>
         <Footer />
       </footer>
