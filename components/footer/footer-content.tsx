@@ -13,17 +13,12 @@ export function FooterContent() {
     <section className={styles.container}>
       <div className={ctntCss.contentC}>
         <div className={ctntCss.content}>
-          <Text
-            col="var(--gold-col-2)"
-            variant="desc"
-            fF="var(--title-font)"
-            fS="2rem"
-          >
+          <Text>
             Contact Us
           </Text>
           <div className={ctntCss.body}>
-            <Text col="var(--gray-col2)">9 W 53rd St, New York, NY 10019, USA</Text>
-            <Text col="var(--gray-col2)">
+            <Text>9 W 53rd St, New York, NY 10019, USA</Text>
+            <Text>
               +1 212-344-1230 <br /> +1 212-344-1230
             </Text>
           </div>
@@ -54,19 +49,14 @@ export function FooterContent() {
           </div>
         </div>
         <div className={ctntCss.content}>
-          <Text
-            col="var(--gold-col-2)"
-            variant="desc"
-            fF="var(--title-font)"
-            fS="2rem"
-          >
+          <Text>
             Working Hours
           </Text>
           <div className={ctntCss.body}>
-            <Text col="var(--gray-col2)">
+            <Text>
               Monday-Friday: <br /> 08:00 am -12:00 am
             </Text>
-            <Text col="var(--gray-col2)">
+            <Text>
               Saturday-Sunday: <br /> 07:00am -11:00 pm
             </Text>
           </div>

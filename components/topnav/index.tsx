@@ -38,7 +38,6 @@ export function Topnav() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   function toggleOpen() {
     setIsOpen((curr) => !curr);
-    console.log(isOpen);
   }
   return (
     <Section justify="space-between" paddingX="2rem" paddingY="1rem">

@@ -13,7 +13,7 @@ export function FooterForm() {
   return (
     <section className={styles.container}>
       <div className={formCss.header}>
-        <Text fF="var(--title-font)" fS="var(--subtitle-size)">
+        <Text>
           Newsletter
         </Text>
         <span className="img">
@@ -21,7 +21,7 @@ export function FooterForm() {
         </span>
       </div>
       <div className={formCss.body}>
-        <Text variant="title">Subscribe To Our Newsletter</Text>
+        <Text>Subscribe To Our Newsletter</Text>
         <Text>And never miss latest Updates!</Text>
       </div>
       <div className={formCss.formC}>

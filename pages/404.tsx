@@ -1,7 +1,8 @@
 import React, {type ReactElement } from 'react'
-import { Layout } from '../components'
+import { Components } from '../components'
 import { NextPageWithLayout } from './_app';
-import Text from '../components/text';
+
+const {Layout,Text} = Components;
 
  const NotFound: NextPageWithLayout = () => {
   return (
