@@ -4,7 +4,7 @@ import { Layout } from "./layout";
 import { NestedLayout } from "./layout nested";
 import { Footer } from "./footer";
 import { Copyright } from "./copyright";
-import { Button } from "./button";
+import Button from "./button";
 
 export const Components ={
     Text,
