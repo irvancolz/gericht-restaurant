@@ -15,7 +15,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     return `${buttonClass} ${props.className ? props.className : ''} ${ButtonStyles({
       variant: props.variant,
       padding: props.padding,
-      disable: props.disabled,
+      disable: props.disable,
     })}`;
   }
   return (
