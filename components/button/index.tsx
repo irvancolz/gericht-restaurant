@@ -1,31 +1,35 @@
-import styles from "./button.module.css";
-interface buttonProps {
-  variant?: string;
-  children?: string | JSX.Element[] | JSX.Element;
+import { forwardRef, ReactNode } from "react";
+import { ButtonStyles, ButtonStylesVariants } from "./button.style";
+
+interface ButtonProps extends ButtonStylesVariants {
+  children?: ReactNode;
   onClick?: () => void;
-  type?: 'button' | 'submit' | 'reset'; 
+  className?: string;
+  title?: string,
 }
-const buttonDefaultProps: buttonProps = {
-  variant: "primary",
-  onClick: () => {
-    return;
-  },
-  children: "Actions",
-};
-export function Button(props: buttonProps = buttonDefaultProps) {
+
+const buttonClass = "custom-button";
+
+const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+  function classNames() {
+    return `${buttonClass} ${props.className ? props.className : ''} ${ButtonStyles({
+      variant: props.variant,
+      padding: props.padding,
+      disable: props.disabled,
+    })}`;
+  }
   return (
     <button
-      type={props.type}
-      className={`${styles.btn} ${
-        props.variant === "primary"
-          ? styles.primary
-          : props.variant === "secondary"
-          ? styles.secondary
-          : styles.ternary
-      }`}
-      onClick={() => props.onClick?.()}
+      ref={ref}
+      // to overriding styles
+      onClick={props.onClick}
+      className={classNames()}
+      title={props.title}
     >
       {props.children}
     </button>
   );
-}
+});
+
+Button.displayName = "Button";
+export default Button;

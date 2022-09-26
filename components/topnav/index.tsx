@@ -4,7 +4,7 @@ import { CSSProperties, useState } from "react";
 import { Section } from "../section";
 import styles from "./topnav.module.css";
 import webLogo from "../../public/assets/global/web-logo.svg";
-import { Button } from "../button";
+import Button  from "../button";
 
 const navigationLinks = [
   {
@@ -51,14 +51,14 @@ export function Topnav() {
         </div>
         {/* Show on tablet */}
         <div className={styles.regs}>
-          <Button variant="ternary">
+          <Button>
             <span className={styles.link}>Log In / Regristration</span>
           </Button>
-          <Button variant="ternary">
+          <Button>
             <span className={styles.link}>Book Table</span>
           </Button>
         </div>
-        <Button onClick={() => toggleOpen()}>
+        <Button onClick={() => toggleOpen()} padding='none'>
           <span className={styles.toggleI}>&#9776;</span>
         </Button>
       </div>
@@ -78,10 +78,11 @@ export function Topnav() {
         </nav>
         {/* show on mobile */}
         <div className={styles.regs}>
-          <Button variant="ternary">
-            <span className={styles.link}>Log In / Regristration</span>
+          <Button>
+            hamburgervons
+            {/* <span className={styles.link}>Log In / Regristration</span> */}
           </Button>
-          <Button variant="ternary">
+          <Button >
             <span className={styles.link}>Book Table</span>
           </Button>
         </div>

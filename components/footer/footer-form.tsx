@@ -3,7 +3,7 @@ import formCss from "./fotrfrm.module.css";
 import Text from "../text";
 import spoon from "../../public/assets/global/spoon-logo.svg";
 import Image from "next/image";
-import { Button } from "../button";
+import Button from "../button";
 import { SyntheticEvent } from "react";
 
 export function FooterForm() {
@@ -27,7 +27,7 @@ export function FooterForm() {
       <div className={formCss.formC}>
         <form className={formCss.form} onSubmit={(e) => handleSubmit(e)}>
           <input type="email" required placeholder="Email Adress" />
-          <Button variant="primary" type="submit">
+          <Button variant={'primary'}>
             Subscribe
           </Button>
         </form>
