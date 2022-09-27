@@ -1,3 +1,5 @@
+import { CSS } from "@stitches/react";
+import Stitches from "@stitches/react/types/stitches";
 import { forwardRef, ReactNode } from "react";
 import { ButtonStyles, ButtonStylesVariants } from "./button.style";
 
@@ -6,6 +8,7 @@ interface ButtonProps extends ButtonStylesVariants {
   onClick?: () => void;
   className?: string;
   title?: string,
+  css?: CSS,
 }
 
 const buttonClass = "custom-button";
@@ -16,6 +19,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
       variant: props.variant,
       padding: props.padding,
       disable: props.disable,
+      css: props.css,
     })}`;
   }
   return (
