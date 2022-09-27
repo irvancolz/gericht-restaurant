@@ -1,6 +1,7 @@
-import { styled, VariantProps } from "@stitches/react";
+import { css } from "../../stitches.config";
+import { VariantProps } from "@stitches/react";
 
-export const TextStyles = styled('p', {
+export const TextStyles = css({
     color: 'inherit',
     variants:{
         // adjust font size

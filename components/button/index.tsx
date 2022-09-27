@@ -1,5 +1,4 @@
 import { CSS } from "@stitches/react";
-import Stitches from "@stitches/react/types/stitches";
 import { forwardRef, ReactNode } from "react";
 import { ButtonStyles, ButtonStylesVariants } from "./button.style";
 
@@ -19,13 +18,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
       variant: props.variant,
       padding: props.padding,
       disable: props.disable,
+      // to overriding styles
       css: props.css,
     })}`;
   }
   return (
     <button
       ref={ref}
-      // to overriding styles
       onClick={props.onClick}
       className={classNames()}
       title={props.title}
