@@ -47,6 +47,11 @@ export const { styled, getCssText, css } = createStitches({
       4: "1000",
       5: "10000",
     },
+    media:{
+      bp1: '(min-width: 640px)',
+      bp2: '(min-width: 768px)',
+      bp3: '(min-width: 1024px)',
+    }
   },
 });
 

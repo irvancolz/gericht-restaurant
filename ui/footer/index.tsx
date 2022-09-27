@@ -1,9 +1,9 @@
-import {Section} from '../section'
+import Section from '../../components/section'
 import {FooterForm} from './footer-form';
 import { FooterContent } from './footer-content';
 export function Footer(){
     return(
-        <Section gap='8rem'>
+        <Section>
             <FooterForm />
             <FooterContent />
         </Section>

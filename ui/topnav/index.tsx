@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CSSProperties, useState } from "react";
-import { Section } from "../section";
+import  Section  from "../../components/section";
 import styles from "./topnav.module.css";
 import webLogo from "../../public/assets/global/web-logo.svg";
-import Button  from "../button";
+import Button  from "../../components/button";
 
 const navigationLinks = [
   {
@@ -40,7 +40,7 @@ export function Topnav() {
     setIsOpen((curr) => !curr);
   }
   return (
-    <Section justify="space-between" paddingX="2rem" paddingY="1rem">
+    <Section>
       <div className={styles.logoC}>
         <div className={styles.logo}>
           <Link href="/" as="/home">

@@ -1,9 +1,9 @@
 import styles from "./footer.module.css";
 import formCss from "./fotrfrm.module.css";
-import Text from "../text";
+import Text from "../../components/text";
 import spoon from "../../public/assets/global/spoon-logo.svg";
 import Image from "next/image";
-import Button from "../button";
+import Button from "../../components/button";
 import { SyntheticEvent } from "react";
 
 export function FooterForm() {

@@ -1,32 +1,31 @@
-import styles from './section.module.css'
+import { CSS } from '@stitches/react';
+import { forwardRef, ReactNode } from 'react'
+import { SectionStyles, SectionVariants } from './section.styles'
 
-interface sectionProps{
-    children?: JSX.Element | JSX.Element[],
-    padding?: string,
-    paddingY?: string,
-    paddingX?: string,
-    overflow?: string,
-    justify?: string,
-    gap?: string,
+interface sectionProps extends SectionVariants{
+   children?: ReactNode;
+    css?: CSS;
+    className?: string,
 }
 
-const defaultSectionProps: sectionProps ={
-    children: <div>helo</div>,
-    padding: '0px',
-    overflow: 'auto',
-    justify: 'center',
-}
+const sectionClass = 'custom-section'
 
-export function Section(props: sectionProps = defaultSectionProps){
+const Section = forwardRef<HTMLElement, sectionProps>((props, ref)=>{
+    function classes() {
+        return `${sectionClass} ${props.className ? props.className : ''} ${SectionStyles({
+          // to overriding styles
+          css: props.css,
+        })}`;
+      }
     return(
         <section 
-            className={styles.container}
-            style={{
-                padding: `${props.paddingX && props.paddingY ? `${props.paddingY} ${props.paddingX}` : `${props.padding}`}`,
-                justifyContent: `${props.justify}`,
-                gap: `${props.gap}`
-            }}>
+        ref={ref}
+            className={classes()}
+            >
             {props.children}
         </section>
     )
-}
+});
+
+Section.displayName = 'Section';
+export default Section;

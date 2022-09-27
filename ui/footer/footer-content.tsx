@@ -1,6 +1,6 @@
 import styles from "./footer.module.css";
 import ctntCss from "./fotrctnt.module.css";
-import Text from "../text";
+import Text from "../../components/text";
 import Image from "next/image";
 import logo from "../../public/assets/global/web-logo-footer.svg";
 import spoon from "../../public/assets/global/spoon-logo.svg";

@@ -1,10 +1,11 @@
 import React, {type ReactElement } from 'react'
 import { Components } from '../components'
+import { UI } from '../ui';
 import { NextPageWithLayout } from './_app';
 
-const {Layout,Text} = Components;
 
- const NotFound: NextPageWithLayout = () => {
+const NotFound: NextPageWithLayout = () => {
+   const {Text} = Components;
   return (
     <Text color={'fade'} family='cormorant' size={'md'}>Not Found</Text>
   )
@@ -12,6 +13,7 @@ const {Layout,Text} = Components;
 
 
 NotFound.getLayout = function getLayout(page: ReactElement){
+  const {Layout} = UI;
   return(
     <Layout>
       {page}
