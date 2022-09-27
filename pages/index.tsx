@@ -4,10 +4,10 @@ import { NextPageWithLayout } from './_app';
 import { Components } from '../components';
 
 const Home: NextPageWithLayout = () => {
-  const {Text} = Components;
+  const {Heading} = Components;
   return (
     <>
-      <Text size='xl' color='gold' family='open'>hamburgervons</Text>
+      <Heading as='h2' color={'gold'}>hamburgervons</Heading>
     </>
   )
 };
