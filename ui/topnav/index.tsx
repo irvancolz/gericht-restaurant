@@ -40,7 +40,7 @@ export function Topnav() {
     setIsOpen((curr) => !curr);
   }
   return (
-    <Section>
+    <Section as='div'>
       <div className={styles.logoC}>
         <div className={styles.logo}>
           <Link href="/" as="/home">

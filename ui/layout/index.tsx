@@ -12,16 +12,13 @@ interface layoutProps {
 export function Layout(props: layoutProps) {
   return (
     <>
-      <div className={styles.container}>
-        <header>
-          <Topnav />
-        </header>
-        <section>{props.children}</section>
+      <header>
+        <Topnav />
+      </header>
+      <main>{props.children}</main>
+      <footer>
         <Copyright />
-      </div>
-      {/* <span className={styles.mainImg}>
-        <Image src={pageImg} alt="page" layout="fixed" priority />
-      </span> */}
+      </footer>
     </>
   );
 }
