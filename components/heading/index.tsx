@@ -1,33 +1,29 @@
 import { CSS } from "@stitches/react";
-import { forwardRef, ReactNode } from "react";
-import { HeadingComp, HeadingStyles, HeadingVariants } from "./heading.style";
+import { ElementType, forwardRef, ReactNode } from "react";
+import { HeadingComp, HeadingCompConfig } from "./heading.style";
 
-interface HeadingProps extends HeadingVariants {
+interface HeadingProps extends HeadingCompConfig {
   children?: ReactNode;
-  css?: CSS;
   className?: string;
-  as?: string;
+  as?: ElementType;
+  css?: CSS;
 }
 
 const headingClassName = "custom-heading";
 
-const Heading = forwardRef<HTMLHeadingElement, HeadingProps>((props, ref) => {
-  function classes() {
-    return `${headingClassName} ${
-      props.className ? props.className : ""
-    } ${HeadingStyles({
-      color: props.color,
-      family: props.family,
-      size: props.size,
-    })}`;
-  }
+const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
+  ({ css, as, className, children, ...rest }, ref) => {
+    function classes() {
+      return `${headingClassName} ${className ? className : ""}`;
+    }
 
-  return (
-    <HeadingComp ref={ref} className={classes()} as={props.as}>
-      {props.children}
-    </HeadingComp>
-  );
-});
+    return (
+      <HeadingComp ref={ref} className={classes()} as={as} css={css} {...rest}>
+        {children}
+      </HeadingComp>
+    );
+  }
+);
 
 Heading.displayName = "Heading";
 export default Heading;

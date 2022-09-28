@@ -4,33 +4,25 @@ import { ButtonStyles, ButtonStylesVariants } from "./button.style";
 
 interface ButtonProps extends ButtonStylesVariants {
   children?: ReactNode;
-  onClick?: () => void;
   className?: string;
-  title?: string,
   css?: CSS,
 }
 
 const buttonClass = "custom-button";
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  function classNames() {
-    return `${buttonClass} ${props.className ? props.className : ''} ${ButtonStyles({
-      variant: props.variant,
-      padding: props.padding,
-      disable: props.disable,
-      // to overriding styles
-      css: props.css,
-    })}`;
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({className, css, children,...rest}, ref) => {
+  function classes() {
+    return `${buttonClass} ${className ? className : ''}`;
   }
   return (
-    <button
-      ref={ref}
-      onClick={props.onClick}
-      className={classNames()}
-      title={props.title}
+    <ButtonStyles
+    ref={ref}
+    className={classes()}
+    css={css}
+    {...rest}
     >
-      {props.children}
-    </button>
+      {children}
+    </ButtonStyles>
   );
 });
 

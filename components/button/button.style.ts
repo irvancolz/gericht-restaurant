@@ -1,5 +1,5 @@
-import {  VariantProps } from "@stitches/react";
-import { css } from "../../stitches.config";
+import { ComponentProps } from "@stitches/react";
+import { styled } from "../../stitches.config";
 
 interface ButtonVariantConfig {
   bgCol?: string;
@@ -17,7 +17,7 @@ function createButtonColorVariant(props: ButtonVariantConfig) {
   })
 }
 
-export const ButtonStyles = css({
+export const ButtonStyles = styled('button',{
   borderColor: "transparent",
   outlineColor: "transparent",
   backgroundColor: "transparent",
@@ -55,4 +55,4 @@ export const ButtonStyles = css({
   }
 });
 
-export type ButtonStylesVariants = VariantProps<typeof ButtonStyles>;
+export type ButtonStylesVariants = ComponentProps<typeof ButtonStyles>;

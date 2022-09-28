@@ -27,7 +27,9 @@ export function FooterForm() {
       <div className={formCss.formC}>
         <form className={formCss.form} onSubmit={(e) => handleSubmit(e)}>
           <input type="email" required placeholder="Email Adress" />
-          <Button variant={'primary'}>
+          <Button css={{
+            border: '1px solid #fff'
+          }} >
             Subscribe
           </Button>
         </form>

@@ -7,7 +7,7 @@ const Home: NextPageWithLayout = () => {
   const {Heading} = Components;
   return (
     <>
-      <Heading as='h2' color={'gold'}>hamburgervons</Heading>
+      <Heading>hamburgervons</Heading>
     </>
   )
 };

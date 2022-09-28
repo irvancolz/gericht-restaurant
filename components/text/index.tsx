@@ -1,6 +1,6 @@
 import { CSS } from "@stitches/react";
 import { forwardRef, ReactNode } from "react";
-import { TextStyles, TextStylesVariant, TextComp } from "./text.style";
+import { TextStyles, TextStylesVariant } from "./text.style";
 
 interface TextProps extends TextStylesVariant {
   children?: ReactNode;
@@ -9,20 +9,15 @@ interface TextProps extends TextStylesVariant {
 }
 
 const textClassName = "custom-text";
-const Text = forwardRef<HTMLParagraphElement, TextProps>((props, ref) => {
+const Text = forwardRef<HTMLParagraphElement, TextProps>(({css, children, className, ...rest}, ref) => {
   function classes() {
-    return `${textClassName} ${props.className ? props.className : ""} ${TextStyles({
-      color: props.color,
-      family: props.family,
-      size: props.size,
-      css: props.css,
-    })}`;
+    return `${textClassName} ${className ? className : ""} `;
   }
 
   return (
-    <TextComp ref={ref} className={classes()}>
-      {props.children}
-    </TextComp>
+    <TextStyles ref={ref} className={classes()} css={css} {...rest}>
+      {children}
+    </TextStyles>
   );
 });
 

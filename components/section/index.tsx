@@ -1,31 +1,27 @@
-import { CSS } from '@stitches/react';
-import { forwardRef, ReactNode } from 'react'
-import { SectionStyles, SectionVariants } from './section.styles'
+import { CSS } from "@stitches/react";
+import { forwardRef, ReactNode } from "react";
+import { SectionStyles, SectionVariants } from "./section.styles";
 
-interface sectionProps extends SectionVariants{
-   children?: ReactNode;
-    css?: CSS;
-    className?: string,
+interface sectionProps extends SectionVariants {
+  children?: ReactNode;
+  className?: string;
+  css?: CSS;
 }
 
-const sectionClass = 'custom-section'
+const sectionClass = "custom-section";
 
-const Section = forwardRef<HTMLElement, sectionProps>((props, ref)=>{
-    function classes() {
-        return `${sectionClass} ${props.className ? props.className : ''} ${SectionStyles({
-          // to overriding styles
-          css: props.css,
-        })}`;
-      }
-    return(
-        <section 
-        ref={ref}
-            className={classes()}
-            >
-            {props.children}
-        </section>
-    )
+const Section = forwardRef<HTMLElement, sectionProps>(({children, css, className,...rest}, ref) => {
+  function classes() {
+    return `${sectionClass} ${
+      className ? className : ""
+    }`;
+  }
+  return (
+    <SectionStyles ref={ref} className={classes()} {...rest}>
+      {children}
+    </SectionStyles>
+  );
 });
 
-Section.displayName = 'Section';
+Section.displayName = "Section";
 export default Section;
