@@ -21,6 +21,7 @@ export const { styled, getCssText, css } = createStitches({
       grayCol3: "#dcca8733",
       shadowCol: "rgba(0, 0, 0, 0.7)",
       textCol: "white",
+      clear: 'transparent',
     },
     fontSizes: {
       'sm': "16px",

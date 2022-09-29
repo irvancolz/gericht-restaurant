@@ -3,13 +3,15 @@ import formCss from "./fotrfrm.module.css";
 import Text from "../../components/text";
 import spoon from "../../public/assets/global/spoon-logo.svg";
 import Image from "next/image";
-import Button from "../../components/button";
 import { SyntheticEvent } from "react";
+import { Components } from "../../components";
 
 export function FooterForm() {
   function handleSubmit(e: SyntheticEvent) {
     e.preventDefault();
+    console.log('ok')
   }
+  const {Button, Input} = Components;
   return (
     <section className={styles.container}>
       <div className={formCss.header}>
@@ -26,10 +28,8 @@ export function FooterForm() {
       </div>
       <div className={formCss.formC}>
         <form className={formCss.form} onSubmit={(e) => handleSubmit(e)}>
-          <input type="email" required placeholder="Email Adress" />
-          <Button css={{
-            border: '1px solid #fff'
-          }} >
+          <Input type={'email'} required placeholder='Email Address'/>
+          <Button type="submit" variant='primary'>
             Subscribe
           </Button>
         </form>
