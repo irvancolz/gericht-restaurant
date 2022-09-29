@@ -1,12 +1,12 @@
-import { createStitches, globalCss } from "@stitches/react";
+import { createStitches, globalCss, PropertyValue } from "@stitches/react";
 
 export const { styled, getCssText, css } = createStitches({
   theme: {
     fonts: {
-      cormorant: 'Cormorant Upright, serif',
-      sourceSans: 'Source Sans Pro , sans-serif',
-      openSans : 'Open Sans, sans-serif',
-      lato: 'Lato, sans-serif',
+      cormorant: "Cormorant Upright, serif",
+      sourceSans: "Source Sans Pro , sans-serif",
+      openSans: "Open Sans, sans-serif",
+      lato: "Lato, sans-serif",
     },
     colors: {
       goldCol1: "#ddca87",
@@ -21,13 +21,13 @@ export const { styled, getCssText, css } = createStitches({
       grayCol3: "#dcca8733",
       shadowCol: "rgba(0, 0, 0, 0.7)",
       textCol: "white",
-      clear: 'transparent',
+      clear: "transparent",
     },
     fontSizes: {
-      'sm': "16px",
-      'md': "23px",
-      'lg': "64px",
-      'xl': "90px",
+      sm: "16px",
+      md: "23px",
+      lg: "64px",
+      xl: "90px",
     },
     space: {
       1: "8px",
@@ -48,11 +48,36 @@ export const { styled, getCssText, css } = createStitches({
       4: "1000",
       5: "10000",
     },
-    media:{
-      bp1: '(min-width: 640px)',
-      bp2: '(min-width: 768px)',
-      bp3: '(min-width: 1024px)',
-    }
+    media: {
+      bp1: "(min-width: 640px)",
+      bp2: "(min-width: 768px)",
+      bp3: "(min-width: 1024px)",
+    },
+  },
+  utils: {
+    m: (value: PropertyValue<"margin">) => ({
+      margin: value,
+    }),
+    pd: (value: PropertyValue<"padding">) => ({
+      padding: value,
+    }),
+    px: (value: PropertyValue<"padding">) => ({
+      paddingTop: value,
+      paddingBottom: value,
+    }),
+    py: (value: PropertyValue<"padding">) => ({
+      paddingLeft: value,
+      paddingRight: value,
+    }),
+    bgCol: (value: PropertyValue<"backgroundColor">) => ({
+      backgroundColor: value,
+    }),
+    lineCol: (value: PropertyValue<'borderColor'>) =>({
+      borderColor: value,
+    }),
+    outCol: (value: PropertyValue<'outlineColor'>) =>({
+      outlineColor: value,
+    }),
   },
 });
 
@@ -62,20 +87,19 @@ export const globalStyles = globalCss({
     'url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap")',
     'url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap")',
     'url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap")',
-
   ],
-  '*' :{
-    margin : '0',
-    padding : '0',
-    boxSizing: 'border-box',
+  "*": {
+    margin: "0",
+    padding: "0",
+    boxSizing: "border-box",
   },
-  'html' :{
-    backgroundColor : '$darkCol1',
-    color: '$textCol',
+  html: {
+    backgroundColor: "$darkCol1",
+    color: "$textCol",
   },
-  'a' :{
-    color: 'inherit',
-    textDecoration : 'none',
-    cursor : 'pointer',
-  }
+  a: {
+    color: "inherit",
+    textDecoration: "none",
+    cursor: "pointer",
+  },
 });
