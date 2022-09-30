@@ -21,7 +21,7 @@ export const SectionStyles = styled("section", {
   variants: {
     sideSpace: {
       default: {
-        padding: "0",
+        padding: "$0",
         "@bp1": {
           padding: "$2",
         },

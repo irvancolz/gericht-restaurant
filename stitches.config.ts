@@ -30,6 +30,10 @@ export const { styled, getCssText, css } = createStitches({
       xl: "90px",
     },
     space: {
+      0: "0",
+      0.125: "1px",
+      0.25: "2px",
+      0.5 : "4px",
       1: "8px",
       2: "16px",
       3: "25px",
@@ -37,11 +41,20 @@ export const { styled, getCssText, css } = createStitches({
       5: "48px",
       6: "64px",
     },
+    fontWeights:{
+      thin: '300',
+      light: '400',
+      normal: '500',
+      medium: '600',
+      bold: '700',
+      xBold: '800',
+    },
     lineHeights: {
       1: "130%",
       2: "175%",
     },
     zIndices: {
+      0: "0",
       1: "1",
       2: "10",
       3: "100",
@@ -72,11 +85,20 @@ export const { styled, getCssText, css } = createStitches({
     bgCol: (value: PropertyValue<"backgroundColor">) => ({
       backgroundColor: value,
     }),
-    lineCol: (value: PropertyValue<'borderColor'>) =>({
+    lineCol: (value: PropertyValue<"borderColor">) => ({
       borderColor: value,
     }),
-    outCol: (value: PropertyValue<'outlineColor'>) =>({
+    outCol: (value: PropertyValue<"outlineColor">) => ({
       outlineColor: value,
+    }),
+    fDir: (value: PropertyValue<'flexDirection'>) =>({
+      flexDirection: value,
+    }),
+    justify: (value: PropertyValue<'justifyContent'>) =>({
+      justifyContent: value,
+    }),
+    align: (value: PropertyValue<'alignItems'>) =>({
+      alignItems: value,
     }),
   },
 });

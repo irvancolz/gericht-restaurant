@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Footer } from "../footer";
+import { FooterForm } from "../foooter form";
 import { Topnav } from "../topnav";
 
 interface NestedLayoutProps {
@@ -13,7 +13,7 @@ export function NestedLayout(props: NestedLayoutProps) {
       </header>
       <main>{props.children}</main>
       <footer>
-        <Footer />
+        <FooterForm />
       </footer>
     </>
   );
