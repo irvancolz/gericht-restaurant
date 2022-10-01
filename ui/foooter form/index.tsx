@@ -2,7 +2,7 @@ import spoon from "../../public/assets/global/spoon-logo.svg";
 import Image from "next/image";
 import { SyntheticEvent } from "react";
 import { Components } from "../../components";
-import { Containerstyles } from "./footerForm.style";
+import { BodyStyles, Containerstyles, FormStyles, HeaderStyles } from "./footerForm.style";
 
 export  function FooterForm() {
   function handleSubmit(e: SyntheticEvent) {
@@ -12,23 +12,23 @@ export  function FooterForm() {
   const {Button, Input, Heading, Text, Section} = Components;
   return (
     <Section className={Containerstyles()}>
-      <header>
-        <Heading as='h3'>
+      <header className={HeaderStyles()}>
+        <Heading as='h3' size='md' fCol={"normal"}>
           Newsletter
         </Heading>
         <span className="img">
           <Image src={spoon} alt="logo" layout="fixed" priority />
         </span>
       </header>
-      <div>
-        <Text>Subscribe To Our Newsletter</Text>
-        <Text>And never miss latest Updates!</Text>
+      <div className={BodyStyles()}>
+        <Text fCol="gold" weight='medium' size="lg">Subscribe To Our Newsletter</Text>
+        <Text size="sm" family="source">And never miss latest Updates!</Text>
       </div>
-      <div>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <Input type={'email'} required placeholder='Email Address'/>
+      <div className="form">
+        <form onSubmit={(e) => handleSubmit(e)} className={FormStyles()}>
+          <Input type="email" required placeholder='Email Address'/>
           <Button type="submit" variant='primary'>
-            Subscribe
+            <Text fCol="dark" size="sm" weight="bold">Subscribe</Text>
           </Button>
         </form>
       </div>

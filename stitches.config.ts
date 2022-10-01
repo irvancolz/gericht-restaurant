@@ -69,10 +69,36 @@ export const { styled, getCssText, css } = createStitches({
   },
   utils: {
     m: (value: PropertyValue<"margin">) => ({
-      margin: value,
+      marginLeft: value,
+      marginRight: value,
+      marginTop: value,
+      marginBottom: value,
+    }),
+    mx: (value: PropertyValue<"margin">) => ({
+      marginTop: value,
+      marginBottom: value,
+    }),
+    my: (value: PropertyValue<"margin">) => ({
+      marginLeft: value,
+      marginRight: value,
+    }),
+    mt: (value: PropertyValue<"marginTop">) => ({
+      marginTop: value,
+    }),
+    mb: (value: PropertyValue<"marginBottom">) => ({
+      marginBottom: value,
+    }),
+    ml: (value: PropertyValue<"marginLeft">) => ({
+      marginLeft: value,
+    }),
+    mr: (value: PropertyValue<"marginRight">) => ({
+      marginRight: value,
     }),
     pd: (value: PropertyValue<"padding">) => ({
-      padding: value,
+      paddingRight: value,
+      paddingLeft: value,
+      paddingTop: value,
+      paddingBottom: value,
     }),
     px: (value: PropertyValue<"padding">) => ({
       paddingTop: value,
@@ -80,6 +106,18 @@ export const { styled, getCssText, css } = createStitches({
     }),
     py: (value: PropertyValue<"padding">) => ({
       paddingLeft: value,
+      paddingRight: value,
+    }),
+    pt: (value: PropertyValue<"paddingTop">) => ({
+      paddingTop: value,
+    }),
+    pb: (value: PropertyValue<"paddingBottom">) => ({
+      paddingBottom: value,
+    }),
+    pl: (value: PropertyValue<"paddingLeft">) => ({
+      paddingLeft: value,
+    }),
+    pr: (value: PropertyValue<"paddingRight">) => ({
       paddingRight: value,
     }),
     bgCol: (value: PropertyValue<"backgroundColor">) => ({
@@ -93,6 +131,9 @@ export const { styled, getCssText, css } = createStitches({
     }),
     fDir: (value: PropertyValue<'flexDirection'>) =>({
       flexDirection: value,
+    }),
+    fBase: (value: PropertyValue<'flexBasis'>) =>({
+      flexBasis: value,
     }),
     justify: (value: PropertyValue<'justifyContent'>) =>({
       justifyContent: value,

@@ -19,7 +19,7 @@ export const TextStyles = styled("p", {
       },
     },
     // adjust font color
-    color: {
+    fCol: {
       gold: {
         color: "$goldCol1",
       },
@@ -28,6 +28,9 @@ export const TextStyles = styled("p", {
       },
       fade: {
         color: "$grayCol1",
+      },
+      dark: {
+        color: "$darkCol1",
       },
     },
     // adjust font variant
@@ -45,6 +48,32 @@ export const TextStyles = styled("p", {
         fontFamily: "$lato",
       },
     },
+    weight: {
+      thin: {
+        fontWeight: "$thin",
+      },
+      light: {
+        fontWeight: "$light",
+      },
+      normal: {
+        fontWeight: "$normal",
+      },
+      medium: {
+        fontWeight: "$medium",
+      },
+      bold: {
+        fontWeight: "$bold",
+      },
+      xBold: {
+        fontWeight: "$xBold",
+      },
+    },
+  },
+  defaultVariants: {
+    family: "cormorant",
+    size: "md",
+    fCol: "normal",
+    weight: "normal",
   },
 });
 // use for components parameter

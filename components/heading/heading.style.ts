@@ -1,48 +1,76 @@
 import { ComponentProps } from "@stitches/react";
 import { styled } from "../../stitches.config";
 
-export const HeadingComp = styled("h1", {variants: {
-  size: {
-    sm: {
-      fontSize: "$sm",
+export const HeadingComp = styled("h1", {
+  variants: {
+    size: {
+      sm: {
+        fontSize: "$sm",
+      },
+      md: {
+        fontSize: "$md",
+      },
+      lg: {
+        fontSize: "$lg",
+      },
+      xl: {
+        fontSize: "$xl",
+      },
     },
-    md: {
-      fontSize: "$md",
+    // adjust font color
+    fCol: {
+      gold: {
+        color: "$goldCol1",
+      },
+      normal: {
+        color: "$textCol",
+      },
+      fade: {
+        color: "$grayCol1",
+      },
     },
-    lg: {
-      fontSize: "$lg",
+    // adjust font variant
+    family: {
+      cormorant: {
+        fontFamily: "$cormorant",
+      },
+      open: {
+        fontFamily: "$openSans",
+      },
+      source: {
+        fontFamily: "$sourceSans",
+      },
+      lato: {
+        fontFamily: "$lato",
+      },
     },
-    xl: {
-      fontSize: "$xl",
+    weight: {
+      thin: {
+        fontWeight: "$thin",
+      },
+      light: {
+        fontWeight: "$light",
+      },
+      normal: {
+        fontWeight: "$normal",
+      },
+      medium: {
+        fontWeight: "$medium",
+      },
+      bold: {
+        fontWeight: "$bold",
+      },
+      xBold: {
+        fontWeight: "$xBold",
+      },
     },
   },
-  // adjust font color
-  color: {
-    gold: {
-      color: "$goldCol1",
-    },
-    normal: {
-      color: "$textCol",
-    },
-    fade: {
-      color: "$grayCol1",
-    },
+  defaultVariants: {
+    family: "cormorant",
+    size: "lg",
+    fCol: "gold",
+    weight: 'normal',
   },
-  // adjust font variant
-  family: {
-    cormorant: {
-      fontFamily: "$cormorant",
-    },
-    open: {
-      fontFamily: "$openSans",
-    },
-    source: {
-      fontFamily: "$sourceSans",
-    },
-    lato: {
-      fontFamily: "$lato",
-    },
-  },
-},});
+});
 
-export type HeadingCompConfig = ComponentProps<typeof HeadingComp>
+export type HeadingCompConfig = ComponentProps<typeof HeadingComp>;

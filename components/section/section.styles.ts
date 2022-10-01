@@ -8,29 +8,14 @@ interface SectionStylesVariantConfig {
   resPadH?: string | number;
 }
 
-function createSectionSizeVariants(props: SectionStylesVariantConfig) {
-  return {
-    padding: `${props.padV} ${props.padH}`,
-  };
-}
 
 export const SectionStyles = styled("section", {
   position: "relative",
   display: "flex",
   flexWrap: "wrap",
-  variants: {
-    sideSpace: {
-      default: {
-        padding: "$0",
-        "@bp1": {
-          padding: "$2",
-        },
-      },
-    },
-  },
-  defaultVariants: {
-    sideSpace: "default",
-  },
+  maxWidth: "1300px",
+  width: "100%",
+  my: "auto",
 });
 
 export type SectionVariants = ComponentProps<typeof SectionStyles>;

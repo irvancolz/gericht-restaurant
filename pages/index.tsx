@@ -4,10 +4,12 @@ import { NextPageWithLayout } from './_app';
 import { Components } from '../components';
 
 const Home: NextPageWithLayout = () => {
-  const {Heading} = Components;
+  const {Heading, Section} = Components;
   return (
     <>
+    <Section>
       <Heading>hamburgervons</Heading>
+    </Section>
     </>
   )
 };
