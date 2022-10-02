@@ -1,8 +1,10 @@
 import Section from '../../components/section'
-import { FooterContent } from './footer-content';
+import { FooterForm } from '../foooter form'
+import { FooterContent } from '../footer content'
 export function Footer(){
     return(
-        <Section>
+        <Section as="div">
+            <FooterForm />
             <FooterContent />
         </Section>
     )

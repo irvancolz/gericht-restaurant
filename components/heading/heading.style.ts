@@ -10,6 +10,9 @@ export const HeadingComp = styled("h1", {
       md: {
         fontSize: "$md",
       },
+      nr:{
+        fontSize: "$nr",
+      },
       lg: {
         fontSize: "$lg",
       },

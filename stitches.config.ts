@@ -26,6 +26,7 @@ export const { styled, getCssText, css } = createStitches({
     fontSizes: {
       sm: "16px",
       md: "23px",
+      nr: "32px",
       lg: "64px",
       xl: "90px",
     },

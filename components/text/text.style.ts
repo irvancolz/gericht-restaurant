@@ -11,6 +11,9 @@ export const TextStyles = styled("p", {
       md: {
         fontSize: "$md",
       },
+      nr:{
+        fontSize: "$nr",
+      },
       lg: {
         fontSize: "$lg",
       },
@@ -68,6 +71,17 @@ export const TextStyles = styled("p", {
         fontWeight: "$xBold",
       },
     },
+    align:{
+      start: {
+        textAlign: "left"
+      },
+      center: {
+        textAlign: "center"
+      },
+      end: {
+        textAlign: "right"
+      },
+    }
   },
   defaultVariants: {
     family: "cormorant",

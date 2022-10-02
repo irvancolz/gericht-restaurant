@@ -11,8 +11,6 @@ interface SectionStylesVariantConfig {
 
 export const SectionStyles = styled("section", {
   position: "relative",
-  display: "flex",
-  flexWrap: "wrap",
   maxWidth: "1300px",
   width: "100%",
   my: "auto",
