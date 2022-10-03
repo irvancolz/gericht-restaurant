@@ -14,6 +14,14 @@ export const SectionStyles = styled("section", {
   maxWidth: "1300px",
   width: "100%",
   my: "auto",
+
+  "@bp2" :{
+    py: "$4",
+  },
+
+  "@bp1" :{
+    py: "$2",
+  }
 });
 
 export type SectionVariants = ComponentProps<typeof SectionStyles>;

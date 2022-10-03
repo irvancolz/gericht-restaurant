@@ -11,9 +11,6 @@ function createButtonColorVariant(props: ButtonVariantConfig) {
   return ({
     color: props.txtCol,
     backgroundColor: props.bgCol,
-    '&:hover' :{
-      backgroundColor: props.hoverCol
-    }
   })
 }
 
@@ -36,8 +33,14 @@ export const ButtonStyles = styled('button',{
       })
     },
     padding: {
-      true: {
+      sm: {
         padding: "$1 $2",
+      },
+      md: {
+        padding: "$1 $4",
+      },
+      lg: {
+        padding: "$1 $5"
       },
       none: {
         padding: "0",
@@ -50,7 +53,7 @@ export const ButtonStyles = styled('button',{
     }
   },
   defaultVariants:{
-    padding: true,
+    padding: "sm",
     variant: 'ternary',
   }
 });

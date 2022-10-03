@@ -1,10 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CSSProperties, useState } from "react";
-import  Section  from "../../components/section";
-import styles from "./topnav.module.css";
+import { useState } from "react";
 import webLogo from "../../public/assets/global/web-logo.svg";
-import Button  from "../../components/button";
+import { Components } from "../../components";
+import {
+  TopnavBookLinkStyles,
+  TopnavContainerStyles,
+  TopnavHeaderStyles,
+  TopnavNavLinkStyles,
+  TopnavNavStyles,
+} from "./topnav.styles";
 
 const navigationLinks = [
   {
@@ -35,14 +40,15 @@ const navigationLinks = [
 ];
 
 export function Topnav() {
+  const { Section, Button, Text } = Components;
   const [isOpen, setIsOpen] = useState<boolean>(false);
   function toggleOpen() {
     setIsOpen((curr) => !curr);
   }
   return (
-    <Section as='div'>
-      <div className={styles.logoC}>
-        <div className={styles.logo}>
+    <Section as="div" className={TopnavContainerStyles()}>
+      <div className={TopnavHeaderStyles()}>
+        <div className="logo">
           <Link href="/" as="/home">
             <a>
               <Image src={webLogo} alt="gericht" layout="intrinsic" priority />
@@ -50,40 +56,69 @@ export function Topnav() {
           </Link>
         </div>
         {/* Show on tablet */}
-        <div className={styles.regs}>
+        <div className="navLink">
           <Button>
-            <span className={styles.link}>Log In / Regristration</span>
+            <Text family="open" size="sm">
+              Log In / Regristration
+            </Text>
           </Button>
           <Button>
-            <span className={styles.link}>Book Table</span>
+            <Text family="open" size="sm">
+              Book Table
+            </Text>
           </Button>
         </div>
-        <Button onClick={() => toggleOpen()} padding='none'>
-          <span className={styles.toggleI}>&#9776;</span>
+        <Button onClick={() => toggleOpen()} padding="none" className="toggle">
+          <Text family="open" size="sm">
+            &#9776;
+          </Text>
         </Button>
       </div>
-      <div className={`${styles.mainC} ${isOpen && styles.open}`}>
-        <nav>
+      <div className={TopnavNavStyles()}>
+        <nav className={isOpen ? "open" : ''}>
           {navigationLinks.map((item) => {
             return (
-              <span key={item.id}
-              style={{
-                '--delay' : item.id,
-              } as CSSProperties}
-              className={styles.link}>
-                <Link href={item.link}>{item.label}</Link>
+              <span key={item.id}>
+                <Link href={item.link}>
+                  <Text
+                    family="open"
+                    size="sm"
+                    className={TopnavNavLinkStyles()}
+                  >
+                    {item.label}
+                  </Text>
+                </Link>
               </span>
             );
           })}
         </nav>
         {/* show on mobile */}
-        <div className={styles.regs}>
-          <Button>
-            hamburgervons
-            {/* <span className={styles.link}>Log In / Regristration</span> */}
+        <div>
+          <Button padding={{
+            "@bp2": "none",
+          }}>
+            <Text
+              family="open"
+              size="sm"
+              className={TopnavBookLinkStyles({
+                position: "left",
+              })}
+            >
+              Log In / Regristration
+            </Text>
           </Button>
-          <Button >
-            <span className={styles.link}>Book Table</span>
+          <Button  padding={{
+            "@bp2": "none",
+          }}>
+            <Text
+              family="open"
+              size="sm"
+              className={TopnavBookLinkStyles({
+                position: "right",
+              })}
+            >
+              Book Table
+            </Text>
           </Button>
         </div>
       </div>

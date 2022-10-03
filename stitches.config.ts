@@ -132,6 +132,12 @@ export const { styled, getCssText, css } = createStitches({
     fBase: (value: PropertyValue<'flexBasis'>) =>({
       flexBasis: value,
     }),
+    fGrow: (value: PropertyValue<'flexGrow'>) =>({
+      flexGrow: value,
+    }),
+    fWrap: (value: PropertyValue<'flexWrap'>) =>({
+      flexWrap: value,
+    }),
     justify: (value: PropertyValue<'justifyContent'>) =>({
       justifyContent: value,
     }),
