@@ -12,6 +12,11 @@ export const ContentStyles = css({
     fDir:"column",
     justify: "center",
     align: "center",
+
+    "&:nth-child(2)" :{
+        fBase: "100%",
+    },
+
     variants: {
         space: {
             sm: {
@@ -26,3 +31,12 @@ export const ContentStyles = css({
         space : "sm"
     }
 });
+
+export const TextStyles = css({
+    mb: '$1',
+});
+
+export const ImageLinkStyles = css({
+    display: "flex",
+    gap: "$2",
+})

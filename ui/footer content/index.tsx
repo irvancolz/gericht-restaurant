@@ -5,7 +5,12 @@ import twtr from "../../public/assets/global/twit-icon.svg";
 import fb from "../../public/assets/global/fb-icon.svg";
 import insta from "../../public/assets/global/insta-icon.svg";
 import { Components } from "../../components";
-import { ContainerStyles, ContentStyles } from "./footer-content.style";
+import {
+  ContainerStyles,
+  ContentStyles,
+  TextStyles,
+  ImageLinkStyles,
+} from "./footer-content.style";
 import Link from "next/link";
 
 const images = [
@@ -35,7 +40,13 @@ export function FooterContent() {
           Contact Us
         </Heading>
         <div>
-          <Text size="sm" fCol="fade" family="source" align="center">
+          <Text
+            size="sm"
+            fCol="fade"
+            family="source"
+            align="center"
+            className={TextStyles()}
+          >
             9 W 53rd St, New York, NY 10019, USA
           </Text>
           <Text size="sm" fCol="fade" family="source" align="center">
@@ -51,20 +62,27 @@ export function FooterContent() {
         <span>
           <Image src={logo} layout="fixed" alt="gericht" priority />
         </span>
-        <div>
-          <Text family="lato" size="sm" align="center">
+        <div className={ContentStyles()}>
+          <Text family="lato" size="sm" align="center" css={{
+            letterSpacing: '.75px',
+          }}>
             &ldquo; The best way to find yourself is to lose yourself in the
             service of others. &rdquo;
           </Text>
           <span>
             <Image src={spoon} layout="fixed" alt="spoon" priority />
           </span>
-          <div>
+          <div className={ImageLinkStyles()}>
             {images.map((img) => {
               return (
                 <span key={img.id}>
                   <Link href="#">
-                    <Image src={img.src} layout="fixed" alt={img.name} priority />
+                    <Image
+                      src={img.src}
+                      layout="fixed"
+                      alt={img.name}
+                      priority
+                    />
                   </Link>
                 </span>
               );
@@ -77,7 +95,13 @@ export function FooterContent() {
           Working Hours
         </Heading>
         <div>
-          <Text size="sm" fCol="fade" family="source" align="center">
+          <Text
+            size="sm"
+            fCol="fade"
+            family="source"
+            align="center"
+            className={TextStyles()}
+          >
             Monday-Friday: <br /> 08:00 am -12:00 am
           </Text>
           <Text size="sm" fCol="fade" family="source" align="center">
