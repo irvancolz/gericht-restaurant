@@ -7,7 +7,10 @@ export function Footer() {
   return (
     <Section as="div" className={FooterStyle()}>
       <FooterForm />
-      <FooterContent />
+      <>
+        <FooterContent />
+        <Copyright  />
+      </>
     </Section>
   );
 }

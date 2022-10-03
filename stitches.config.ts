@@ -63,11 +63,6 @@ export const { styled, getCssText, css } = createStitches({
       4: "1000",
       5: "10000",
     },
-    media: {
-      bp1: "(min-width: 640px)",
-      bp2: "(min-width: 768px)",
-      bp3: "(min-width: 1024px)",
-    },
   },
   utils: {
     m: (value: PropertyValue<"margin">) => ({
@@ -144,6 +139,11 @@ export const { styled, getCssText, css } = createStitches({
       alignItems: value,
     }),
   },
+  media: {
+    bp1: "(max-width: 640px)",
+    bp2: "(max-width: 768px)",
+    bp3: "(max-width: 1024px)",
+  },
 });
 
 export const globalStyles = globalCss({
@@ -161,6 +161,7 @@ export const globalStyles = globalCss({
   html: {
     backgroundColor: "$darkCol1",
     color: "$textCol",
+    scrollBehavior: "smooth",
   },
   a: {
     color: "inherit",

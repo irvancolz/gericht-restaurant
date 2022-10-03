@@ -1,24 +1,22 @@
-import React, {type ReactElement } from 'react'
-import { Components } from '../components'
-import { UI } from '../ui';
-import { NextPageWithLayout } from './_app';
-
+import React, { type ReactElement } from "react";
+import { Components } from "../components";
+import { UI } from "../ui";
+import { NextPageWithLayout } from "./_app";
 
 const NotFound: NextPageWithLayout = () => {
-   const {Text} = Components;
+  const { Heading, Section } = Components;
   return (
-    <Text color={'fade'} family='cormorant' size={'md'}>Not Found</Text>
-  )
-}
+    <Section>
+      <Heading color={"fade"} family="cormorant" size={"lg"}>
+        Not Found
+      </Heading>
+    </Section>
+  );
+};
 
-
-NotFound.getLayout = function getLayout(page: ReactElement){
-  const {Layout} = UI;
-  return(
-    <Layout>
-      {page}
-    </Layout>
-  )
-}
+NotFound.getLayout = function getLayout(page: ReactElement) {
+  const { Layout } = UI;
+  return <Layout>{page}</Layout>;
+};
 
 export default NotFound;

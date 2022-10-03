@@ -1,10 +1,16 @@
 import { css } from "../../stitches.config";
 
 export const ContainerStyles = css({
+    mt: "$7",
+    mb: "$6",
     display: "flex",
     align: "flex-start",
     justify: "space-between",
     gap: "$2",
+
+    "@bp2" :{
+        fDir: "column",
+    },
 });
 
 export const ContentStyles = css({

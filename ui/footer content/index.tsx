@@ -63,9 +63,14 @@ export function FooterContent() {
           <Image src={logo} layout="fixed" alt="gericht" priority />
         </span>
         <div className={ContentStyles()}>
-          <Text family="lato" size="sm" align="center" css={{
-            letterSpacing: '.75px',
-          }}>
+          <Text
+            family="lato"
+            size="sm"
+            align="center"
+            css={{
+              letterSpacing: ".75px",
+            }}
+          >
             &ldquo; The best way to find yourself is to lose yourself in the
             service of others. &rdquo;
           </Text>
@@ -77,12 +82,14 @@ export function FooterContent() {
               return (
                 <span key={img.id}>
                   <Link href="#">
-                    <Image
-                      src={img.src}
-                      layout="fixed"
-                      alt={img.name}
-                      priority
-                    />
+                    <a >
+                      <Image
+                        src={img.src}
+                        layout="fixed"
+                        alt={img.name}
+                        priority
+                      />
+                    </a>
                   </Link>
                 </span>
               );
