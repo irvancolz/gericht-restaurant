@@ -79,7 +79,7 @@ export function Topnav() {
           </Button>
         </div>
         <Button onClick={() => toggleOpen()} padding="none" className="toggle">
-          <Text family="open" size="sm">
+          <Text family="open" size="nr">
             &#9776;
           </Text>
         </Button>

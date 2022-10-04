@@ -29,7 +29,7 @@ export const { styled, getCssText, css } = createStitches({
       nr: "32px",
       lg: "64px",
       xl: "90px",
-      smr: "12px",
+      smr: "14px",
       mdr: "18px",
       nrr: "24px",
       lgr: "48px",
