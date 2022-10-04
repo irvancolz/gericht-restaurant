@@ -7,6 +7,7 @@ import {
   TopnavBookLinkStyles,
   TopnavContainerStyles,
   TopnavHeaderStyles,
+  TopnavMenuStyles,
   TopnavNavLinkStyles,
   TopnavNavStyles,
 } from "./topnav.styles";
@@ -41,9 +42,18 @@ const navigationLinks = [
 
 export function Topnav() {
   const { Section, Button, Text } = Components;
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
+
   function toggleOpen() {
     setIsOpen((curr) => !curr);
+  }
+
+  function toggleClass(e: boolean) {
+    if (e) {
+      return "show";
+    } else {
+      return "hide";
+    }
   }
   return (
     <Section as="div" className={TopnavContainerStyles()}>
@@ -74,52 +84,58 @@ export function Topnav() {
           </Text>
         </Button>
       </div>
-      <div className={TopnavNavStyles()}>
-        <nav className={isOpen ? "open" : ''}>
-          {navigationLinks.map((item) => {
-            return (
-              <span key={item.id}>
-                <Link href={item.link}>
-                  <Text
-                    family="open"
-                    size="sm"
-                    className={TopnavNavLinkStyles()}
-                  >
-                    {item.label}
-                  </Text>
-                </Link>
-              </span>
-            );
-          })}
-        </nav>
-        {/* show on mobile */}
-        <div>
-          <Button padding={{
-            "@bp2": "none",
-          }}>
-            <Text
-              family="open"
-              size="sm"
-              className={TopnavBookLinkStyles({
-                position: "left",
-              })}
+      <div className={`${TopnavNavStyles()} ${toggleClass(isOpen)}`}>
+        <div className={`${TopnavMenuStyles()} ${toggleClass(isOpen)}`}>
+          <nav>
+            {navigationLinks.map((item) => {
+              return (
+                <span key={item.id}>
+                  <Link href={item.link}>
+                    <Text
+                      family="open"
+                      size="sm"
+                      className={TopnavNavLinkStyles()}
+                    >
+                      {item.label}
+                    </Text>
+                  </Link>
+                </span>
+              );
+            })}
+          </nav>
+          {/* show on mobile */}
+          <div>
+            <Button
+              padding={{
+                "@bp2": "none",
+              }}
             >
-              Log In / Regristration
-            </Text>
-          </Button>
-          <Button  padding={{
-            "@bp2": "none",
-          }}>
-            <Text
-              family="open"
-              size="sm"
-              className={TopnavBookLinkStyles({
-                position: "right",
-              })}
+              <Text
+                family="open"
+                size="sm"
+                className={TopnavBookLinkStyles({
+                  position: "left",
+                })}
+              >
+                Log In / Regristration
+              </Text>
+            </Button>
+            <Button
+              padding={{
+                "@bp2": "none",
+              }}
             >
-              Book Table
-            </Text>
-          </Button>
+              <Text
+                family="open"
+                size="sm"
+                className={TopnavBookLinkStyles({
+                  position: "right",
+                })}
+              >
+                Book Table
+              </Text>
+            </Button>
+          </div>
         </div>
       </div>
     </Section>

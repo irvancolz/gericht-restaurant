@@ -31,7 +31,7 @@ export const { styled, getCssText, css } = createStitches({
       xl: "90px",
     },
     space: {
-      0: "0",
+      0: "0px",
       0.125: "1px",
       0.25: "2px",
       0.5 : "4px",
@@ -143,6 +143,9 @@ export const { styled, getCssText, css } = createStitches({
     }),
     align: (value: PropertyValue<'alignItems'>) =>({
       alignItems: value,
+    }),
+    delay: (value: PropertyValue<'transitionDelay'>) =>({
+      transitionDelay: value,
     }),
   },
   media: {

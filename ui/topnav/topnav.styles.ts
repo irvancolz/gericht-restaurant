@@ -1,3 +1,4 @@
+import { keyframes } from "@stitches/react";
 import { css } from "../../stitches.config";
 
 const ContainerStyles = {
@@ -6,6 +7,24 @@ const ContainerStyles = {
   align: "center",
 };
 
+const SlideIn = keyframes({
+  "0%": {
+    transform: "translateX(-100%)",
+  },
+  "100%": {
+    transform: "translateX(0)",
+  },
+});
+
+const SlideOut = keyframes({
+  "0%": {
+    transform: "translateX(0)",
+  },
+  "100%": {
+    transform: "translateX(-100%)",
+  },
+});
+
 export const TopnavContainerStyles = css({
   ...ContainerStyles,
   px: "$4",
@@ -13,6 +32,12 @@ export const TopnavContainerStyles = css({
   position: "sticky",
   top: "-1px",
   zIndex: "$1",
+  "@bp2": {
+    px: "$2",
+  },
+  "@bp1": {
+    px: "$1",
+  },
 });
 
 export const TopnavHeaderStyles = css({
@@ -32,67 +57,6 @@ export const TopnavHeaderStyles = css({
   "@bp1": {
     "& .navLink": {
       display: "none",
-    },
-  },
-});
-
-export const TopnavNavStyles = css({
-  ...ContainerStyles,
-  fBase: "70%",
-  zIndex: "$2",
-
-  "& nav": {
-    ...ContainerStyles,
-  },
-
-  "@bp2": {
-    position: "absolute",
-    top: "100%",
-    left: "0",
-    right: "0",
-    height: "100vh",
-    fDir: "column",
-    align: "start",
-    px: "$2",
-    py: "$2",
-
-    "& nav": {
-      fDir: "column",
-      align: "start",
-      justify: "start",
-      bgCol: "$darkCol1",
-      width: "50%",
-      height: "80%",
-      pd: "$2",
-      borderRadius: "3px",
-      border: "1px solid",
-      lineCol: "$grayCol3",
-      transform: "translateX(calc(-100% - 16px))",
-      transition: ".5s ease-in",
-
-      "&.open": {
-        transform: "translateX(0)",
-        transition: ".5s ease-out",
-      },
-    },
-
-    "& > div": {
-      display: "none",
-    },
-  },
-  "@bp1": {
-    pd: "0",
-
-    "& nav": {
-      my: "auto",
-      width: "calc(100% - 32px)",
-    },
-
-    "& > div": {
-      display: "block",
-      fDir: "column",
-      align: "start",
-      justify: "start",
     },
   },
 });
@@ -129,18 +93,35 @@ export const TopnavNavLinkStyles = css({
 export const TopnavBookLinkStyles = css({
   py: "$1",
   minWidth: "max-content",
+  position: "relative",
 
   "@bp2": {
     py: "0",
     px: "$1",
+    "&::before": {
+      content: "",
+      position: "absolute",
+      bottom: "0",
+      bgCol: "$goldCol1",
+      height: "2px",
+      width: "0",
+      transition: "width .2s ease-in-out",
+    },
+
+    "&:hover": {
+      color: "$goldCol1",
+      "&::before": {
+        width: "100%",
+      },
+    },
   },
 
   variants: {
     position: {
       left: {
+        pr: "$5",
         lineCol: "$textCol",
         borderRight: "1px solid",
-        pr: "$5",
         "@bp2": {
           pr: "0",
           lineCol: "none",
@@ -155,4 +136,82 @@ export const TopnavBookLinkStyles = css({
       },
     },
   },
+});
+
+export const TopnavMenuStyles = css({
+  ...ContainerStyles,
+
+  "& nav": {
+    ...ContainerStyles,
+    fWrap: "wrap",
+  },
+  "@bp2": {
+    width: "50%",
+    fDir: "column",
+    justify: "start",
+    align: "start",
+    pd: "$2",
+    bgCol: "$darkCol1",
+    border: "1px solid",
+    lineCol: "$goldCol3",
+    borderRadius: "3px",
+
+    "&.show": {
+      animation: `${SlideIn} 400ms ease-out`,
+    },
+
+    "&.hide": {
+      animation: `${SlideOut} 400ms ease-in`,
+    },
+
+    "& nav": {
+      fDir: "column",
+      align: "flex-start",
+    },
+
+    "& > div": {
+      display: "none",
+    },
+  },
+  "@bp1": {
+    width: "calc(100% - 16px)",
+
+    "& > div": {
+      display: "flex",
+      fDir: "column",
+      align: "start",
+      position: "relative",
+    },
+  },
+});
+
+export const TopnavNavStyles = css({
+  "@bp2": {
+    position: "absolute",
+    top: "100%",
+    height: "100vh",
+    left: "0",
+    right: "0",
+    fBase: "70%",
+    zIndex: "$2",
+    fGrow: "1",
+    pd: "$2",
+    bgCol: "$shadowCol",
+
+    "&.hide": {
+      opacity: "0",
+      visibility: "hidden",
+      pointerEvents: "none",
+      delay: "400ms",
+    },
+
+    "&.show": {
+      opacity: "1",
+      visibility: "visible",
+      pointerEvents: "auto",
+    },
+  },
+  "bp1" :{
+    pd: "$1",
+  }
 });
