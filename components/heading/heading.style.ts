@@ -1,24 +1,31 @@
 import { ComponentProps } from "@stitches/react";
 import { styled } from "../../stitches.config";
 
+interface fontSizeConfig {
+  initial?: string;
+  responsive?: string;
+}
+
+function CreateFontSizeVariant(value: fontSizeConfig) {
+  return {
+    fontSize: value.initial,
+    "@bp2": {
+      fontSize: value.responsive,
+    },
+    "@bp1": {
+      fontSize: value.responsive,
+    },
+  };
+}
+
 export const HeadingComp = styled("h1", {
   variants: {
     size: {
-      sm: {
-        fontSize: "$sm",
-      },
-      md: {
-        fontSize: "$md",
-      },
-      nr:{
-        fontSize: "$nr",
-      },
-      lg: {
-        fontSize: "$lg",
-      },
-      xl: {
-        fontSize: "$xl",
-      },
+      sm: CreateFontSizeVariant({ initial: "$sm", responsive: "$smr" }),
+      md: CreateFontSizeVariant({ initial: "$md", responsive: "$mdr" }),
+      nr: CreateFontSizeVariant({ initial: "$nr", responsive: "$nrr" }),
+      lg: CreateFontSizeVariant({ initial: "$lg", responsive: "$lgr" }),
+      xl: CreateFontSizeVariant({ initial: "$xl", responsive: "$xlr" }),
     },
     // adjust font color
     fCol: {
@@ -72,7 +79,7 @@ export const HeadingComp = styled("h1", {
     family: "cormorant",
     size: "lg",
     fCol: "gold",
-    weight: 'normal',
+    weight: "normal",
   },
 });
 

@@ -42,7 +42,7 @@ const navigationLinks = [
 
 export function Topnav() {
   const { Section, Button, Text } = Components;
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   function toggleOpen() {
     setIsOpen((curr) => !curr);

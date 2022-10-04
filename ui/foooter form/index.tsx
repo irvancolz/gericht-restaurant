@@ -21,7 +21,7 @@ export  function FooterForm() {
         </span>
       </header>
       <div className={BodyStyles()}>
-        <Text fCol="gold" weight='medium' size="lg">Subscribe To Our Newsletter</Text>
+        <Text fCol="gold" weight='medium' size="lg" align="center">Subscribe To Our Newsletter</Text>
         <Text size="sm" family="source">And never miss latest Updates!</Text>
       </div>
       <div className="form">

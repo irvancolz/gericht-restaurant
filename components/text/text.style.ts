@@ -1,25 +1,32 @@
 import { styled } from "../../stitches.config";
 import { ComponentProps } from "@stitches/react";
 
+interface fontSizeConfig {
+  initial?: string;
+  responsive?: string;
+}
+
+function CreateFontSizeVariant(value: fontSizeConfig) {
+  return {
+    fontSize: value.initial,
+    "@bp2": {
+      fontSize: value.responsive,
+    },
+    "@bp1": {
+      fontSize: value.responsive,
+    },
+  };
+}
+
 export const TextStyles = styled("p", {
   variants: {
     // adjust font size
     size: {
-      sm: {
-        fontSize: "$sm",
-      },
-      md: {
-        fontSize: "$md",
-      },
-      nr:{
-        fontSize: "$nr",
-      },
-      lg: {
-        fontSize: "$lg",
-      },
-      xl: {
-        fontSize: "$xl",
-      },
+      sm: CreateFontSizeVariant({ initial: "$sm", responsive: "$smr" }),
+      md: CreateFontSizeVariant({ initial: "$md", responsive: "$mdr" }),
+      nr: CreateFontSizeVariant({ initial: "$nr", responsive: "$nrr" }),
+      lg: CreateFontSizeVariant({ initial: "$lg", responsive: "$lgr" }),
+      xl: CreateFontSizeVariant({ initial: "$xl", responsive: "$xlr" }),
     },
     // adjust font color
     fCol: {
@@ -71,17 +78,17 @@ export const TextStyles = styled("p", {
         fontWeight: "$xBold",
       },
     },
-    align:{
+    align: {
       start: {
-        textAlign: "left"
+        textAlign: "left",
       },
       center: {
-        textAlign: "center"
+        textAlign: "center",
       },
       end: {
-        textAlign: "right"
+        textAlign: "right",
       },
-    }
+    },
   },
   defaultVariants: {
     family: "cormorant",
