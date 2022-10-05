@@ -1,11 +1,12 @@
 import { CSS } from "@stitches/react";
-import { forwardRef, ReactNode } from "react";
+import { ElementType, forwardRef, ReactNode } from "react";
 import { TextStyles, TextStylesVariant } from "./text.style";
 
 interface TextProps extends TextStylesVariant {
   children?: ReactNode;
   className?: string;
   css?: CSS;
+  as?: ElementType;
 }
 
 const textClassName = "custom-text";

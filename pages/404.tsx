@@ -4,7 +4,7 @@ import { UI } from "../ui";
 import { NextPageWithLayout } from "./_app";
 
 const NotFound: NextPageWithLayout = () => {
-  const { Heading, Section } = Components;
+  const { Signature , Heading, Section } = Components;
   return (
     <Section>
       <Heading color={"fade"} family="cormorant" size={"lg"}>
