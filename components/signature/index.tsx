@@ -13,6 +13,7 @@ import {
 interface SignatureProps extends Signaturevariants {
   css?: CSS;
   className?: string;
+  rotation?: "left" | "right";
 }
 
 const signatureTxt = "DELIGHT IN EVERY BITE ";
@@ -20,14 +21,18 @@ const signatureTxt = "DELIGHT IN EVERY BITE ";
 const signatureClass = "custom-signature";
 
 const Signature = forwardRef<HTMLDivElement, SignatureProps>(
-  ({ className, css, ...rest }, ref) => {
+  ({ className, css, rotation, ...rest }, ref) => {
     function Classes() {
       return `${signatureClass} ${className ? className : ""}`;
     }
     return (
       <SignatureStyles css={css} ref={ref} className={Classes()} {...rest}>
         {/* for the rotating text */}
-        <div className={SignatureTextWrapperStyles()}>
+        <div
+          className={SignatureTextWrapperStyles({
+            rotate: rotation,
+          })}
+        >
           {signatureTxt.split("").map((letter, i) => {
             return (
               <SignatureTextStyles

@@ -54,7 +54,7 @@ export const ButtonStyles = styled('button',{
   },
   defaultVariants:{
     padding: "sm",
-    variant: 'ternary',
+    variant: 'primary',
   }
 });
 

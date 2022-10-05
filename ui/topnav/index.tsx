@@ -67,18 +67,23 @@ export function Topnav() {
         </div>
         {/* Show on tablet */}
         <div className="navLink">
-          <Button>
+          <Button variant="ternary">
             <Text family="open" size="sm">
               Log In / Regristration
             </Text>
           </Button>
-          <Button>
+          <Button  variant="ternary">
             <Text family="open" size="sm">
               Book Table
             </Text>
           </Button>
         </div>
-        <Button onClick={() => toggleOpen()} padding="none" className="toggle">
+        <Button
+          onClick={() => toggleOpen()}
+          padding="none"
+          className="toggle"
+          variant="ternary"
+        >
           <Text family="open" size="nr">
             &#9776;
           </Text>
@@ -109,6 +114,7 @@ export function Topnav() {
               padding={{
                 "@bp2": "none",
               }}
+              variant="ternary"
             >
               <Text
                 family="open"
@@ -124,6 +130,7 @@ export function Topnav() {
               padding={{
                 "@bp2": "none",
               }}
+              variant="ternary"
             >
               <Text
                 family="open"

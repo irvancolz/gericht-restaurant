@@ -186,13 +186,14 @@ export const TopnavMenuStyles = css({
 });
 
 export const TopnavNavStyles = css({
+  fBase: "75%",
+
   "@bp2": {
     position: "absolute",
     top: "100%",
     height: "100vh",
     left: "0",
     right: "0",
-    fBase: "70%",
     zIndex: "$2",
     fGrow: "1",
     pd: "$2",
@@ -211,7 +212,7 @@ export const TopnavNavStyles = css({
       pointerEvents: "auto",
     },
   },
-  "bp1" :{
+  bp1: {
     pd: "$1",
-  }
+  },
 });

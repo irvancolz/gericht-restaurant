@@ -7,15 +7,16 @@ const rotate = keyframes({
   },
 });
 
+
 export const SignatureStyles = styled("div", {
   position: "absolute",
   aspectRatio: "1",
   display: "grid",
   placeItems: "center",
-  "@bp2" :{
+  "@bp2": {
     transform: "scale(.8)",
   },
-  "@bp1" :{
+  "@bp1": {
     transform: "scale(.5)",
   },
 });
@@ -27,8 +28,17 @@ export const SignatureTextWrapperStyles = css({
   height: "100%",
   width: "100%",
   display: "grid",
-  placeItems: 'center',
-  animation: `${rotate} 60000ms linear infinite`
+  placeItems: "center",
+  variants: {
+    rotate: {
+      left: {
+        animation: `${rotate} 60000ms linear infinite reverse`,
+      },
+      right: {
+        animation: `${rotate} 60000ms linear infinite`,
+      },
+    },
+  },
 });
 
 export const SignatureTextStyles = styled("span", {
