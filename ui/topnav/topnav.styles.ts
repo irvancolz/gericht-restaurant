@@ -70,6 +70,7 @@ export const TopnavNavLinkStyles = css({
   "&::before": {
     content: "",
     bottom: "0",
+    left: "0",
     position: "absolute",
     height: "2px",
     bgCol: "$goldCol1",
@@ -77,16 +78,17 @@ export const TopnavNavLinkStyles = css({
     transition: "width .2s ease-in-out",
   },
 
+  "&:hover": {
+    color: "$goldCol1",
+    "&::before": {
+      width: "100%",
+    },
+  },
+
   "@bp2": {
     py: "0",
     textAlign: "left",
     fBase: "100%",
-    "&:hover": {
-      color: "$goldCol1",
-      "&::before": {
-        width: "100%",
-      },
-    },
   },
 });
 
@@ -94,6 +96,13 @@ export const TopnavBookLinkStyles = css({
   py: "$1",
   minWidth: "max-content",
   position: "relative",
+
+  "&:hover": {
+    color: "$goldCol1",
+    "&::before": {
+      width: "100%",
+    },
+  },
 
   "@bp2": {
     py: "0",
@@ -108,12 +117,6 @@ export const TopnavBookLinkStyles = css({
       transition: "width .2s ease-in-out",
     },
 
-    "&:hover": {
-      color: "$goldCol1",
-      "&::before": {
-        width: "100%",
-      },
-    },
   },
 
   variants: {
