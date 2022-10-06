@@ -2,8 +2,9 @@ import { css } from "../stitches.config";
 
 export const NotFoundContainerStyles = css({
   height: "80vh",
-  display: "grid",
-  placeItems: "center",
+  display: "flex",
+  align: "center",
+  justify: "center",
 
   "@bp2": {
     height: "85vh",
@@ -12,6 +13,11 @@ export const NotFoundContainerStyles = css({
   "@bp1": {
     height: "90vh",
   },
+});
+
+export const NotFoundLogoStyles = css({
+  position: "relative",
+
 });
 
 export const NotFoundSignatureStyles = css({
@@ -55,6 +61,10 @@ export const NotFoundContentStyles = css({
     align: "center",
     gap: "$4",
     maxWidth: "550px",
+
+    "@bp1" :{
+      width: "50%",
+    },
 });
 
 export const NotFoundImageStyles = css({
@@ -62,4 +72,14 @@ export const NotFoundImageStyles = css({
   fDir: "column",
   align: "center",
   gap: "$2",
+  "@bp2" :{
+    "& > span:first-child" :{
+      transform: "scale(.7)",
+    },
+  },
+  "@bp1" :{
+    "& > span:first-child" :{
+      transform: "scale(.5)",
+    },
+  },
 });

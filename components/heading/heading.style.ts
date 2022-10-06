@@ -74,6 +74,17 @@ export const HeadingComp = styled("h1", {
         fontWeight: "$xBold",
       },
     },
+    align: {
+      start: {
+        textAlign: "left",
+      },
+      center: {
+        textAlign: "center",
+      },
+      end: {
+        textAlign: "right",
+      },
+    },
   },
   defaultVariants: {
     family: "cormorant",

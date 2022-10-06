@@ -29,10 +29,10 @@ const NotFound: NextPageWithLayout = () => {
             <Image src={spoonLogo} alt="spoon logo" layout="fixed" />
           </div>
         </div>
-        <Text align="center" size="md">
+        <Heading as="h4" align="center" size="md" fCol="normal">
           Oops! The page you are looking for does not exist. It might have been
           moved or deleted.
-        </Text>
+        </Heading>
         <Button>
           <Link href={"/"}>
             <Text fCol="dark">Back To Home</Text>

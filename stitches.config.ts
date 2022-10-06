@@ -155,7 +155,7 @@ export const { styled, getCssText, css } = createStitches({
   },
   media: {
     bp1: "(max-width: 640px)",
-    bp2: "(max-width: 768px)",
+    bp2: "(max-width: 900px)",
     bp3: "(max-width: 1024px)",
   },
 });
