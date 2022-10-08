@@ -14,7 +14,7 @@ import notFoundImg from "../public/assets/global/404.png";
 import spoonLogo from "../public/assets/global/spoon-logo.svg";
 
 const NotFound: NextPageWithLayout = () => {
-  const { Text, Signature, Heading, Section, Button } = Components;
+  const { Text, Signature, Heading, Section, Button } = UI;
   return (
     <Section className={NotFoundContainerStyles()}>
       <div className={NotFoundContentStyles()}>
@@ -56,7 +56,7 @@ const NotFound: NextPageWithLayout = () => {
 };
 
 NotFound.getLayout = function getLayout(page: ReactElement) {
-  const { Layout } = UI;
+  const { Layout } = Components;
   return <Layout>{page}</Layout>;
 };
 

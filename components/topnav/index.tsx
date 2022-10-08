@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import webLogo from "../../public/assets/global/web-logo.svg";
-import { Components } from "../../components";
+import { UI } from "../../ui";
 import {
   TopnavBookLinkStyles,
   TopnavContainerStyles,
@@ -41,7 +41,7 @@ const navigationLinks = [
 ];
 
 export function Topnav() {
-  const { Section, Button, Text } = Components;
+  const { Section, Button, Text } = UI;
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   function toggleOpen() {

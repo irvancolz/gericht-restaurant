@@ -4,7 +4,7 @@ import { Layout } from "./layout";
 import { NestedLayout } from "./layout nested";
 import { Topnav } from "./topnav";
 
-export  const UI ={
+export  const Components ={
     Copyright,
     Footer,
     Layout,

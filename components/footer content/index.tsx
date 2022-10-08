@@ -4,7 +4,7 @@ import spoon from "../../public/assets/global/spoon-logo.svg";
 import twtr from "../../public/assets/global/twit-icon.svg";
 import fb from "../../public/assets/global/fb-icon.svg";
 import insta from "../../public/assets/global/insta-icon.svg";
-import { Components } from "../../components";
+import { UI } from "../../ui";
 import {
   ContainerStyles,
   ContentStyles,
@@ -32,7 +32,7 @@ const images = [
 ];
 
 export function FooterContent() {
-  const { Text, Heading, Section } = Components;
+  const { Text, Heading, Section } = UI;
   return (
     <Section as="div" className={ContainerStyles()}>
       <Section className={ContentStyles()}>

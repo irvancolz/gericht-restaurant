@@ -5,7 +5,7 @@ import Heading from "./heading";
 import Input from "./input";
 import Signature from "./signature";
 
-export const Components ={
+export const UI ={
     Text,
     Section,
     Button,

@@ -1,5 +1,5 @@
 import { Topnav } from "../topnav";
-import { Components } from "../../components";
+import { UI } from "../../ui";
 import { ReactNode } from "react";
 import { Copyright } from "../copyright";
 
@@ -7,7 +7,7 @@ interface layoutProps {
   children?: ReactNode;
 }
 export function Layout(props: layoutProps) {
-  const { Section } = Components;
+  const { Section } = UI;
   return (
     <>
       <header>
