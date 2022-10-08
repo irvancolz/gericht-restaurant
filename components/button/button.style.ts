@@ -10,41 +10,31 @@ interface ButtonVariantConfig {
 function createButtonColorVariant(props: ButtonVariantConfig) {
   return {
     color: props.txtCol,
-    backgroundColor: props.bgCol,
-    "&:hover" :{
-      background: "#47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%",
-    },
-  
-    "&:active" :{
-      bgCol: "#6eb9f7",
-      backgroundSize: "100%",
-      transition: "background 0s",
-    },
+    bgCol: props.bgCol,
   };
 }
 
+const pulse = keyframes({
+  "0%" :{
+    transform: "scale(0)",
+    opacity: "1",
+  },
+  "100%" :{
+    transform: "scale(1)",
+    opacity: "0",
+  }
+})
 
 export const ButtonStyles = styled("button", {
-  position: "relative",
-  borderColor: "transparent",
-  outlineColor: "transparent",
-  backgroundColor: "transparent",
+  lineCol: "transparent",
+  outCol: "transparent",
+  bgCol: "transparent",
   cursor: "pointer",
   overflow: "hidden",
   backgroundPosition: "center",
-  transition: "background 0.3s .2s",
+  transition: "background 0.3s",
 
   // properties to create ripple effect
-
-  "&:hover" :{
-    background: "#47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%",
-  },
-
-  "&:active" :{
-    bgCol: "#6eb9f7",
-    backgroundSize: "100%",
-    transition: "background 0s",
-  },
 
 
   variants: {
@@ -52,11 +42,12 @@ export const ButtonStyles = styled("button", {
       primary: createButtonColorVariant({
         bgCol: "$goldCol1",
         txtCol: "$darkCol1",
-        hoverCol: "$goldCol3",
+        hoverCol: "$goldCol4",
       }),
       ternary: createButtonColorVariant({
         bgCol: "transparent",
         txtCol: "$textCol",
+        hoverCol: "$goldCol4",
       }),
     },
     padding: {
@@ -86,3 +77,16 @@ export const ButtonStyles = styled("button", {
 });
 
 export type ButtonStylesVariants = ComponentProps<typeof ButtonStyles>;
+
+export const RippleVariants = styled("div",{
+  variants:{
+    show: {
+      true:{
+
+      },
+      false:{
+        
+      }
+    }
+  }
+})

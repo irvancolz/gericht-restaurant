@@ -12,6 +12,7 @@ export const { styled, getCssText, css } = createStitches({
       goldCol1: "#ddca87",
       goldCol2: "#f5efdb",
       goldCol3: "#ddca8833",
+      goldCol4: "#edd67e",
       darkCol1: "#0c0b08",
       darkCol2: "#050505",
       darkCol3: "#272626",
@@ -21,7 +22,6 @@ export const { styled, getCssText, css } = createStitches({
       grayCol3: "#dcca8733",
       shadowCol: "rgba(0, 0, 0, 0.7)",
       textCol: "white",
-      textTransCol : "rgba(255, 255, 255, 0.7)",
       clear: "transparent",
     },
     fontSizes: {
