@@ -36,4 +36,8 @@ export const FormStyles = css({
   justify: "center",
   gap: "$3",
   minWidth: "100%",
+
+  "@bp1" :{
+    fDir: "column",
+  }
 });
