@@ -1,5 +1,6 @@
 import { keyframes } from "@stitches/react";
-import { css } from "../../stitches.config";
+import { css, styled } from "../../stitches.config";
+import { TextStyles } from "../../ui/text/text.style";
 
 const ContainerStyles = {
   display: "flex",
@@ -46,9 +47,20 @@ export const TopnavHeaderStyles = css({
     display: "none",
   },
 
+  "& .logoC": {
+    position: "relative",
+    "& .logo": {
+      transform: "translateY(-50%)",
+      position: "absolute",
+    },
+  },
+
   "@bp2": {
     fGrow: "1",
 
+    "& > *:not(:last-child)": {
+      fBase: "50%",
+    },
     "& .navLink, & .toggle": {
       display: "block",
     },
@@ -61,7 +73,7 @@ export const TopnavHeaderStyles = css({
   },
 });
 
-export const TopnavNavLinkStyles = css({
+export const TopnavNavLinkStyles = styled(TextStyles, {
   padding: "$1 $2",
   minWidth: "max-content",
   cursor: "pointer",
@@ -92,7 +104,7 @@ export const TopnavNavLinkStyles = css({
   },
 });
 
-export const TopnavBookLinkStyles = css({
+export const TopnavBookLinkStyles = styled(TextStyles, {
   py: "$1",
   minWidth: "max-content",
   position: "relative",
@@ -116,7 +128,6 @@ export const TopnavBookLinkStyles = css({
       width: "0",
       transition: "width .2s ease-in-out",
     },
-
   },
 
   variants: {
@@ -143,10 +154,15 @@ export const TopnavBookLinkStyles = css({
 
 export const TopnavMenuStyles = css({
   ...ContainerStyles,
+  $$delay: ".3s",
 
   "& nav": {
     ...ContainerStyles,
     fWrap: "wrap",
+  },
+
+  "& .link": {
+    overflow: "hidden",
   },
   "@bp2": {
     width: "50%",
@@ -161,10 +177,20 @@ export const TopnavMenuStyles = css({
 
     "&.show": {
       animation: `${SlideIn} 400ms ease-out`,
+      [`& ${TopnavNavLinkStyles}, & ${TopnavBookLinkStyles}`]: {
+        transition: "transform .5s ease-out, opacity .3s ease-out .1s",
+        transitionDelay: "$$delay",
+        transform: "translateX(0%)",
+        opacity: "1",
+      },
     },
 
     "&.hide": {
       animation: `${SlideOut} 400ms ease-in`,
+      [`& ${TopnavNavLinkStyles}, & ${TopnavBookLinkStyles}`]: {
+        transform: "translateX(-100%)",
+        opacity: "0",
+      },
     },
 
     "& nav": {

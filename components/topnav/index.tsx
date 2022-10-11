@@ -1,6 +1,7 @@
+import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import webLogo from "../../public/assets/global/web-logo.svg";
 import { UI } from "../../ui";
 import {
@@ -43,6 +44,7 @@ const navigationLinks = [
 export function Topnav() {
   const { Section, Button, Text } = UI;
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const containerEl = useRef<HTMLDivElement>(null);
 
   function toggleOpen() {
     setIsOpen((curr) => !curr);
@@ -55,13 +57,27 @@ export function Topnav() {
       return "hide";
     }
   }
+
+  // animation goes here
+  useEffect(() => {
+    const tl = gsap.timeline({ defaults: { duration: 0.3 } });
+    const animation = gsap.context(() => {
+      tl.from(".logo", {
+        duration: 3,
+        opacity: "0",
+        x: "-30%",
+      });
+    }, containerEl);
+
+    return () => animation.revert();
+  }, []);
   return (
-    <Section as="div" className={TopnavContainerStyles()}>
+    <Section as="div" ref={containerEl} className={TopnavContainerStyles()}>
       <div className={TopnavHeaderStyles()}>
-        <div className="logo">
+        <div className="logoC">
           <Link href="/" as="/home">
-            <a>
-              <Image src={webLogo} alt="gericht" layout="intrinsic" priority />
+            <a className="logo">
+              <Image src={webLogo} alt="gericht" layout="fixed" priority />
             </a>
           </Link>
         </div>
@@ -72,7 +88,7 @@ export function Topnav() {
               Log In / Regristration
             </Text>
           </Button>
-          <Button  variant="ternary">
+          <Button variant="ternary">
             <Text family="open" size="sm">
               Book Table
             </Text>
@@ -94,15 +110,17 @@ export function Topnav() {
           <nav>
             {navigationLinks.map((item) => {
               return (
-                <span key={item.id}>
+                <span key={item.id} className="link">
                   <Link href={item.link}>
-                    <Text
+                    <TopnavNavLinkStyles
                       family="open"
                       size="sm"
-                      className={TopnavNavLinkStyles()}
+                      css={{
+                        $$delay: `${(item.id + 1) * 200}ms`,
+                      }}
                     >
                       {item.label}
-                    </Text>
+                    </TopnavNavLinkStyles>
                   </Link>
                 </span>
               );
@@ -114,33 +132,37 @@ export function Topnav() {
               padding={{
                 "@bp2": "none",
               }}
+              className="link"
               variant="ternary"
             >
-              <Text
+              <TopnavBookLinkStyles
                 family="open"
                 size="sm"
-                className={TopnavBookLinkStyles({
-                  position: "left",
-                })}
+                position="left"
+                css={{
+                  $$delay: "1.2s",
+                }}
               >
                 Log In / Regristration
-              </Text>
+              </TopnavBookLinkStyles>
             </Button>
             <Button
               padding={{
                 "@bp2": "none",
               }}
+              className="link"
               variant="ternary"
             >
-              <Text
+              <TopnavBookLinkStyles
                 family="open"
                 size="sm"
-                className={TopnavBookLinkStyles({
-                  position: "right",
-                })}
+                position="right"
+                css={{
+                  $$delay: "1.4s",
+                }}
               >
                 Book Table
-              </Text>
+              </TopnavBookLinkStyles>
             </Button>
           </div>
         </div>
