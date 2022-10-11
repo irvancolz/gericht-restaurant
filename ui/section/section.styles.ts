@@ -14,6 +14,7 @@ export const SectionStyles = styled("section", {
   maxWidth: "1300px",
   width: "100%",
   my: "auto",
+  scrollSnapAlign: "start",
 
   "@bp2" :{
     py: "$4",

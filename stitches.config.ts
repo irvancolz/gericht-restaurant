@@ -40,7 +40,7 @@ export const { styled, getCssText, css } = createStitches({
       0: "0px",
       0.125: "1px",
       0.25: "2px",
-      0.5 : "4px",
+      0.5: "4px",
       1: "8px",
       2: "16px",
       3: "25px",
@@ -49,13 +49,13 @@ export const { styled, getCssText, css } = createStitches({
       6: "64px",
       7: "128px",
     },
-    fontWeights:{
-      thin: '300',
-      light: '400',
-      normal: '500',
-      medium: '600',
-      bold: '700',
-      xBold: '800',
+    fontWeights: {
+      thin: "300",
+      light: "400",
+      normal: "500",
+      medium: "600",
+      bold: "700",
+      xBold: "800",
     },
     lineHeights: {
       1: "130%",
@@ -132,25 +132,25 @@ export const { styled, getCssText, css } = createStitches({
     outCol: (value: PropertyValue<"outlineColor">) => ({
       outlineColor: value,
     }),
-    fDir: (value: PropertyValue<'flexDirection'>) =>({
+    fDir: (value: PropertyValue<"flexDirection">) => ({
       flexDirection: value,
     }),
-    fBase: (value: PropertyValue<'flexBasis'>) =>({
+    fBase: (value: PropertyValue<"flexBasis">) => ({
       flexBasis: value,
     }),
-    fGrow: (value: PropertyValue<'flexGrow'>) =>({
+    fGrow: (value: PropertyValue<"flexGrow">) => ({
       flexGrow: value,
     }),
-    fWrap: (value: PropertyValue<'flexWrap'>) =>({
+    fWrap: (value: PropertyValue<"flexWrap">) => ({
       flexWrap: value,
     }),
-    justify: (value: PropertyValue<'justifyContent'>) =>({
+    justify: (value: PropertyValue<"justifyContent">) => ({
       justifyContent: value,
     }),
-    align: (value: PropertyValue<'alignItems'>) =>({
+    align: (value: PropertyValue<"alignItems">) => ({
       alignItems: value,
     }),
-    delay: (value: PropertyValue<'transitionDelay'>) =>({
+    delay: (value: PropertyValue<"transitionDelay">) => ({
       transitionDelay: value,
     }),
   },
@@ -173,10 +173,14 @@ export const globalStyles = globalCss({
     padding: "0",
     boxSizing: "border-box",
   },
+  body: {
+    scrollSnapType: "y mandatory",
+  },
   html: {
     backgroundColor: "$darkCol1",
     color: "$textCol",
     scrollBehavior: "smooth",
+    scrollSnapType: "y mandatory",
   },
   a: {
     color: "inherit",
