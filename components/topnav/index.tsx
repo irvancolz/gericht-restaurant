@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import CustomEase from "gsap/dist/CustomEase";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
@@ -12,6 +13,8 @@ import {
   TopnavNavLinkStyles,
   TopnavNavStyles,
 } from "./topnav.styles";
+gsap.registerPlugin(CustomEase);
+
 
 const navigationLinks = [
   {
@@ -45,6 +48,7 @@ export function Topnav() {
   const { Section, Button, Text } = UI;
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const containerEl = useRef<HTMLDivElement>(null);
+  const linkEl = useRef<HTMLParagraphElement>(null);
 
   function toggleOpen() {
     setIsOpen((curr) => !curr);
@@ -63,9 +67,17 @@ export function Topnav() {
     const tl = gsap.timeline({ defaults: { duration: 0.3 } });
     const animation = gsap.context(() => {
       tl.from(".logo", {
-        duration: 3,
+        duration: 0.5,
         opacity: "0",
         x: "-30%",
+      }).from(".link-text", {
+        opacity: "0",
+        y: "50%",
+        stagger: 0.1,
+        ease: CustomEase.create(
+          "custom",
+          "M0,0 C0.083,0.294 0.156,0.624 0.422,0.814 0.553,0.907 0.752,1 1,1 "
+        ),
       });
     }, containerEl);
 
@@ -113,11 +125,13 @@ export function Topnav() {
                 <span key={item.id} className="link">
                   <Link href={item.link}>
                     <TopnavNavLinkStyles
+                      ref={linkEl}
                       family="open"
                       size="sm"
                       css={{
                         $$delay: `${(item.id + 1) * 200}ms`,
                       }}
+                      className="link-text"
                     >
                       {item.label}
                     </TopnavNavLinkStyles>
@@ -142,6 +156,7 @@ export function Topnav() {
                 css={{
                   $$delay: "1.2s",
                 }}
+                className="link-text"
               >
                 Log In / Regristration
               </TopnavBookLinkStyles>
@@ -160,6 +175,7 @@ export function Topnav() {
                 css={{
                   $$delay: "1.4s",
                 }}
+                className="link-text"
               >
                 Book Table
               </TopnavBookLinkStyles>

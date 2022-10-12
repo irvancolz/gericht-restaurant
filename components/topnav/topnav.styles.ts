@@ -1,6 +1,7 @@
 import { keyframes } from "@stitches/react";
 import { css, styled } from "../../stitches.config";
 import { TextStyles } from "../../ui/text/text.style";
+import Text from "../../ui/text";
 
 const ContainerStyles = {
   display: "flex",
@@ -73,7 +74,7 @@ export const TopnavHeaderStyles = css({
   },
 });
 
-export const TopnavNavLinkStyles = styled(TextStyles, {
+export const TopnavNavLinkStyles = styled(Text, {
   padding: "$1 $2",
   minWidth: "max-content",
   cursor: "pointer",
@@ -104,7 +105,7 @@ export const TopnavNavLinkStyles = styled(TextStyles, {
   },
 });
 
-export const TopnavBookLinkStyles = styled(TextStyles, {
+export const TopnavBookLinkStyles = styled(Text, {
   py: "$1",
   minWidth: "max-content",
   position: "relative",
