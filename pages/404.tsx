@@ -1,6 +1,7 @@
 import Link from "next/link";
+import gsap from "gsap";
 import Image from "next/image";
-import React, { type ReactElement } from "react";
+import React, { useEffect, useRef, type ReactElement } from "react";
 import { Components } from "../components";
 import {
   NotFoundContainerStyles,
@@ -12,13 +13,41 @@ import { UI } from "../ui";
 import { NextPageWithLayout } from "./_app";
 import notFoundImg from "../public/assets/global/404.png";
 import spoonLogo from "../public/assets/global/spoon-logo.svg";
+import Head from "next/head";
 
 const NotFound: NextPageWithLayout = () => {
+  const ContainerEl = useRef(null);
   const { Text, Signature, Heading, Section, Button } = UI;
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      defaults: {
+        duration: 0.5,
+        ease: "linear",
+      },
+    });
+    const animation = gsap.context(() => {
+      tl.from(".signature", {
+        duration: 3,
+        opacity: 0,
+      }).from(".content", {
+        opacity: 0,
+        yPercent: -100,
+        duration: 2,
+        ease: "power1.out",
+        stagger: 0.2,
+      }, 1);
+    }, ContainerEl);
+    return () => animation.revert();
+  }, []);
+
   return (
-    <Section className={NotFoundContainerStyles()}>
-      <div className={NotFoundContentStyles()}>
-        <div className={NotFoundImageStyles()}>
+    <Section ref={ContainerEl} className={NotFoundContainerStyles()}>
+      <Head>
+        <title>Gericht | Not Found</title>
+      </Head>
+      <NotFoundContentStyles >
+        <NotFoundImageStyles className="content">
           <Image
             src={notFoundImg}
             alt="pages not found"
@@ -28,28 +57,26 @@ const NotFound: NextPageWithLayout = () => {
           <div>
             <Image src={spoonLogo} alt="spoon logo" layout="fixed" />
           </div>
-        </div>
-        <Heading as="h4" align="center" size="md" fCol="normal">
+        </NotFoundImageStyles>
+        <Heading as="h4" align="center" size="md" fCol="normal" className="content">
           Oops! The page you are looking for does not exist. It might have been
           moved or deleted.
         </Heading>
-        <Button>
+        <Button className="content">
           <Link href={"/"}>
             <Text fCol="dark">Back To Home</Text>
           </Link>
         </Button>
-      </div>
-      <Signature
-        rotation="right"
-        className={NotFoundSignatureStyles({
-          position: "top",
-        })}
-      />
-      <Signature
+      </NotFoundContentStyles>
+      <NotFoundSignatureStyles
+        className="signature"
         rotation="left"
-        className={NotFoundSignatureStyles({
-          position: "bottom",
-        })}
+        position="top"
+      />
+      <NotFoundSignatureStyles
+        className="signature"
+        rotation="right"
+        position="bottom"
       />
     </Section>
   );

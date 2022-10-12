@@ -69,10 +69,10 @@ export function Topnav() {
       tl.from(".logo", {
         duration: 0.5,
         opacity: "0",
-        x: "-30%",
+        xPercent: -30,
       }).from(".link-text", {
         opacity: "0",
-        y: "50%",
+        yPercent: 50,
         stagger: 0.1,
         ease: CustomEase.create(
           "custom",
