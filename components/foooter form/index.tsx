@@ -1,6 +1,8 @@
 import spoon from "../../public/assets/global/spoon-logo.svg";
 import Image from "next/image";
-import { SyntheticEvent } from "react";
+import { SyntheticEvent, useEffect, useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { UI } from "../../ui";
 import {
   BodyStyles,
@@ -9,40 +11,87 @@ import {
   HeaderStyles,
 } from "./footerForm.style";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function FooterForm() {
+  const { Button, Input, Heading, Text, Section } = UI;
+  const containerRef = useRef<HTMLElement>(null);
+
   function handleSubmit(e: SyntheticEvent) {
     e.preventDefault();
-    console.log("ok");
+    console.log("request sent!");
   }
-  const { Button, Input, Heading, Text, Section } = UI;
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      defaults: {
+        duration: 1,
+        ease: "power1.Out",
+        opacity: 0,
+      },
+    });
+    const animation = gsap.context(() => {
+      tl.from(containerRef.current, {
+        opacity: 0,
+        duration: 2,
+      }).from(".header", {
+        yPercent: -100,
+      }, 1).from(".text", {
+        yPercent: -100,
+        duration: .5,
+        stagger: .2
+      }).from(".input",{
+        scaleX : 0,
+      }).from(".submit",{
+        yPercent: 100,
+        duration: .5
+      }, "-=0.5");
+    }, containerRef);
+    return () => animation.revert();
+  }, []);
+
   return (
-    <Section className={Containerstyles()}>
-      <header className={HeaderStyles()}>
+    <Containerstyles ref={containerRef}>
+      <HeaderStyles className="header">
         <Heading as="h3" size="md" fCol={"normal"}>
           Newsletter
         </Heading>
         <span className="img">
           <Image src={spoon} alt="logo" layout="fixed" priority />
         </span>
-      </header>
+      </HeaderStyles>
       <div className={BodyStyles()}>
-        <Text fCol="gold" weight="medium" size="lg" align="center">
+        <Text
+          fCol="gold"
+          weight="medium"
+          size="lg"
+          align="center"
+          className="text"
+        >
           Subscribe To Our Newsletter
         </Text>
-        <Text size="sm" family="source">
+        <Text size="sm" family="source" className="text">
           And never miss latest Updates!
         </Text>
       </div>
       <div className="form">
         <form onSubmit={(e) => handleSubmit(e)} className={FormStyles()}>
-          <Input type="email" required placeholder="Email Address" />
-          <Button type="submit" variant="primary">
+          <Input
+            type="email"
+            required
+            placeholder="Email Address"
+            className="input"
+            css={{
+              transformOrigin: "left center"
+            }}
+          />
+          <Button type="submit" variant="primary"  className="submit">
             <Text fCol="dark" size="sm" weight="bold">
               Subscribe
             </Text>
           </Button>
         </form>
       </div>
-    </Section>
+    </Containerstyles>
   );
 }

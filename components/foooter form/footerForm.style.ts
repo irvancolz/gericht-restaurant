@@ -1,6 +1,9 @@
-import { css } from "../../stitches.config";
+import { css, styled } from "../../stitches.config";
+import { UI } from "../../ui";
 
-export const Containerstyles = css({
+const {Section} = UI;
+
+export const Containerstyles = styled(Section ,{
   display: "flex",
   fDir: "column",
   align: "center",
@@ -15,7 +18,7 @@ export const Containerstyles = css({
   },
 });
 
-export const HeaderStyles = css({
+export const HeaderStyles = styled("div",{
   display: "flex",
   fDir: "column",
   align: "center",
