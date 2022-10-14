@@ -57,12 +57,11 @@ export function FooterForm() {
         }, "< +=0.35")
         .from(".input", {
           opacity: 1,
-          duration: .5,
           yPercent: 100,
         })
         .from(".submit", {
           yPercent: 100,
-        });
+        }, "< +=0.4");
     }, containerRef);
     return () => animation.revert();
   });
