@@ -173,14 +173,10 @@ export const globalStyles = globalCss({
     padding: "0",
     boxSizing: "border-box",
   },
-  body: {
-    scrollSnapType: "y mandatory",
-  },
   html: {
     backgroundColor: "$darkCol1",
     color: "$textCol",
     scrollBehavior: "smooth",
-    scrollSnapType: "y mandatory",
   },
   a: {
     color: "inherit",

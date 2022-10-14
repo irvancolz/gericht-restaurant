@@ -1,7 +1,8 @@
 import spoon from "../../public/assets/global/spoon-logo.svg";
 import Image from "next/image";
-import { SyntheticEvent, useEffect, useLayoutEffect, useRef } from "react";
+import { SyntheticEvent, useEffect, useRef } from "react";
 import gsap from "gsap";
+import CustomEase from "gsap/dist/CustomEase";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { UI } from "../../ui";
 import {
@@ -23,32 +24,48 @@ export function FooterForm() {
   }
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      defaults: {
-        duration: 1,
-        ease: "power1.Out",
-        opacity: 0,
-      },
-    });
     const animation = gsap.context(() => {
+      const tl = gsap.timeline({
+        defaults: {
+          duration: 0.3,
+          opacity: 0,
+          ease: CustomEase.create(
+            "custom",
+            "M0,0 C0.01,0.106 0.028,0.412 1,1 "
+          ),
+        },
+        scrollTrigger: {
+          trigger: containerRef.current,
+          markers: true,
+          start: "top center",
+        },
+      });
       tl.from(containerRef.current, {
         opacity: 0,
         duration: 2,
-      }).from(".header", {
-        yPercent: -100,
-      }, 1).from(".text", {
-        yPercent: -100,
-        duration: .5,
-        stagger: .2
-      }).from(".input",{
-        scaleX : 0,
-      }).from(".submit",{
-        yPercent: 100,
-        duration: .5
-      }, "-=0.5");
+      })
+        .from(
+          ".header",
+          {
+            yPercent: -100,
+          },
+          1
+        )
+        .from(".text", {
+          yPercent: -100,
+          stagger: 0.2,
+        }, "< +=0.35")
+        .from(".input", {
+          opacity: 1,
+          duration: .5,
+          yPercent: 100,
+        })
+        .from(".submit", {
+          yPercent: 100,
+        });
     }, containerRef);
     return () => animation.revert();
-  }, []);
+  });
 
   return (
     <Containerstyles ref={containerRef}>
@@ -82,10 +99,10 @@ export function FooterForm() {
             placeholder="Email Address"
             className="input"
             css={{
-              transformOrigin: "left center"
+              transformOrigin: "left center",
             }}
           />
-          <Button type="submit" variant="primary"  className="submit">
+          <Button type="submit" variant="primary" className="submit">
             <Text fCol="dark" size="sm" weight="bold">
               Subscribe
             </Text>

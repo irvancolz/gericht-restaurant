@@ -2,7 +2,6 @@ import Link from "next/link";
 import gsap from "gsap";
 import Image from "next/image";
 import React, {
-  useEffect,
   useRef,
   useLayoutEffect,
   type ReactElement,
@@ -19,7 +18,6 @@ import { NextPageWithLayout } from "./_app";
 import notFoundImg from "../public/assets/global/404.png";
 import spoonLogo from "../public/assets/global/spoon-logo.svg";
 import Head from "next/head";
-import { useState } from "react";
 
 const NotFound: NextPageWithLayout = () => {
   const ContainerEl = useRef(null);
