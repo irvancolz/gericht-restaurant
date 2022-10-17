@@ -4,7 +4,7 @@ import { UI } from "../ui";
 const {Signature} = UI;
 
 export const NotFoundContainerStyles = css({
-  height: "80vh",
+  height: "75vh",
   display: "flex",
   align: "center",
   justify: "center",
@@ -40,7 +40,7 @@ export const NotFoundSignatureStyles = styled(Signature,{
         },
       },
       bottom: {
-        left: "-10%",
+        left: "10%",
         bottom: "10%",
         "@bp2": {
             left: "5%",
