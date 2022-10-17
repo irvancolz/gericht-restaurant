@@ -12,6 +12,11 @@ import {
   ImageLinkStyles,
 } from "./footer-content.style";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const images = [
   {
@@ -33,13 +38,50 @@ const images = [
 
 export function FooterContent() {
   const { Text, Heading, Section } = UI;
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const animation = gsap.context(() => {
+      const tl = gsap.timeline({
+        defaults: {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power1.out",
+        },
+        scrollTrigger: {
+          start: "bottom bottom",
+        },
+      });
+
+      tl.from(".content:nth-child(2)", {
+        yPercent: 50,
+      })
+        .from(".image", {
+          yPercent: 50,
+        })
+        .from(".main-text", {
+          yPercent: 100,
+        })
+        .from(".content:not(:nth-child(2))", {
+          yPercent: 50,
+          stagger: 0.2,
+        })
+        .from(".side-text", {
+          yPercent: 50,
+          duration: 0.75,
+          stagger: 0.2,
+        });
+    }, containerRef);
+    return () => animation.revert();
+  }, []);
+
   return (
-    <Section as="div" className={ContainerStyles()}>
-      <Section className={ContentStyles()}>
+    <Section as="div" ref={containerRef} className={ContainerStyles()}>
+      <ContentStyles className="content">
         <Heading as="h3" size="nr" fCol="normal">
           Contact Us
         </Heading>
-        <div>
+        <div className="side-text">
           <Text
             size="sm"
             fCol="fade"
@@ -53,16 +95,12 @@ export function FooterContent() {
             +1 212-344-1230 <br /> +1 212-344-1230
           </Text>
         </div>
-      </Section>
-      <div
-        className={ContentStyles({
-          space: "md",
-        })}
-      >
-        <span>
+      </ContentStyles>
+      <ContentStyles as="div" space="md" className="content">
+        <span className="image">
           <Image src={logo} layout="fixed" alt="gericht" priority />
         </span>
-        <div className={ContentStyles()}>
+        <ContentStyles>
           <Text
             family="lato"
             size="sm"
@@ -70,6 +108,7 @@ export function FooterContent() {
             css={{
               letterSpacing: ".75px",
             }}
+            className="main-text"
           >
             &ldquo; The best way to find yourself is to lose yourself in the
             service of others. &rdquo;
@@ -82,7 +121,7 @@ export function FooterContent() {
               return (
                 <span key={img.id}>
                   <Link href="#">
-                    <a >
+                    <a>
                       <Image
                         src={img.src}
                         layout="fixed"
@@ -95,13 +134,13 @@ export function FooterContent() {
               );
             })}
           </div>
-        </div>
-      </div>
-      <Section className={ContentStyles()}>
+        </ContentStyles>
+      </ContentStyles>
+      <ContentStyles className="content">
         <Heading as="h3" size="nr" fCol="normal">
           Working Hours
         </Heading>
-        <div>
+        <div className="side-text">
           <Text
             size="sm"
             fCol="fade"
@@ -115,7 +154,7 @@ export function FooterContent() {
             Saturday-Sunday: <br /> 07:00am -11:00 pm
           </Text>
         </div>
-      </Section>
+      </ContentStyles>
     </Section>
   );
 }

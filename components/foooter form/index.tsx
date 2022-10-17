@@ -36,7 +36,6 @@ export function FooterForm() {
         },
         scrollTrigger: {
           trigger: containerRef.current,
-          markers: true,
           start: "top center",
         },
       });

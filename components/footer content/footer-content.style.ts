@@ -1,4 +1,6 @@
-import { css } from "../../stitches.config";
+import { css, styled } from "../../stitches.config";
+import { UI } from "../../ui";
+const { Section } = UI;
 
 export const ContainerStyles = css({
   mt: "$7",
@@ -14,12 +16,12 @@ export const ContainerStyles = css({
     mt: "$4",
     mb: "$3",
   },
-  "@bp1":{
+  "@bp1": {
     gap: "$4",
-  }
+  },
 });
 
-export const ContentStyles = css({
+export const ContentStyles = styled(Section, {
   display: "flex",
   fDir: "column",
   justify: "center",
