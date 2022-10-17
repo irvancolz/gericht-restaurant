@@ -1,7 +1,8 @@
 import { keyframes } from "@stitches/react";
 import { css, styled } from "../../stitches.config";
-import { TextStyles } from "../../ui/text/text.style";
-import Text from "../../ui/text";
+import { UI } from "../../ui";
+
+const { Text } = UI;
 
 const ContainerStyles = {
   display: "flex",
@@ -31,9 +32,6 @@ export const TopnavContainerStyles = css({
   ...ContainerStyles,
   px: "$4",
   flexWrap: "wrap",
-  position: "sticky",
-  top: "-1px",
-  zIndex: "$1",
   "@bp2": {
     px: "$2",
   },
@@ -216,8 +214,7 @@ export const TopnavMenuStyles = css({
 });
 
 export const TopnavNavStyles = css({
-  fBase: "75%",
-
+  fBase: "65%",
   "@bp2": {
     position: "absolute",
     top: "100%",
@@ -242,7 +239,10 @@ export const TopnavNavStyles = css({
       pointerEvents: "auto",
     },
   },
-  bp1: {
+  "@bp3":{
+    fBase: "70%",
+  },
+  "@bp1": {
     pd: "$1",
   },
 });

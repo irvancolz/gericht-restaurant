@@ -11,17 +11,39 @@ interface SectionStylesVariantConfig {
 
 export const SectionStyles = styled("section", {
   position: "relative",
-  maxWidth: "1300px",
+  maxWidth: "1920px",
   width: "100%",
   my: "auto",
-
-  "@bp2" :{
-    py: "$4",
+  variants:{
+    paddingSide :{
+      true: {
+        py: "$7",
+        "@bp3" :{
+          py: " $4",
+        },
+        "@bp2" :{
+          py: '$2'
+        },
+        "@bp1" :{
+          py: '$1'
+        },
+      },
+      false: {
+        py: "0px",
+        "@bp3" :{
+          py: "0px",
+        },"@bp2" :{
+          py: '0px'
+        },
+        "@bp1" :{
+          py: '0px'
+        },
+      }
+    }
   },
-
-  "@bp1" :{
-    py: "$2",
-  }
+  defaultVariants :{
+    paddingSide : false,
+  },
 });
 
 export type SectionVariants = ComponentProps<typeof SectionStyles>;

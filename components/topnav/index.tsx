@@ -15,7 +15,6 @@ import {
 } from "./topnav.styles";
 gsap.registerPlugin(CustomEase);
 
-
 const navigationLinks = [
   {
     id: 0,
@@ -84,7 +83,12 @@ export function Topnav() {
     return () => animation.revert();
   }, []);
   return (
-    <Section as="div" ref={containerEl} className={TopnavContainerStyles()}>
+    <Section
+      as="div"
+      ref={containerEl}
+      className={TopnavContainerStyles()}
+      paddingSide="true"
+    >
       <div className={TopnavHeaderStyles()}>
         <div className="logoC">
           <Link href="/" as="/home">

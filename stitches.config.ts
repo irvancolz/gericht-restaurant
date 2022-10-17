@@ -47,7 +47,8 @@ export const { styled, getCssText, css } = createStitches({
       4: "32px",
       5: "48px",
       6: "64px",
-      7: "128px",
+      7: "120px",
+      8: "128px",
     },
     fontWeights: {
       thin: "300",
@@ -157,7 +158,7 @@ export const { styled, getCssText, css } = createStitches({
   media: {
     bp1: "(max-width: 640px)",
     bp2: "(max-width: 900px)",
-    bp3: "(max-width: 1024px)",
+    bp3: "(max-width: 1550px)",
   },
 });
 
