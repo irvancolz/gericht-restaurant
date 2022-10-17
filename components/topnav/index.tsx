@@ -87,7 +87,7 @@ export function Topnav() {
       as="div"
       ref={containerEl}
       className={TopnavContainerStyles()}
-      paddingSide="true"
+      paddingSide="sm"
     >
       <div className={TopnavHeaderStyles()}>
         <div className="logoC">

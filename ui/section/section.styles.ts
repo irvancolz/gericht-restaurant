@@ -8,41 +8,53 @@ interface SectionStylesVariantConfig {
   resPadH?: string | number;
 }
 
-
 export const SectionStyles = styled("section", {
   position: "relative",
   maxWidth: "1920px",
   width: "100%",
   my: "auto",
-  variants:{
-    paddingSide :{
-      true: {
+  variants: {
+    paddingSide: {
+      sm: {
         py: "$7",
-        "@bp3" :{
+        "@bp3": {
           py: " $4",
         },
-        "@bp2" :{
-          py: '$2'
+        "@bp2": {
+          py: "$2",
         },
-        "@bp1" :{
-          py: '$1'
+        "@bp1": {
+          py: "$1",
         },
       },
-      false: {
+      lg: {
+        py: "$10",
+        "@bp3": {
+          py: " $4",
+        },
+        "@bp2": {
+          py: "$2",
+        },
+        "@bp1": {
+          py: "$1",
+        },
+      },
+      none: {
         py: "0px",
-        "@bp3" :{
+        "@bp3": {
           py: "0px",
-        },"@bp2" :{
-          py: '0px'
         },
-        "@bp1" :{
-          py: '0px'
+        "@bp2": {
+          py: "0px",
         },
-      }
-    }
+        "@bp1": {
+          py: "0px",
+        },
+      },
+    },
   },
-  defaultVariants :{
-    paddingSide : false,
+  defaultVariants: {
+    paddingSide: "none",
   },
 });
 

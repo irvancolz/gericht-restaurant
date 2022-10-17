@@ -1,12 +1,12 @@
-import { UI } from "../../ui";
 import { Copyright } from "../copyright";
 import { FooterForm } from "../foooter form";
 import { FooterContent } from "../footer content";
-import { FooterStyle } from "./footer.style";
+import { UI } from "../../ui";
+
 export function Footer() {
   const { Section } = UI;
   return (
-    <Section as="div" className={FooterStyle()}>
+    <Section as="div" paddingSide="lg">
       <FooterForm />
       <>
         <FooterContent />
