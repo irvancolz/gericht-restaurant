@@ -4,12 +4,10 @@ const { Section } = UI;
 
 export const MainContainerStyles = styled(Section, {
   position: "relative",
-  border: "1px solid #eee",
 });
 
 export const ContainerStyles = styled(Section, {
   height: "828px",
-  border: "1px solid #eee",
   transition: "all 1s ease-in-out",
   width: "100%",
   variants: {

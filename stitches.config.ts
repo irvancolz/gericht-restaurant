@@ -180,6 +180,10 @@ export const globalStyles = globalCss({
     backgroundColor: "$darkCol1",
     color: "$textCol",
     scrollBehavior: "smooth",
+    scrollPaddingTop: "106px",
+    '@bp1' :{
+    scrollPaddingTop: "52px",
+    }
   },
   a: {
     color: "inherit",
