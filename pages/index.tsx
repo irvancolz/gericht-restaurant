@@ -13,7 +13,7 @@ const Home: NextPageWithLayout = () => {
   );
 
   useEffect(() => {
-    console.log(activeSection);
+
   }, [activeSection]);
   return (
     <>

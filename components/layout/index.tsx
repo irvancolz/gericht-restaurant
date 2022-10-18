@@ -7,7 +7,6 @@ interface layoutProps {
   children?: ReactNode;
 }
 export function Layout(props: layoutProps) {
-  const { Section } = UI;
   return (
     <>
       <header>
