@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function carouselNav() {
+export function CarouselNavigation() {
   return (
     <div>carousel-nav</div>
   )

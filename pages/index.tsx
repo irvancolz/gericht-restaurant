@@ -4,9 +4,12 @@ import { NextPageWithLayout } from "./_app";
 import { Components } from "../components";
 import Head from "next/head";
 import Link from "next/link";
+import logo from "../public/assets/global/web-logo.png"
 import { ContainerStyles, MainContainerStyles } from "../styles/home.style";
 
 const Home: NextPageWithLayout = () => {
+  const {Carousel} = Components;
+  const {CarouselContainer, CarouselImage, CarouselNavigation} = Carousel;
   const { Heading, Section, Button, Text } = UI;
   const [activeSection, setActiveSection] = useState<"bar" | "gericht">(
     "gericht"
@@ -38,7 +41,9 @@ const Home: NextPageWithLayout = () => {
                 <Heading>Article</Heading>
               </div>
               <div className="carousel">
-                <Text>Carousel</Text>
+              <CarouselContainer>
+                <CarouselImage src={logo}/>
+              </CarouselContainer>
               </div>
             </div>
           </Section>

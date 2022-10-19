@@ -11,7 +11,7 @@ interface carouselContainerConfig extends CarouselContainerVariants {
 
 const carousel_custom_class = "custom-carousel-container";
 
-export function carouselContainer({
+export function CarouselContainer({
   children,
   className,
   ...rest

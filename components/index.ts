@@ -1,3 +1,4 @@
+import { Carousel } from "./carousel";
 import { Copyright } from "./copyright";
 import { Footer } from "./footer";
 import { Layout } from "./layout";
@@ -9,5 +10,6 @@ export  const Components ={
     Footer,
     Layout,
     NestedLayout,
-    Topnav,    
+    Topnav,
+    Carousel,    
 }

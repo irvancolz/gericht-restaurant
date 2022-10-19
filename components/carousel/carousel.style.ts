@@ -4,8 +4,23 @@ import {UI} from "../../ui";
 const {Section} = UI;
 
 export const CarouselContainerStyles = styled(Section,{
-    border: "1px solid #eee",
     position: "relative",
 });
 
 export type CarouselContainerVariants = ComponentProps<typeof CarouselContainerStyles>;
+
+export const CarouselImageStyles = styled("div",{
+    variants:{
+        layout:{
+            fill:{
+                position: "absolute",
+                top: 0,
+                left:0,
+                bottom: 0,
+                right: 0,
+            }
+        }
+    }
+});
+
+export type CarouselImageVariants = ComponentProps<typeof CarouselImageStyles>;
