@@ -4,6 +4,7 @@ import Button from "./button";
 import Heading from "./heading";
 import Input from "./input";
 import Signature from "./signature";
+import Box from "./box";
 
 export const UI ={
     Text,
@@ -12,4 +13,5 @@ export const UI ={
     Heading,
     Input,
     Signature,
+    Box,
 }
