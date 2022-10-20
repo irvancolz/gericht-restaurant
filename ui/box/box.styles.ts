@@ -37,6 +37,7 @@ function createBoxPaddingVariants(props: boxPaddingConfig) {
 }
 
 export const BoxStyles = styled("div", {
+
   variants: {
     flex: {
       center: createBoxFlexVariatns({

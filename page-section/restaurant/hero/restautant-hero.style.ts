@@ -15,7 +15,6 @@ export const NavigationPagesStyles = styled(Box,{
   
   export const HeroRestaurantStyles = styled(Section,{
     ...flexStyles,
-    width: "1300px",
   });
   
   export const HeroRestaurantWrapperStyles = styled(Box,{

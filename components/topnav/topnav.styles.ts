@@ -40,7 +40,7 @@ export const TopnavContainerStyles = css({
   },
 });
 
-export const TopnavHeaderStyles = styled(Box,{
+export const TopnavHeaderStyles = styled(Box, {
   ...ContainerStyles,
   "& .navLink, & .toggle": {
     display: "none",
@@ -151,7 +151,7 @@ export const TopnavBookLinkStyles = styled(Text, {
   },
 });
 
-export const TopnavMenuStyles = styled(Box,{
+export const TopnavMenuStyles = styled(Box, {
   ...ContainerStyles,
   $$delay: ".3s",
 
@@ -176,20 +176,10 @@ export const TopnavMenuStyles = styled(Box,{
 
     "&.show": {
       animation: `${SlideIn} 400ms ease-out`,
-      [`& ${TopnavNavLinkStyles}, & ${TopnavBookLinkStyles}`]: {
-        transition: "transform .5s ease-out, opacity .3s ease-out .1s",
-        transitionDelay: "$$delay",
-        transform: "translateX(0%)",
-        opacity: "1",
-      },
     },
 
     "&.hide": {
       animation: `${SlideOut} 400ms ease-in`,
-      [`& ${TopnavNavLinkStyles}, & ${TopnavBookLinkStyles}`]: {
-        transform: "translateX(-100%)",
-        opacity: "0",
-      },
     },
 
     "& nav": {
@@ -213,7 +203,7 @@ export const TopnavMenuStyles = styled(Box,{
   },
 });
 
-export const TopnavNavStyles = styled(Box,{
+export const TopnavNavStyles = styled(Box, {
   fBase: "65%",
   "@bp2": {
     position: "absolute",
@@ -239,7 +229,7 @@ export const TopnavNavStyles = styled(Box,{
       pointerEvents: "auto",
     },
   },
-  "@bp3":{
+  "@bp3": {
     fBase: "70%",
   },
   "@bp1": {

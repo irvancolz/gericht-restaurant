@@ -26,6 +26,7 @@ export const ContentStyles = styled(Box, {
   fDir: "column",
   justify: "center",
   align: "center",
+  minWidth: "fit-content",
 
   "&:nth-child(2)": {
     fBase: "100%",
@@ -48,7 +49,7 @@ export const ContentStyles = styled(Box, {
     },
     "&:not(:nth-child(2))": {
       order: "2",
-      fBase: "calc(50% - 8px)",
+      fBase: "calc(50% - 16px)",
     },
   },
   "@bp1": {
