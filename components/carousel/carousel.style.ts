@@ -10,17 +10,11 @@ export const CarouselContainerStyles = styled(Section,{
 export type CarouselContainerVariants = ComponentProps<typeof CarouselContainerStyles>;
 
 export const CarouselImageStyles = styled("div",{
-    variants:{
-        layout:{
-            fill:{
-                position: "absolute",
-                top: 0,
-                left:0,
-                bottom: 0,
-                right: 0,
-            }
-        }
-    }
+    position: 'absolute',
+    width: "619px",
+    height: "688px",
+    border: "1px solid #eee",
+    transition: "all .5s ease-out",
 });
 
 export type CarouselImageVariants = ComponentProps<typeof CarouselImageStyles>;

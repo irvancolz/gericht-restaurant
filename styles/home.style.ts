@@ -6,8 +6,7 @@ export const MainContainerStyles = styled(Section, {
   position: "relative",
 });
 
-export const ContainerStyles = styled(Section, {
-  height: "828px",
+export const PagesContentStyles = styled(Section, {
   transition: "all 1s ease-in-out",
   width: "100%",
   variants: {
@@ -28,3 +27,4 @@ export const ContainerStyles = styled(Section, {
     },
   },
 });
+

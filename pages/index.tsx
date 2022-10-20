@@ -3,67 +3,38 @@ import { UI } from "../ui";
 import { NextPageWithLayout } from "./_app";
 import { Components } from "../components";
 import Head from "next/head";
-import Link from "next/link";
-import logo from "../public/assets/global/web-logo.png"
-import { ContainerStyles, MainContainerStyles } from "../styles/home.style";
+import resHeroCaroImg1 from "../public/assets/restaurants/restaurant-hero-img.png";
+import resHeroCaroImg2 from "../public/assets/restaurants/restaurant-hero2-img.png";
+import resHeroCaroImg3 from "../public/assets/restaurants/restaurant-hero3-img.png";
+import { PagesContentStyles, MainContainerStyles } from "../styles/home.style";
+import { RestaurantSections } from "../page-section/restaurant";
+
+const resHeroCarouImg = [resHeroCaroImg1, resHeroCaroImg2, resHeroCaroImg3];
 
 const Home: NextPageWithLayout = () => {
-  const {Carousel} = Components;
-  const {CarouselContainer, CarouselImage, CarouselNavigation} = Carousel;
-  const { Heading, Section, Button, Text } = UI;
+  const { HeroRestaurantSection } = RestaurantSections;
   const [activeSection, setActiveSection] = useState<"bar" | "gericht">(
     "gericht"
   );
 
-  useEffect(() => {
-
-  }, [activeSection]);
+  useEffect(() => {}, [activeSection]);
   return (
     <>
       <Head>
         <title>Gericht Restaturant</title>
       </Head>
       <MainContainerStyles>
-        <ContainerStyles
-          as="div"
-          id="gericht"
+        {/* restaurant section goes here */}
+        <PagesContentStyles
           isActive={activeSection === "gericht" ? true : false}
         >
-          <Section as="div" paddingSide="sm">
-            <div className="navigation">
-              <Link href="#bar">
-                <a onClick={() => setActiveSection("bar")}>#Bar</a>
-              </Link>
-              <Link href="#gericht">#Gericht</Link>
-            </div>
-            <div className="content">
-              <div className="article">
-                <Heading>Article</Heading>
-              </div>
-              <div className="carousel">
-              <CarouselContainer>
-                <CarouselImage src={logo}/>
-              </CarouselContainer>
-              </div>
-            </div>
-          </Section>
-        </ContainerStyles>
-        <ContainerStyles
-          as="div"
-          id="bar"
-          isActive={activeSection === "bar" ? true : false}
-        >
-          <Section paddingSide="sm">
-            <div className="navigation">
-              <Link href="#bar">#Bar</Link>
-              <Link href="#gericht">
-                <a onClick={() => setActiveSection("gericht")}>#Gericht</a>
-              </Link>
-            </div>
-            <Heading>Bar</Heading>
-            <Text>Carousel</Text>
-          </Section>
-        </ContainerStyles>
+          <HeroRestaurantSection setActiveSection={setActiveSection} />
+        </PagesContentStyles>
+
+        {/* bar section goes here */}
+        <PagesContentStyles isActive={activeSection === "bar" ? true : false}>
+          tst
+        </PagesContentStyles>
       </MainContainerStyles>
     </>
   );
