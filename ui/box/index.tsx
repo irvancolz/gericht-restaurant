@@ -1,9 +1,10 @@
-import React, { forwardRef, ReactNode } from "react";
+import React, { ElementType, forwardRef, ReactNode } from "react";
 import { BoxStyles, BoxVariants } from "./box.styles";
 
 interface BoxProps extends BoxVariants {
   children?: ReactNode;
   className?: string;
+  as?: ElementType;
 }
 
 const box_class = "custom-box";

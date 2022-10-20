@@ -9,9 +9,9 @@ interface HeroRestaurantSectionProps {
 }
 
 export default function HeroRestaurantSection({setActiveSection}: HeroRestaurantSectionProps) {
-    const {Button, Text, Section} = UI;
+    const {Button, Text, Section, Heading} = UI;
   return (
-    <HeroRestaurantWrapperStyles as="div" paddingSide="lg">
+    <HeroRestaurantWrapperStyles paddingSide="sm">
     <NavigationPagesStyles>
       <Button onClick={() => setActiveSection("bar")} variant="ternary">
         <Text css={{ fontSize: "18px" }} family="open">
@@ -31,6 +31,7 @@ export default function HeroRestaurantSection({setActiveSection}: HeroRestaurant
       <Section>
         <Text>Chase The New Flavour</Text>
         <Image src={SpoonLogo} layout="fixed" alt="spoon"/>
+        <Heading size="xl">The Key To Fine Dining</Heading>
       </Section>
     </HeroRestaurantStyles>
   </HeroRestaurantWrapperStyles>

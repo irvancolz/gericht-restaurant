@@ -1,7 +1,7 @@
 import { css, styled } from "../../stitches.config";
 import { UI } from "../../ui";
 
-const {Section} = UI;
+const {Section,Box} = UI;
 
 export const Containerstyles = styled(Section ,{
   display: "flex",
@@ -18,7 +18,7 @@ export const Containerstyles = styled(Section ,{
   },
 });
 
-export const HeaderStyles = styled("div",{
+export const HeaderStyles = styled(Box,{
   display: "flex",
   fDir: "column",
   align: "center",

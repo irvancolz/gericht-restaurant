@@ -2,10 +2,10 @@ import { UI } from "../../ui";
 import { CopyrightStyles } from "./copyright.styles";
 
 export function Copyright() {
-  const { Section } = UI;
+  const { Box } = UI;
   return (
-    <Section as="div" className={CopyrightStyles()}>
+    <Box as="div" className={CopyrightStyles()}>
       <p>2021 Gericht. All Rights reserved.</p>
-    </Section>
+    </Box>
   );
 }

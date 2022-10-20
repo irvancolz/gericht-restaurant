@@ -17,7 +17,7 @@ import Head from "next/head";
 
 const NotFound: NextPageWithLayout = () => {
   const ContainerEl = useRef(null);
-  const { Text, Heading, Section, Button } = UI;
+  const { Text, Heading, Section, Button, Box } = UI;
 
   useLayoutEffect(() => {
     const tl = gsap.timeline({
@@ -59,9 +59,9 @@ const NotFound: NextPageWithLayout = () => {
               layout="fixed"
               priority
             />
-            <div>
+            <Box as="span">
               <Image src={spoonLogo} alt="spoon logo" layout="fixed" />
-            </div>
+            </Box>
           </NotFoundImageStyles>
           <Heading
             as="h4"

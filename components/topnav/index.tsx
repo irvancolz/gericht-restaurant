@@ -44,7 +44,7 @@ const navigationLinks = [
 ];
 
 export function Topnav() {
-  const { Section, Button, Text } = UI;
+  const { Section, Button, Text, Box } = UI;
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const containerEl = useRef<HTMLDivElement>(null);
   const linkEl = useRef<HTMLParagraphElement>(null);
@@ -89,16 +89,16 @@ export function Topnav() {
       className={TopnavContainerStyles()}
       paddingSide="sm"
     >
-      <div className={TopnavHeaderStyles()}>
-        <div className="logoC">
+      <TopnavHeaderStyles>
+        <Box className="logoC">
           <Link href="/" as="/home">
             <a className="logo">
               <Image src={webLogo} alt="gericht" layout="fixed" priority />
             </a>
           </Link>
-        </div>
+        </Box>
         {/* Show on tablet */}
-        <div className="navLink">
+        <Box className="navLink">
           <Button variant="ternary">
             <Text family="open" size="sm">
               Log In / Regristration
@@ -109,7 +109,7 @@ export function Topnav() {
               Book Table
             </Text>
           </Button>
-        </div>
+        </Box>
         <Button
           onClick={() => toggleOpen()}
           padding="none"
@@ -120,13 +120,13 @@ export function Topnav() {
             &#9776;
           </Text>
         </Button>
-      </div>
-      <div className={`${TopnavNavStyles()} ${toggleClass(isOpen)}`}>
-        <div className={`${TopnavMenuStyles()} ${toggleClass(isOpen)}`}>
+      </TopnavHeaderStyles>
+      <TopnavNavStyles className={toggleClass(isOpen)}>
+        <TopnavMenuStyles className={toggleClass(isOpen)}>
           <nav>
             {navigationLinks.map((item) => {
               return (
-                <span key={item.id} className="link">
+                <Box as="span" key={item.id} className="link">
                   <Link href={item.link}>
                     <TopnavNavLinkStyles
                       ref={linkEl}
@@ -140,12 +140,12 @@ export function Topnav() {
                       {item.label}
                     </TopnavNavLinkStyles>
                   </Link>
-                </span>
+                </Box>
               );
             })}
           </nav>
           {/* show on mobile */}
-          <div>
+          <Box>
             <Button
               padding={{
                 "@bp2": "none",
@@ -184,9 +184,9 @@ export function Topnav() {
                 Book Table
               </TopnavBookLinkStyles>
             </Button>
-          </div>
-        </div>
-      </div>
+          </Box>
+        </TopnavMenuStyles>
+      </TopnavNavStyles>
     </Section>
   );
 }

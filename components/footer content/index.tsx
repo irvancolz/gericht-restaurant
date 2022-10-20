@@ -37,7 +37,7 @@ const images = [
 ];
 
 export function FooterContent() {
-  const { Text, Heading, Section } = UI;
+  const { Text, Heading, Section, Box } = UI;
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -81,7 +81,7 @@ export function FooterContent() {
         <Heading as="h3" size="nr" fCol="normal">
           Contact Us
         </Heading>
-        <div className="side-text">
+        <Box className="side-text">
           <Text
             size="sm"
             fCol="fade"
@@ -94,12 +94,12 @@ export function FooterContent() {
           <Text size="sm" fCol="fade" family="source" align="center">
             +1 212-344-1230 <br /> +1 212-344-1230
           </Text>
-        </div>
+        </Box>
       </ContentStyles>
       <ContentStyles as="div" space="md" className="content">
-        <span className="image">
+        <Box as="span" className="image">
           <Image src={logo} layout="fixed" alt="gericht" priority />
-        </span>
+        </Box>
         <ContentStyles>
           <Text
             family="lato"
@@ -113,13 +113,13 @@ export function FooterContent() {
             &ldquo; The best way to find yourself is to lose yourself in the
             service of others. &rdquo;
           </Text>
-          <span>
+          <Box as ="span">
             <Image src={spoon} layout="fixed" alt="spoon" priority />
-          </span>
-          <div className={ImageLinkStyles()}>
+          </Box>
+          <ImageLinkStyles>
             {images.map((img) => {
               return (
-                <span key={img.id}>
+                <Box as="span" key={img.id}>
                   <Link href="#">
                     <a>
                       <Image
@@ -130,17 +130,17 @@ export function FooterContent() {
                       />
                     </a>
                   </Link>
-                </span>
+                </Box>
               );
             })}
-          </div>
+          </ImageLinkStyles>
         </ContentStyles>
       </ContentStyles>
       <ContentStyles className="content">
         <Heading as="h3" size="nr" fCol="normal">
           Working Hours
         </Heading>
-        <div className="side-text">
+        <Box className="side-text">
           <Text
             size="sm"
             fCol="fade"
@@ -153,7 +153,7 @@ export function FooterContent() {
           <Text size="sm" fCol="fade" family="source" align="center">
             Saturday-Sunday: <br /> 07:00am -11:00 pm
           </Text>
-        </div>
+        </Box>
       </ContentStyles>
     </Section>
   );

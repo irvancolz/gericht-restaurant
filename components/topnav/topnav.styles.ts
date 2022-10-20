@@ -2,7 +2,7 @@ import { keyframes } from "@stitches/react";
 import { css, styled } from "../../stitches.config";
 import { UI } from "../../ui";
 
-const { Text } = UI;
+const { Text, Box } = UI;
 
 const ContainerStyles = {
   display: "flex",
@@ -40,7 +40,7 @@ export const TopnavContainerStyles = css({
   },
 });
 
-export const TopnavHeaderStyles = css({
+export const TopnavHeaderStyles = styled(Box,{
   ...ContainerStyles,
   "& .navLink, & .toggle": {
     display: "none",
@@ -151,7 +151,7 @@ export const TopnavBookLinkStyles = styled(Text, {
   },
 });
 
-export const TopnavMenuStyles = css({
+export const TopnavMenuStyles = styled(Box,{
   ...ContainerStyles,
   $$delay: ".3s",
 
@@ -213,7 +213,7 @@ export const TopnavMenuStyles = css({
   },
 });
 
-export const TopnavNavStyles = css({
+export const TopnavNavStyles = styled(Box,{
   fBase: "65%",
   "@bp2": {
     position: "absolute",

@@ -1,7 +1,7 @@
 import { css, styled } from "../stitches.config";
 import { UI } from "../ui";
 
-const {Signature} = UI;
+const {Signature, Box} = UI;
 
 export const NotFoundContainerStyles = css({
   height: "75vh",
@@ -56,7 +56,7 @@ export const NotFoundSignatureStyles = styled(Signature,{
   },
 });
 
-export const NotFoundContentStyles = styled("div",{
+export const NotFoundContentStyles = styled(Box,{
     position: "relative",
     display: 'flex',
     fDir: "column",
@@ -70,7 +70,7 @@ export const NotFoundContentStyles = styled("div",{
     },
 });
 
-export const NotFoundImageStyles = styled("div",{
+export const NotFoundImageStyles = styled(Box,{
   display: "flex",
   fDir: "column",
   align: "center",

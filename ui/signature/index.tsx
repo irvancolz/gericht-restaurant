@@ -1,5 +1,5 @@
 import { CSS } from "@stitches/react";
-import Image from "next/image";
+import Box from "../box";
 import { forwardRef } from "react";
 import Text from "../text";
 import {
@@ -49,7 +49,7 @@ const Signature = forwardRef<HTMLDivElement, SignatureProps>(
           })}
         </div>
         {/* for the logo */}
-        <div className={Logostyles()}>
+        <Box className={Logostyles()}>
           <svg
             width="66"
             height="64"
@@ -66,7 +66,7 @@ const Signature = forwardRef<HTMLDivElement, SignatureProps>(
               fill="white"
             />
           </svg>
-        </div>
+        </Box>
       </SignatureStyles>
     );
   }

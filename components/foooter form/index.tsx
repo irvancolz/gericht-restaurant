@@ -15,7 +15,7 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 export function FooterForm() {
-  const { Button, Input, Heading, Text, Section } = UI;
+  const { Button, Input, Heading, Text, Box } = UI;
   const containerRef = useRef<HTMLElement>(null);
 
   function handleSubmit(e: SyntheticEvent) {
@@ -71,11 +71,11 @@ export function FooterForm() {
         <Heading as="h3" size="md" fCol={"normal"}>
           Newsletter
         </Heading>
-        <span className="img">
+        <Box as="span" className="img">
           <Image src={spoon} alt="logo" layout="fixed" priority />
-        </span>
+        </Box>
       </HeaderStyles>
-      <div className={BodyStyles()}>
+      <Box  className={BodyStyles()}>
         <Text
           fCol="gold"
           weight="medium"
@@ -88,8 +88,8 @@ export function FooterForm() {
         <Text size="sm" family="source" className="text">
           And never miss latest Updates!
         </Text>
-      </div>
-      <div className="form">
+      </Box>
+      <Box  className="form">
         <form onSubmit={(e) => handleSubmit(e)} className={FormStyles()}>
           <Input
             type="email"
@@ -106,7 +106,7 @@ export function FooterForm() {
             </Text>
           </Button>
         </form>
-      </div>
+      </Box>
     </Containerstyles>
   );
 }

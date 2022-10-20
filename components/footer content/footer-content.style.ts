@@ -1,6 +1,6 @@
 import { css, styled } from "../../stitches.config";
 import { UI } from "../../ui";
-const { Section } = UI;
+const { Box } = UI;
 
 export const ContainerStyles = css({
   mt: "$7",
@@ -21,7 +21,7 @@ export const ContainerStyles = css({
   },
 });
 
-export const ContentStyles = styled(Section, {
+export const ContentStyles = styled(Box, {
   display: "flex",
   fDir: "column",
   justify: "center",
@@ -65,7 +65,7 @@ export const TextStyles = css({
   mb: "$1",
 });
 
-export const ImageLinkStyles = css({
+export const ImageLinkStyles = styled(Box,{
   display: "flex",
   gap: "$2",
 });

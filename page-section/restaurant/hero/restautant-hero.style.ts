@@ -1,6 +1,6 @@
 import { styled } from "../../../stitches.config";
 import { UI } from "../../../ui";
-const {Section} = UI;
+const {Section, Box} = UI;
 
 const flexStyles = {
     display: "flex",
@@ -8,7 +8,7 @@ const flexStyles = {
     justify: "center",
   }
 
-export const NavigationPagesStyles = styled("div",{
+export const NavigationPagesStyles = styled(Box,{
     width: "fit-content",
     display: "inline"
   });
@@ -18,5 +18,5 @@ export const NavigationPagesStyles = styled("div",{
     width: "1300px",
   });
   
-  export const HeroRestaurantWrapperStyles = styled(Section,{
+  export const HeroRestaurantWrapperStyles = styled(Box,{
   });

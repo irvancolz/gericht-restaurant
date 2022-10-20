@@ -1,12 +1,12 @@
 import { styled } from "../stitches.config";
 import { UI } from "../ui";
-const { Section } = UI;
+const { Section, Box } = UI;
 
 export const MainContainerStyles = styled(Section, {
   position: "relative",
 });
 
-export const PagesContentStyles = styled(Section, {
+export const PagesContentStyles = styled(Box, {
   transition: "all 1s ease-in-out",
   width: "100%",
   variants: {
@@ -27,4 +27,3 @@ export const PagesContentStyles = styled(Section, {
     },
   },
 });
-

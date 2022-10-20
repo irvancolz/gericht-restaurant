@@ -1,9 +1,9 @@
 import { ComponentProps } from "@stitches/react";
 import { styled } from "../../stitches.config";
 import {UI} from "../../ui";
-const {Section} = UI;
+const {Box} = UI;
 
-export const CarouselContainerStyles = styled(Section,{
+export const CarouselContainerStyles = styled(Box,{
     position: "relative",
 });
 

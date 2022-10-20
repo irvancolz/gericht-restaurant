@@ -4,14 +4,14 @@ import { FooterContent } from "../footer content";
 import { UI } from "../../ui";
 
 export function Footer() {
-  const { Section } = UI;
+  const { Box } = UI;
   return (
-    <Section as="div" paddingSide="lg">
+    <Box paddingSide="lg">
       <FooterForm />
       <>
         <FooterContent />
         <Copyright />
       </>
-    </Section>
+    </Box>
   );
 }
