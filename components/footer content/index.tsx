@@ -78,7 +78,7 @@ export function FooterContent() {
   return (
     <Section as="div" ref={containerRef} className={ContainerStyles()}>
       <ContentStyles className="content">
-        <Heading as="h3" size="nr" fCol="normal">
+        <Heading as="h3" size="nr" fCol="fadeGold">
           Contact Us
         </Heading>
         <Box className="side-text">
@@ -137,7 +137,7 @@ export function FooterContent() {
         </ContentStyles>
       </ContentStyles>
       <ContentStyles className="content">
-        <Heading as="h3" size="nr" fCol="normal">
+        <Heading as="h3" size="nr" fCol="fadeGold">
           Working Hours
         </Heading>
         <Box className="side-text">

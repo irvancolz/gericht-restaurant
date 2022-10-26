@@ -33,6 +33,8 @@ export const ButtonStyles = styled("button", {
   overflow: "hidden",
   backgroundPosition: "center",
   transition: "background 0.3s",
+  appearance: "none",
+  letterSpacing: "0.04em",
 
   // properties to create ripple effect
 

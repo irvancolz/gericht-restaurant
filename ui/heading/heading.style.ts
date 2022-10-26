@@ -33,6 +33,9 @@ export const HeadingComp = styled("h1", {
       gold: {
         color: "$goldCol1",
       },
+      fadeGold:{
+        color: "$goldCol2",
+      },
       normal: {
         color: "$textCol1",
       },

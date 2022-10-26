@@ -9,8 +9,8 @@ export const Containerstyles = styled(Section ,{
   align: "center",
   border: "1px solid",
   pd: "$6",
-  lineCol: "$grayCol3",
-  bgCol: "$darkCol1",
+  lineCol: "$goldCol3",
+  bgCol: "$darkCol3",
 
   "& .form": {
     flexGrow: 1,

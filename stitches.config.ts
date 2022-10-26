@@ -12,10 +12,13 @@ export const { styled, getCssText, css } = createStitches({
     colors: {
       goldCol1: "#ddca87",
       goldCol2: "#f5efdb",
+      goldCol3: "#dcca8733",
       darkCol1: "#040404",
       darkCol2: "#242424",
+      darkCol3: "#0C0C0C",
       grayCol1: "#AAAAAA",
       textCol1: "#ffffff",
+      clear: "transparent",
     },
     fontSizes: {
       1: "16px",

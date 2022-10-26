@@ -96,9 +96,6 @@ export function FooterForm() {
             required
             placeholder="Email Address"
             className="input"
-            css={{
-              transformOrigin: "left center",
-            }}
           />
           <Button type="submit" variant="primary" className="submit">
             <Text fCol="dark" size="sm" weight="bold">

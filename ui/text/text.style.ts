@@ -43,6 +43,9 @@ export const TextStyles = styled("p", {
       dark: {
         color: "$darkCol1",
       },
+      fadeGold: {
+        color: "$goldCol2",
+      },
     },
     // adjust font variant
     family: {
@@ -58,9 +61,9 @@ export const TextStyles = styled("p", {
       lato: {
         fontFamily: "$lato",
       },
-      poppins:{
+      poppins: {
         fontFamily: "$poppins",
-      }
+      },
     },
     weight: {
       thin: {

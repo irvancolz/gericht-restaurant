@@ -6,7 +6,7 @@ export const InputStyles = styled("input", {
   lineCol: "$clear",
   border: "1px solid",
   outline: "none",
-  color: "$textCol",
+  color: "$textCol1",
   width: "100%",
   maxWidth: "635px",
   fontSize: "$sm",
@@ -15,7 +15,7 @@ export const InputStyles = styled("input", {
   py: "$2",
 
   "&:focus": {
-    lineCol: "$textCol",
+    lineCol: "$goldCol2",
   },
 
   "&:invalid": {
@@ -23,8 +23,11 @@ export const InputStyles = styled("input", {
   },
 
   "&:placeholder-shown": {
-    lineCol: "$textCol",
+    lineCol: "$goldCol2",
   },
+  "&:placeholder" :{
+    color: "$grayCol1",
+  }
 });
 
 export type InputVariants = ComponentProps<typeof InputStyles>;
