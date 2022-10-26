@@ -7,6 +7,7 @@ export const { styled, getCssText, css } = createStitches({
       sourceSans: "Source Sans Pro , sans-serif",
       openSans: "Open Sans, sans-serif",
       lato: "Lato, sans-serif",
+      poppins: "Poppins, sans-serif",
     },
     colors: {
       goldCol1: "#ddca87",
@@ -25,9 +26,10 @@ export const { styled, getCssText, css } = createStitches({
       6: "90px",
       10: "14px",
       20: "18px",
-      30: "24px",
-      40: "48px",
-      50: "72px",
+      30: "26px",
+      40: "35px",
+      50: "55px",
+      60: "72px",
     },
     space: {
       0: "0px",

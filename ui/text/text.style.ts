@@ -22,11 +22,12 @@ export const TextStyles = styled("p", {
   variants: {
     // adjust font size
     size: {
-      sm: CreateFontSizeVariant({ initial: "$sm", responsive: "$smr" }),
-      md: CreateFontSizeVariant({ initial: "$md", responsive: "$mdr" }),
-      nr: CreateFontSizeVariant({ initial: "$nr", responsive: "$nrr" }),
-      lg: CreateFontSizeVariant({ initial: "$lg", responsive: "$lgr" }),
-      xl: CreateFontSizeVariant({ initial: "$xl", responsive: "$xlr" }),
+      sm: CreateFontSizeVariant({ initial: "$1", responsive: "$10" }),
+      md: CreateFontSizeVariant({ initial: "$2", responsive: "$20" }),
+      nr: CreateFontSizeVariant({ initial: "$3", responsive: "$30" }),
+      lg: CreateFontSizeVariant({ initial: "$4", responsive: "$40" }),
+      xl: CreateFontSizeVariant({ initial: "$5", responsive: "$50" }),
+      xxl: CreateFontSizeVariant({ initial: "$6", responsive: "$60" }),
     },
     // adjust font color
     fCol: {
@@ -34,7 +35,7 @@ export const TextStyles = styled("p", {
         color: "$goldCol1",
       },
       normal: {
-        color: "$textCol",
+        color: "$textCol1",
       },
       fade: {
         color: "$grayCol1",
@@ -57,6 +58,9 @@ export const TextStyles = styled("p", {
       lato: {
         fontFamily: "$lato",
       },
+      poppins:{
+        fontFamily: "$poppins",
+      }
     },
     weight: {
       thin: {
