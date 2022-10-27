@@ -27,7 +27,7 @@ export default function HeroRestaurantSection({setActiveSection}: HeroRestaurant
         </Text>
       </Button>
     </NavigationPagesStyles>
-    <HeroRestaurantStyles as="div">
+    <HeroRestaurantStyles>
       <Section>
         <Text>Chase The New Flavour</Text>
         <Image src={SpoonLogo} layout="fixed" alt="spoon"/>

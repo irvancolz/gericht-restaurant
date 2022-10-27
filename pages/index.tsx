@@ -33,7 +33,7 @@ const Home: NextPageWithLayout = () => {
 
         {/* bar section goes here */}
         <PagesContentStyles isActive={activeSection === "bar" ? true : false}>
-          tst
+         
         </PagesContentStyles>
       </MainContainerStyles>
     </>

@@ -13,7 +13,7 @@ export const NavigationPagesStyles = styled(Box,{
     display: "inline"
   });
   
-  export const HeroRestaurantStyles = styled(Section,{
+  export const HeroRestaurantStyles = styled(Box,{
     ...flexStyles,
   });
   
