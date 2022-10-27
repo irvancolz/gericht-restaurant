@@ -9,7 +9,7 @@ interface ArticleHeaderConfig extends ContainerVariants {
 
 const article_classes = "custom_article_header";
 
-const ArticleHeader = forwardRef<HTMLElement, ArticleHeaderConfig>(({
+export const ArticleHeader = forwardRef<HTMLElement, ArticleHeaderConfig>(({
   children,
   clasName,
   ...rest
@@ -25,4 +25,3 @@ const ArticleHeader = forwardRef<HTMLElement, ArticleHeaderConfig>(({
 })
 
 ArticleHeader.displayName ="ArticleHeader";
-export default ArticleHeader;

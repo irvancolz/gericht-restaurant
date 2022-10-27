@@ -92,9 +92,9 @@ export const HeadingComp = styled("h1", {
   },
   defaultVariants: {
     family: "cormorant",
-    size: "lg",
-    fCol: "gold",
-    weight: "normal",
+    size: "md",
+    fCol: "normal",
+    weight: "bold",
   },
 });
 

@@ -18,18 +18,9 @@ export const Containerstyles = styled(Section ,{
   },
 });
 
-export const HeaderStyles = styled(Box,{
-  display: "flex",
-  fDir: "column",
-  align: "center",
-  justify: "center",
-});
 
 export const BodyStyles = css({
-  display: "flex",
-  fDir: "column",
-  align: "center",
-  justify: "center",
+  mt: "$3",
   mb: "$6",
 });
 

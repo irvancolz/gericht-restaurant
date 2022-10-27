@@ -9,7 +9,7 @@ interface ArticleTitleConfig extends TitleVariants {
 
 const title_class = "custom_article_title";
 
-const ArticleTitle = forwardRef<
+export const ArticleTitle = forwardRef<
   HTMLParagraphElement,
   ArticleTitleConfig
 >(({ className, children, ...rest }, ref) => {
@@ -24,4 +24,3 @@ const ArticleTitle = forwardRef<
 });
 
 ArticleTitle.displayName = "ArticleTitle";
-export default ArticleTitle;

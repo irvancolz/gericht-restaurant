@@ -5,12 +5,8 @@ import gsap from "gsap";
 import CustomEase from "gsap/dist/CustomEase";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { UI } from "../../ui";
-import {
-  BodyStyles,
-  Containerstyles,
-  FormStyles,
-  HeaderStyles,
-} from "./footerForm.style";
+import { BodyStyles, Containerstyles, FormStyles } from "./footerForm.style";
+import { ArticleHeader, ArticleTitle, ArticleHeading } from "../article header";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,50 +42,45 @@ export function FooterForm() {
         .from(
           ".header",
           {
-            yPercent: -100,
+            yPercent: -10,
           },
           1
         )
-        .from(".text", {
-          yPercent: -100,
-          stagger: 0.2,
-        }, "< +=0.35")
+        .from(
+          ".text",
+          {
+            yPercent: -10,
+            stagger: 0.2,
+          },
+          "< +=0.35"
+        )
         .from(".input", {
           opacity: 1,
-          yPercent: 100,
+          yPercent: 10,
         })
-        .from(".submit", {
-          yPercent: 100,
-        }, "< +=0.4");
+        .from(
+          ".submit",
+          {
+            yPercent: 10,
+          },
+          "< +=0.4"
+        );
     }, containerRef);
     return () => animation.revert();
   });
 
   return (
     <Containerstyles ref={containerRef}>
-      <HeaderStyles className="header">
-        <Heading as="h3" size="md" fCol={"normal"}>
+      <ArticleHeader className="header" content="center">
+        <ArticleHeading className="text">
           Newsletter
-        </Heading>
-        <Box as="span" className="img">
-          <Image src={spoon} alt="logo" layout="fixed" priority />
-        </Box>
-      </HeaderStyles>
-      <Box  className={BodyStyles()}>
-        <Text
-          fCol="gold"
-          weight="medium"
-          size="lg"
-          align="center"
-          className="text"
-        >
+        </ArticleHeading>
+        <ArticleTitle className="text" fCol="gold" size="xl" weight="medium">
           Subscribe To Our Newsletter
-        </Text>
-        <Text size="sm" family="source" className="text">
-          And never miss latest Updates!
-        </Text>
-      </Box>
-      <Box  className="form">
+        </ArticleTitle>
+      </ArticleHeader>
+      <Text family="open" size="sm" className={BodyStyles()}>And never miss latest Updates</Text>
+      <Box className="form">
         <form onSubmit={(e) => handleSubmit(e)} className={FormStyles()}>
           <Input
             type="email"

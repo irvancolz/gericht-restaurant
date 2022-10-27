@@ -5,7 +5,16 @@ import { UI } from "../../ui";
 const { Heading, Text } = UI;
 
 export const ContainerStyles = styled("header", {
-  border: "1px solid #eee",
+  display: "grid",
+  gap: "$1",
+
+  variants:{
+    content:{
+      center:{
+        placeItems: "center",
+      }
+    }
+  }
 });
 
 export type ContainerVariants = ComponentProps<typeof ContainerStyles>;
