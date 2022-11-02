@@ -4,7 +4,7 @@ import spoon from "../../public/assets/global/spoon-logo.svg";
 import twtr from "../../public/assets/global/twit-icon.svg";
 import fb from "../../public/assets/global/fb-icon.svg";
 import insta from "../../public/assets/global/insta-icon.svg";
-import { UI } from "../../ui";
+import { Text, Heading, Section, Box } from "../../ui";
 import {
   ContainerStyles,
   ContentStyles,
@@ -37,7 +37,6 @@ const images = [
 ];
 
 export function FooterContent() {
-  const { Text, Heading, Section, Box } = UI;
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

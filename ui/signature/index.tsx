@@ -1,7 +1,7 @@
 import { CSS } from "@stitches/react";
-import Box from "../box";
+import { Box } from "../box";
 import { forwardRef } from "react";
-import Text from "../text";
+import { Text } from "../text";
 import {
   Logostyles,
   SignatureStyles,
@@ -20,7 +20,7 @@ const signatureTxt = "DELIGHT IN EVERY BITE ";
 
 const signatureClass = "custom-signature";
 
-const Signature = forwardRef<HTMLDivElement, SignatureProps>(
+export const Signature = forwardRef<HTMLDivElement, SignatureProps>(
   ({ className, css, rotation, ...rest }, ref) => {
     function Classes() {
       return `${signatureClass} ${className ? className : ""}`;
@@ -73,4 +73,3 @@ const Signature = forwardRef<HTMLDivElement, SignatureProps>(
 );
 
 Signature.displayName = "Signature";
-export default Signature;

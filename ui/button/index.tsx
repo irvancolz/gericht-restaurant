@@ -10,7 +10,7 @@ interface ButtonProps extends ButtonStylesVariants {
 
 const buttonClass = "custom-button";
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, children, ...rest }, ref) => {
     function classes() {
       return `${buttonClass} ${className ? className : ""}`;
@@ -25,4 +25,3 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = "Button";
-export default Button;

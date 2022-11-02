@@ -9,7 +9,7 @@ interface InputProps extends InputVariants{
 
 const inputClasses = 'custom-input'
 
-const Input = forwardRef<HTMLInputElement, InputProps>(({ className, ...rest}, ref)=>{
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, ...rest}, ref)=>{
     function classes(){
         return `${inputClasses} ${className ? className : ''}`;
     }
@@ -19,4 +19,3 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ className, ...rest}, r
 });
 
 Input.displayName = 'Input';
-export default Input;

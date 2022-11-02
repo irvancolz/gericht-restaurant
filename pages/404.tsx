@@ -2,14 +2,14 @@ import Link from "next/link";
 import gsap from "gsap";
 import Image from "next/image";
 import React, { useRef, useLayoutEffect, type ReactElement } from "react";
-import { Components } from "../components";
+import { Layout } from "../components";
 import {
   NotFoundContainerStyles,
   NotFoundSignatureStyles,
   NotFoundContentStyles,
   NotFoundImageStyles,
 } from "../styles/not-found.style";
-import { UI } from "../ui";
+import { Text, Heading, Section, Button, Box } from "../ui";
 import { NextPageWithLayout } from "./_app";
 import notFoundImg from "../public/assets/global/404.png";
 import spoonLogo from "../public/assets/global/spoon-logo.svg";
@@ -17,7 +17,6 @@ import Head from "next/head";
 
 const NotFound: NextPageWithLayout = () => {
   const ContainerEl = useRef(null);
-  const { Text, Heading, Section, Button, Box } = UI;
 
   useLayoutEffect(() => {
     const tl = gsap.timeline({
@@ -95,7 +94,6 @@ const NotFound: NextPageWithLayout = () => {
 };
 
 NotFound.getLayout = function getLayout(page: ReactElement) {
-  const { Layout } = Components;
   return <Layout>{page}</Layout>;
 };
 

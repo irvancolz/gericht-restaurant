@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import webLogo from "../../public/assets/global/web-logo.svg";
-import { UI } from "../../ui";
+import { Section, Button, Text, Box } from "../../ui";
 import {
   TopnavBookLinkStyles,
   TopnavContainerStyles,
@@ -44,7 +44,6 @@ const navigationLinks = [
 ];
 
 export function Topnav() {
-  const { Section, Button, Text, Box } = UI;
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const containerEl = useRef<HTMLDivElement>(null);
   const linkEl = useRef<HTMLParagraphElement>(null);

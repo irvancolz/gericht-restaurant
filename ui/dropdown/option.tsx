@@ -9,7 +9,7 @@ interface Optionprops extends OptionVariants{
 
 const optionClass = "custom-option";
 
-const Option =forwardRef< HTMLDivElement, Optionprops>(({children, className, as, ...rest}, ref) =>{
+export const Option =forwardRef< HTMLDivElement, Optionprops>(({children, className, as, ...rest}, ref) =>{
    
     function classes(){
         return`${optionClass} ${className ? className : ''}`
@@ -27,4 +27,3 @@ const Option =forwardRef< HTMLDivElement, Optionprops>(({children, className, as
 
 Option.displayName = "Option";
 
-export default Option;

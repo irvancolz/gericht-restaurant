@@ -6,11 +6,10 @@ interface SelectProps extends SelectVariants{
     as?: ElementType;
 }
 
-const Select = forwardRef< HTMLDivElement, SelectProps>(({children,...rest}, ref) =>{
+export const Select = forwardRef< HTMLDivElement, SelectProps>(({children,...rest}, ref) =>{
     return(
         <SelectStyles ref={ref} {...rest}>{children}</SelectStyles>
     );
 });
 
 Select.displayName = "Select";
-export default Select;

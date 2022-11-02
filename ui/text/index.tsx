@@ -10,7 +10,7 @@ interface TextProps extends TextStylesVariant {
 }
 
 const textClassName = "custom-text";
-const Text = forwardRef<HTMLParagraphElement, TextProps>(({css, children, className, ...rest}, ref) => {
+export const Text = forwardRef<HTMLParagraphElement, TextProps>(({css, children, className, ...rest}, ref) => {
   function classes() {
     return `${textClassName} ${className ? className : ""} `;
   }
@@ -23,4 +23,3 @@ const Text = forwardRef<HTMLParagraphElement, TextProps>(({css, children, classN
 });
 
 Text.displayName = "Text";
-export default Text;

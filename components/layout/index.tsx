@@ -1,5 +1,4 @@
 import { Topnav } from "../topnav";
-import { UI } from "../../ui";
 import { ReactNode } from "react";
 import { Copyright } from "../copyright";
 

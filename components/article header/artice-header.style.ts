@@ -1,20 +1,18 @@
 import { ComponentProps } from "@stitches/react";
 import { styled } from "../../stitches.config";
-import { UI } from "../../ui";
-
-const { Heading, Text } = UI;
+import { Heading, Text } from "../../ui";
 
 export const ContainerStyles = styled("header", {
   display: "grid",
   gap: "$1",
 
-  variants:{
-    content:{
-      center:{
+  variants: {
+    content: {
+      center: {
         placeItems: "center",
-      }
-    }
-  }
+      },
+    },
+  },
 });
 
 export type ContainerVariants = ComponentProps<typeof ContainerStyles>;

@@ -1,7 +1,5 @@
 import { css, styled } from "../stitches.config";
-import { UI } from "../ui";
-
-const {Signature, Box} = UI;
+import { Signature, Box } from "../ui";
 
 export const NotFoundContainerStyles = css({
   height: "75vh",
@@ -20,10 +18,9 @@ export const NotFoundContainerStyles = css({
 
 export const NotFoundLogoStyles = css({
   position: "relative",
-
 });
 
-export const NotFoundSignatureStyles = styled(Signature,{
+export const NotFoundSignatureStyles = styled(Signature, {
   variants: {
     position: {
       top: {
@@ -43,45 +40,45 @@ export const NotFoundSignatureStyles = styled(Signature,{
         left: "10%",
         bottom: "10%",
         "@bp2": {
-            left: "5%",
-            bottom: "10%",
-          },
-  
-          "@bp1": {
-            left: "0%",
-            bottom: "10%",
-          },
+          left: "5%",
+          bottom: "10%",
+        },
+
+        "@bp1": {
+          left: "0%",
+          bottom: "10%",
+        },
       },
     },
   },
 });
 
-export const NotFoundContentStyles = styled(Box,{
-    position: "relative",
-    display: 'flex',
-    fDir: "column",
-    justify: "center",
-    align: "center",
-    gap: "$4",
-    maxWidth: "550px",
+export const NotFoundContentStyles = styled(Box, {
+  position: "relative",
+  display: "flex",
+  fDir: "column",
+  justify: "center",
+  align: "center",
+  gap: "$4",
+  maxWidth: "550px",
 
-    "@bp1" :{
-      width: "50%",
-    },
+  "@bp1": {
+    width: "50%",
+  },
 });
 
-export const NotFoundImageStyles = styled(Box,{
+export const NotFoundImageStyles = styled(Box, {
   display: "flex",
   fDir: "column",
   align: "center",
   gap: "$2",
-  "@bp2" :{
-    "& > span:first-child" :{
+  "@bp2": {
+    "& > span:first-child": {
       transform: "scale(.7)",
     },
   },
-  "@bp1" :{
-    "& > span:first-child" :{
+  "@bp1": {
+    "& > span:first-child": {
       transform: "scale(.5)",
     },
   },

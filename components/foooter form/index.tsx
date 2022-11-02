@@ -4,14 +4,13 @@ import { SyntheticEvent, useEffect, useRef } from "react";
 import gsap from "gsap";
 import CustomEase from "gsap/dist/CustomEase";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { UI } from "../../ui";
+import { Button, Input, Text, Box } from "../../ui";
 import { BodyStyles, Containerstyles, FormStyles } from "./footerForm.style";
 import { ArticleHeader, ArticleTitle, ArticleHeading } from "../article header";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function FooterForm() {
-  const { Button, Input, Heading, Text, Box } = UI;
   const containerRef = useRef<HTMLElement>(null);
 
   function handleSubmit(e: SyntheticEvent) {

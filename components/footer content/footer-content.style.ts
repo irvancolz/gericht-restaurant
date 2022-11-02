@@ -1,6 +1,5 @@
 import { css, styled } from "../../stitches.config";
-import { UI } from "../../ui";
-const { Box } = UI;
+import {  Box } from "../../ui";
 
 export const ContainerStyles = css({
   mt: "$7",

@@ -9,7 +9,7 @@ interface BoxProps extends BoxVariants {
 
 const box_class = "custom-box";
 
-const Box = forwardRef<HTMLDivElement, BoxProps>(
+export const Box = forwardRef<HTMLDivElement, BoxProps>(
   ({ children, className, ...rest }, ref) => {
     function classes() {
       return `${className ? className : ""} ${box_class}`;
@@ -23,4 +23,4 @@ const Box = forwardRef<HTMLDivElement, BoxProps>(
 );
 
 Box.displayName = "Box";
-export default Box;
+

@@ -8,7 +8,7 @@ interface WrapperProps extends WrapperVariants {
 
 const wrapper_classes = "custom-wrapper";
 
-const Wrapper = forwardRef<HTMLSpanElement, WrapperProps>(
+export const Wrapper = forwardRef<HTMLSpanElement, WrapperProps>(
   ({ children, className, ...rest }, ref) => {
     function classes() {
       return `${className ? className : ""} ${wrapper_classes}`;
@@ -22,4 +22,3 @@ const Wrapper = forwardRef<HTMLSpanElement, WrapperProps>(
 );
 
 Wrapper.displayName = "Wrapper";
-export default Wrapper;

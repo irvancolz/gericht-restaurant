@@ -1,16 +1,7 @@
-import { Carousel } from "./carousel";
-import { Copyright } from "./copyright";
-import { Footer } from "./footer";
-import { Layout } from "./layout";
-import { NestedLayout } from "./layout nested";
-import { Topnav } from "./topnav";
+export * from "./carousel";
+export * from "./copyright";
+export * from "./footer";
+export * from "./layout";
+export * from "./layout nested";
+export * from "./topnav";
 export * from "./article header";
-
-export const Components = {
-  Copyright,
-  Footer,
-  Layout,
-  NestedLayout,
-  Topnav,
-  Carousel,
-};

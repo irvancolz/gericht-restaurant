@@ -11,7 +11,7 @@ interface sectionProps extends SectionVariants {
 
 const sectionClass = "custom-section";
 
-const Section = forwardRef<HTMLElement, sectionProps>(({children, as, css, className,...rest}, ref) => {
+export const Section = forwardRef<HTMLElement, sectionProps>(({children, as, css, className,...rest}, ref) => {
   function classes() {
     return `${sectionClass} ${
       className ? className : ""
@@ -25,4 +25,3 @@ const Section = forwardRef<HTMLElement, sectionProps>(({children, as, css, class
 });
 
 Section.displayName = "Section";
-export default Section;

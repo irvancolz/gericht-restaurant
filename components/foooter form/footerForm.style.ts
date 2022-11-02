@@ -1,9 +1,7 @@
 import { css, styled } from "../../stitches.config";
-import { UI } from "../../ui";
+import { Section } from "../../ui";
 
-const {Section,Box} = UI;
-
-export const Containerstyles = styled(Section ,{
+export const Containerstyles = styled(Section, {
   display: "flex",
   fDir: "column",
   align: "center",
@@ -18,7 +16,6 @@ export const Containerstyles = styled(Section ,{
   },
 });
 
-
 export const BodyStyles = css({
   mt: "$3",
   mb: "$6",
@@ -32,7 +29,7 @@ export const FormStyles = css({
   minWidth: "100%",
   overflow: "hidden",
 
-  "@bp1" :{
+  "@bp1": {
     fDir: "column",
-  }
+  },
 });

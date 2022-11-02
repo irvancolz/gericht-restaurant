@@ -1,6 +1,5 @@
 import { styled } from "../stitches.config";
-import { UI } from "../ui";
-const { Section, Box } = UI;
+import { Section, Box } from "../ui";
 
 export const MainContainerStyles = styled(Section, {
   position: "relative",

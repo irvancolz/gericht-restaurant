@@ -1,8 +1,6 @@
 import { keyframes } from "@stitches/react";
 import { css, styled } from "../../stitches.config";
-import { UI } from "../../ui";
-
-const { Text, Box } = UI;
+import { Text, Box } from "../../ui";
 
 const ContainerStyles = {
   display: "flex",

@@ -11,7 +11,7 @@ interface HeadingProps extends HeadingCompConfig {
 
 const headingClassName = "custom-heading";
 
-const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
+export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
   ({ css, as, className, children, ...rest }, ref) => {
     function classes() {
       return `${headingClassName} ${className ? className : ""}`;
@@ -26,4 +26,3 @@ const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
 );
 
 Heading.displayName = "Heading";
-export default Heading;
