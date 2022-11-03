@@ -28,13 +28,13 @@ const SlideOut = keyframes({
 
 export const TopnavContainerStyles = css({
   ...ContainerStyles,
-  px: "$4",
+  py: "$4",
   flexWrap: "wrap",
   "@bp2": {
-    px: "$2",
+    py: "$2",
   },
   "@bp1": {
-    px: "$1",
+    py: "$1",
   },
 });
 

@@ -71,7 +71,7 @@ export function Topnav() {
       }).from(".link-text", {
         opacity: "0",
         yPercent: 50,
-        stagger: 0.1,
+        stagger: 0.05,
         ease: CustomEase.create(
           "custom",
           "M0,0 C0.083,0.294 0.156,0.624 0.422,0.814 0.553,0.907 0.752,1 1,1 "
@@ -82,8 +82,7 @@ export function Topnav() {
     return () => animation.revert();
   }, []);
   return (
-    <Section
-      as="div"
+    <Box
       ref={containerEl}
       className={TopnavContainerStyles()}
       paddingSide="sm"
@@ -186,6 +185,6 @@ export function Topnav() {
           </Box>
         </TopnavMenuStyles>
       </TopnavNavStyles>
-    </Section>
+    </Box>
   );
 }
