@@ -78,11 +78,11 @@ export const { styled, getCssText, css } = createStitches({
       marginTop: value,
       marginBottom: value,
     }),
-    mx: (value: PropertyValue<"margin">) => ({
+    my: (value: PropertyValue<"margin">) => ({
       marginTop: value,
       marginBottom: value,
     }),
-    my: (value: PropertyValue<"margin">) => ({
+    mx: (value: PropertyValue<"margin">) => ({
       marginLeft: value,
       marginRight: value,
     }),
@@ -104,11 +104,11 @@ export const { styled, getCssText, css } = createStitches({
       paddingTop: value,
       paddingBottom: value,
     }),
-    px: (value: PropertyValue<"padding">) => ({
+    py: (value: PropertyValue<"padding">) => ({
       paddingTop: value,
       paddingBottom: value,
     }),
-    py: (value: PropertyValue<"padding">) => ({
+    px: (value: PropertyValue<"padding">) => ({
       paddingLeft: value,
       paddingRight: value,
     }),

@@ -12,43 +12,43 @@ export const SectionStyles = styled("section", {
   position: "relative",
   maxWidth: "1920px",
   width: "100%",
-  my: "auto",
+  mx: "auto",
   variants: {
     paddingSide: {
       sm: {
-        py: "$7",
+        px: "$7",
         "@bp3": {
-          py: " $4",
+          px: " $4",
         },
         "@bp2": {
-          py: "$2",
+          px: "$2",
         },
         "@bp1": {
-          py: "$1",
+          px: "$1",
         },
       },
       lg: {
-        py: "$10",
+        px: "$10",
         "@bp3": {
-          py: " $4",
+          px: " $4",
         },
         "@bp2": {
-          py: "$2",
+          px: "$2",
         },
         "@bp1": {
-          py: "$1",
+          px: "$1",
         },
       },
       none: {
-        py: "0px",
+        px: "0px",
         "@bp3": {
-          py: "0px",
+          px: "0px",
         },
         "@bp2": {
-          py: "0px",
+          px: "0px",
         },
         "@bp1": {
-          py: "0px",
+          px: "0px",
         },
       },
     },

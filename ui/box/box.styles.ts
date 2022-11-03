@@ -23,15 +23,15 @@ function createBoxFlexVariatns(props: boxFlexConfig) {
 
 function createBoxPaddingVariants(props: boxPaddingConfig) {
   return {
-    py: props.initial,
+    px: props.initial,
     "@bp3": {
-      py: props.large,
+      px: props.large,
     },
     "@bp2": {
-      py: props.tablet,
+      px: props.tablet,
     },
     "@bp1": {
-      py: props.mobile,
+      px: props.mobile,
     },
   };
 }
