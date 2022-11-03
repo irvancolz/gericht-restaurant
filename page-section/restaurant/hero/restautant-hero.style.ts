@@ -20,9 +20,11 @@ export const NavigationPagesStyles = styled(Box, {
 
 export const HeroRestaurantStyles = styled(Box, {
   display: "flex",
-  align: "center",
   justify: "space-between",
+  alignItems: "center",
+
   "& .hero_content": {
+    fBase: "50%",
     "&:first-of-type": {
       fBase: "35%",
     },
@@ -31,5 +33,4 @@ export const HeroRestaurantStyles = styled(Box, {
 
 export const HeroRestaurantWrapperStyles = styled(Box, {
   position: "relative",
-
 });

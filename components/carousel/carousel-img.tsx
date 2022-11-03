@@ -5,7 +5,7 @@ type CarouselImageProps = CarouselImageVariants & ImageProps;
 
 const carousel_image_class = "custom-carousel-image";
 
-const CarouselImage = forwardRef<HTMLDivElement, CarouselImageProps>(
+export const CarouselImage = forwardRef<HTMLDivElement, CarouselImageProps>(
   ({ className, layout, priority, src, alt, height, width, ...rest }, ref) => {
     function classes() {
       return `${className ? className : ""} ${carousel_image_class}`;
@@ -27,4 +27,3 @@ const CarouselImage = forwardRef<HTMLDivElement, CarouselImageProps>(
 );
 
 CarouselImage.displayName = "CarouselImage";
-export default CarouselImage;

@@ -1,12 +1,15 @@
 import React from "react";
 import { Button, Text, Box } from "../../../ui";
-import Image from "next/image";
 import {
   ArticleHeader,
   ArticleTitle,
   ArticleHeading,
+  CarouselContainer,
+  CarouselImage,
 } from "../../../components";
-import Img1 from "../../../public/assets/restaurants/restaurant-hero3-img.png";
+import Img1 from "../../../public/assets/restaurants/restaurant-hero-img.png";
+import Img2 from "../../../public/assets/restaurants/restaurant-hero2-img.png";
+import Img3 from "../../../public/assets/restaurants/restaurant-hero3-img.png";
 import {
   HeroRestaurantStyles,
   HeroRestaurantWrapperStyles,
@@ -69,7 +72,11 @@ export function HeroRestaurantSection({
           </Button>
         </Box>
         <Box className="hero_content">
-          <Image src={Img1} alt="carousel-img" />
+          <CarouselContainer>
+            <CarouselImage src={Img1} layout="fill" priority/>
+            <CarouselImage src={Img2} layout="fill" priority/>
+            <CarouselImage src={Img3} layout="fill" priority/>
+          </CarouselContainer>
         </Box>
       </HeroRestaurantStyles>
     </HeroRestaurantWrapperStyles>
