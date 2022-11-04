@@ -36,9 +36,9 @@ export const { styled, getCssText, css } = createStitches({
     },
     space: {
       0: "0px",
-      0.125: "1px",
-      0.25: "2px",
-      0.5: "4px",
+      one: "1px",
+      two: "2px",
+      four: "4px",
       1: "8px",
       2: "16px",
       3: "25px",

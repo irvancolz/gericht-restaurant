@@ -19,6 +19,7 @@ function CreateFontSizeVariant(value: fontSizeConfig) {
 }
 
 export const TextStyles = styled("p", {
+  color: "inherit",
   variants: {
     // adjust font size
     size: {

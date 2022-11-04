@@ -52,10 +52,3 @@ export const CarouselImageStyles = styled(Box, {
 
 export type CarouselImageVariants = ComponentProps<typeof CarouselImageStyles>;
 
-export const CarouselNavStyles = styled(Box, {
-  color: "#eee",
-  position: "absolute",
-  zIndex: "100",
-});
-
-export type CarouselNavVariants = ComponentProps<typeof CarouselNavStyles>;

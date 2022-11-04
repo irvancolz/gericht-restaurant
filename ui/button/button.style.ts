@@ -30,7 +30,6 @@ export const ButtonStyles = styled("button", {
   outCol: "transparent",
   bgCol: "transparent",
   cursor: "pointer",
-  overflow: "hidden",
   backgroundPosition: "center",
   transition: "background 0.3s",
   appearance: "none",

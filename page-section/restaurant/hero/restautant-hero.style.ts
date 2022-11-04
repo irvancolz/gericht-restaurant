@@ -31,6 +31,10 @@ export const HeroRestaurantStyles = styled(Box, {
   },
 });
 
+export const CarouselNavigationStyles = styled(Box,{
+  mt: "64px",
+})
+
 export const HeroRestaurantWrapperStyles = styled(Box, {
   position: "relative",
 });
