@@ -28,13 +28,34 @@ export type CarouselContainerVariants = ComponentProps<
   typeof CarouselContainerStyles
 >;
 
-export const CarouselImageStyles = styled("div", {
+export const CarouselImageStyles = styled(Box, {
   position: "absolute",
   top: "0",
   bottom: "0",
   left: "0",
   right: "0",
   transition: "all .5s ease-out",
+  variants:{
+    show:{
+      true:{
+        opacity: "1",
+      },
+      false :{
+        opacity: "0",
+      },
+    },
+  },
+  defaultVariants :{
+    show : true,
+  }
 });
 
 export type CarouselImageVariants = ComponentProps<typeof CarouselImageStyles>;
+
+export const CarouselNavStyles = styled(Box, {
+  color: "#eee",
+  position: "absolute",
+  zIndex: "100",
+});
+
+export type CarouselNavVariants = ComponentProps<typeof CarouselNavStyles>;

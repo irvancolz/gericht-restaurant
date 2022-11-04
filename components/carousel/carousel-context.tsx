@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
-interface carouselConfig {
+export interface carouselContextValueConfig {
   navigation?: number;
   setNavigation?: (props: number) => void;
 }
@@ -9,11 +9,8 @@ interface CarouselContextConfig {
   children?: ReactNode;
 }
 
-const CarouselContextValue = createContext<carouselConfig>({});
+export const CarouselContextValue = createContext<carouselContextValueConfig>({});
 
-export function useCarousel() {
-  return useContext(CarouselContextValue);
-}
 
 export function CarouselContext({ children }: CarouselContextConfig) {
   const [navigation, setNavigation] = useState<number>(0);

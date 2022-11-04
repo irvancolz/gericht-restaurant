@@ -4,8 +4,7 @@ import {
   ArticleHeader,
   ArticleTitle,
   ArticleHeading,
-  CarouselContainer,
-  CarouselImage,
+  Carousel,
 } from "../../../components";
 import Img1 from "../../../public/assets/restaurants/restaurant-hero-img.png";
 import Img2 from "../../../public/assets/restaurants/restaurant-hero2-img.png";
@@ -49,7 +48,7 @@ export function HeroRestaurantSection({
         <Box className="hero_content">
           <ArticleHeader>
             <ArticleHeading>Chase The New Flavour</ArticleHeading>
-            <ArticleTitle size="xl" fCol="gold">
+            <ArticleTitle size="xl" fCol="gold" weight="xBold">
               The Key To Fine Dining
             </ArticleTitle>
           </ArticleHeader>
@@ -72,11 +71,7 @@ export function HeroRestaurantSection({
           </Button>
         </Box>
         <Box className="hero_content">
-          <CarouselContainer>
-            <CarouselImage src={Img1} layout="fill" priority/>
-            <CarouselImage src={Img2} layout="fill" priority/>
-            <CarouselImage src={Img3} layout="fill" priority/>
-          </CarouselContainer>
+          <Carousel images={[Img1, Img2, Img3]} />
         </Box>
       </HeroRestaurantStyles>
     </HeroRestaurantWrapperStyles>
