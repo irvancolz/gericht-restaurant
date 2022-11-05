@@ -2,13 +2,8 @@ import { ReactElement, useEffect, useState } from "react";
 import { NextPageWithLayout } from "./_app";
 import { NestedLayout } from "../components";
 import Head from "next/head";
-import resHeroCaroImg1 from "../public/assets/restaurants/restaurant-hero-img.png";
-import resHeroCaroImg2 from "../public/assets/restaurants/restaurant-hero2-img.png";
-import resHeroCaroImg3 from "../public/assets/restaurants/restaurant-hero3-img.png";
 import { PagesContentStyles, MainContainerStyles } from "../styles/home.style";
-import { HeroRestaurantSection } from "../page-section";
-
-const resHeroCarouImg = [resHeroCaroImg1, resHeroCaroImg2, resHeroCaroImg3];
+import { HeroAbout, HeroRestaurantSection } from "../page-section";
 
 const Home: NextPageWithLayout = () => {
   const [activeSection, setActiveSection] = useState<"bar" | "gericht">(
@@ -27,6 +22,7 @@ const Home: NextPageWithLayout = () => {
           isActive={activeSection === "gericht" ? true : false}
         >
           <HeroRestaurantSection setActiveSection={setActiveSection} />
+          <HeroAbout/>
         </PagesContentStyles>
 
         {/* bar section goes here */}
