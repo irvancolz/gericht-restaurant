@@ -155,6 +155,7 @@ export function Topnav() {
                 family="open"
                 size="sm"
                 position="left"
+                weight="medium"
                 css={{
                   $$delay: "1.2s",
                 }}
@@ -173,6 +174,7 @@ export function Topnav() {
               <TopnavBookLinkStyles
                 family="open"
                 size="sm"
+                weight="medium"
                 position="right"
                 css={{
                   $$delay: "1.4s",
