@@ -1,4 +1,4 @@
-import { ComponentProps } from "@stitches/react";
+import { ComponentProps, keyframes } from "@stitches/react";
 import { styled } from "../../stitches.config";
 import { Box } from "../../ui";
 
@@ -34,21 +34,23 @@ export const CarouselImageStyles = styled(Box, {
   bottom: "0",
   left: "0",
   right: "0",
-  transition: "all .5s ease-out",
-  variants:{
-    show:{
-      true:{
+  variants: {
+    show: {
+      true: {
         opacity: "1",
+        zIndex: "$1",
+        transition: "z-index .1s linear, opacity .5s ease-in-out .2s",
       },
-      false :{
+      false: {
+        zIndex: "$0",
         opacity: "0",
+        transition: "z-index .1s linear, opacity .5s ease-in-out .6s",
       },
     },
   },
-  defaultVariants :{
-    show : true,
-  }
+  defaultVariants: {
+    show: true,
+  },
 });
 
 export type CarouselImageVariants = ComponentProps<typeof CarouselImageStyles>;
-

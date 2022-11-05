@@ -48,7 +48,7 @@ export const CarouselNav = forwardRef<HTMLDivElement, CarouselNavConfig>(
     }
     return (
       <CarouselNavContainerStyles ref={ref} className={classes()} {...rest}>
-        <Box>{NavBtn}</Box>
+        <Box className="nav_btn_container">{NavBtn}</Box>
       </CarouselNavContainerStyles>
     );
   }

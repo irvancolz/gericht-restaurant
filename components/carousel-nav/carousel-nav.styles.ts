@@ -4,7 +4,6 @@ import { Box, Button } from "../../ui";
 
 export const CarouselNavContainerStyles = styled(Box, {
   display: "flex",
-  align: "center",
   justify: "center",
 });
 
@@ -17,9 +16,9 @@ export const NavBtnStyles = styled(Button, {
   mx: "$four",
   transition: "width .5s ease-in, margin .3s ease-in-out",
 
-  '&::before, &::after' :{
+  "&::before, &::after": {
     content: "",
-    position : "absolute",
+    position: "absolute",
     bgCol: "$goldCol1",
     width: "0px",
     height: "2px",
@@ -28,10 +27,10 @@ export const NavBtnStyles = styled(Button, {
     transform: "translateY(50%)",
     overflow: "visible",
   },
-  "&::before" :{
+  "&::before": {
     left: "calc(-100% - 4px)",
   },
-  "&::after" :{
+  "&::after": {
     right: "calc(-100% - 4px)",
   },
 
@@ -39,23 +38,25 @@ export const NavBtnStyles = styled(Button, {
     active: {
       true: {
         mx: "$2",
-        '&::before, &::after' :{
-            width : "16px",
+        "&::before, &::after": {
+          width: "16px",
         },
-        "&:first-of-type" :{
-            "&::before" :{
-                width : "0",
-            }
+        "&:first-of-type": {
+          mx: "$0",
+          "& + button": {
+            ml: "$2",
+          },
+          "&::before": {
+            width: "0",
+          },
         },
-        "&:last-of-type" :{
-            "&::after" :{
-                width : "0",
-            }
+        "&:last-of-type": {
+          "&::after": {
+            width: "0",
+          },
         },
-       
       },
-      false: {
-      },
+      false: {},
     },
   },
 });

@@ -24,7 +24,7 @@ export const HeroRestaurantStyles = styled(Box, {
   alignItems: "center",
 
   "& .hero_content": {
-    fBase: "50%",
+    fBase: "45%",
     "&:first-of-type": {
       fBase: "35%",
     },
