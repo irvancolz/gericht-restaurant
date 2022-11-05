@@ -22,6 +22,12 @@ export const HeroRestaurantStyles = styled(Box, {
   display: "flex",
   justify: "space-between",
   alignItems: "center",
+  fWrap: "wrap",
+
+  "@bp3": {
+    justify: "center",
+    align: "center",
+  },
 
   "& .hero_content": {
     fBase: "45%",
@@ -31,9 +37,9 @@ export const HeroRestaurantStyles = styled(Box, {
   },
 });
 
-export const CarouselNavigationStyles = styled(Box,{
+export const CarouselNavigationStyles = styled(Box, {
   mt: "64px",
-})
+});
 
 export const HeroRestaurantWrapperStyles = styled(Box, {
   position: "relative",

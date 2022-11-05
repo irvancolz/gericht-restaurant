@@ -6,6 +6,7 @@ export const CarouselContainerStyles = styled(Box, {
   position: "relative",
   height: "688px",
   width: "619px",
+  maxWidth: "100%",
   "&::before, &::after": {
     content: "",
     position: "absolute",
