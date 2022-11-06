@@ -1,4 +1,10 @@
-import React, { createContext, ReactNode, useState } from "react";
+import React, {
+  createContext,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { Button, Text, Box } from "../../../ui";
 import {
   ArticleHeader,
@@ -17,6 +23,7 @@ import {
   HeroRestaurantWrapperStyles,
   NavigationPagesStyles,
 } from "./restautant-hero.style";
+import gsap from "gsap";
 
 interface HeroRestaurantSectionProps {
   setActiveSection: (arg: "bar" | "gericht") => void;
@@ -48,6 +55,37 @@ function HeroCarouselContext({ children }: HeroCarouselContextConfig) {
 export function HeroRestaurantSection({
   setActiveSection,
 }: HeroRestaurantSectionProps) {
+  const container = useRef(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      defaults: {
+        duration: 0.3,
+        ease: "power1.easeOut",
+      },
+    });
+    const ctx = gsap.context(() => {
+      tl.from(".switch-section-btn", {
+        opacity: 0,
+        y: "50px",
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "none",
+      })
+        .from(".hero_content", {
+          opacity: 0,
+          duration: .5,
+        },)
+        .from(".text", {
+          opacity: 0,
+          y: 10,
+          duration: 0.5,
+          stagger: 0.2,
+        },"-=1");
+    }, container);
+    return () => ctx.revert();
+  });
+
   return (
     <HeroRestaurantWrapperStyles
       paddingSide="lg"
@@ -55,16 +93,22 @@ export function HeroRestaurantSection({
         mt: "61px",
         mb: "170px",
       }}
+      ref={container}
     >
       <HeroCarouselContext>
         <NavigationPagesStyles>
           <Box>
-            <Button onClick={() => setActiveSection("bar")} variant="ternary">
+            <Button
+              className="switch-section-btn"
+              onClick={() => setActiveSection("bar")}
+              variant="ternary"
+            >
               <Text css={{ fontSize: "18px" }} family="open">
                 #Bar
               </Text>
             </Button>
             <Button
+              className="switch-section-btn"
               onClick={() => setActiveSection("gericht")}
               variant="ternary"
             >
@@ -77,8 +121,15 @@ export function HeroRestaurantSection({
         <HeroRestaurantStyles>
           <Box className="hero_content">
             <ArticleHeader>
-              <ArticleHeading>Chase The New Flavour</ArticleHeading>
-              <ArticleTitle size="xl" fCol="gold" weight="xBold">
+              <ArticleHeading className="text" imageClass="text">
+                Chase The New Flavour
+              </ArticleHeading>
+              <ArticleTitle
+                size="xl"
+                fCol="gold"
+                className="text"
+                weight="xBold"
+              >
                 The Key To Fine Dining
               </ArticleTitle>
             </ArticleHeader>
@@ -86,6 +137,7 @@ export function HeroRestaurantSection({
               family="open"
               size="sm"
               fCol="fade"
+              className="text"
               css={{
                 my: "$4",
               }}
@@ -94,7 +146,7 @@ export function HeroRestaurantSection({
               volutpat morbi facilisis quam scelerisque sapien. Et, penatibus
               aliquam amet tellus.
             </Text>
-            <Button>
+            <Button className="text">
               <Text fCol="dark" weight="bold">
                 Explore Menu
               </Text>
