@@ -3,26 +3,11 @@ import { styled } from "../../stitches.config";
 import { Box } from "../../ui";
 
 export const CarouselContainerStyles = styled(Box, {
-  position: "relative",
-  height: "688px",
-  width: "619px",
-  maxWidth: "100%",
-  "&::before, &::after": {
-    content: "",
-    position: "absolute",
-    bgCol: "$goldCol1",
-    height: "435px",
-    width: "435px",
-    zIndex: "-1",
-  },
-  "&::before": {
-    top: "-24px",
-    right: "-24px",
-  },
-  "&::after": {
-    bottom: "-24px",
-    left: "-24px",
-  },
+  position: "absolute",
+  top: "0",
+  bottom: "0",
+  left: "0",
+  right: "0",
 });
 
 export type CarouselContainerVariants = ComponentProps<
@@ -35,6 +20,7 @@ export const CarouselImageStyles = styled(Box, {
   bottom: "0",
   left: "0",
   right: "0",
+
   variants: {
     show: {
       true: {

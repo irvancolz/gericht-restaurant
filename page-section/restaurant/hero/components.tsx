@@ -65,23 +65,27 @@ export function HeroRestaurantSection({
       },
     });
     const ctx = gsap.context(() => {
-      tl.from(".switch-section-btn", {
+      tl.from(".hero_content", {
         opacity: 0,
-        y: "50px",
-        duration: 0.5,
-        stagger: 0.1,
-        ease: "none",
+        duration: 1,
       })
-        .from(".hero_content", {
+        .from(
+          ".text",
+          {
+            opacity: 0,
+            y: 10,
+            duration: 0.5,
+            stagger: 0.2,
+          },
+          "-=1"
+        )
+        .from(".switch-section-btn", {
           opacity: 0,
-          duration: .5,
-        },)
-        .from(".text", {
-          opacity: 0,
-          y: 10,
+          y: "10px",
           duration: 0.5,
-          stagger: 0.2,
-        },"-=1");
+          stagger: 0.1,
+          ease: "none",
+        },">");
     }, container);
     return () => ctx.revert();
   });
@@ -152,7 +156,7 @@ export function HeroRestaurantSection({
               </Text>
             </Button>
           </Box>
-          <Box className="hero_content">
+          <Box className="hero_content carousel_container">
             <Carousel
               context={HeroCarouselContextValue}
               images={[Img1, Img2, Img3]}

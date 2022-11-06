@@ -23,7 +23,28 @@ export const HeroRestaurantStyles = styled(Box, {
   justify: "space-between",
   alignItems: "center",
   fWrap: "wrap",
+  "& .carousel_container": {
+    position: "relative",
+    width: "619px",
+    height: "688px",
 
+    "&::before, &::after": {
+      content: "",
+      position: "absolute",
+      bgCol: "$goldCol1",
+      height: "435px",
+      width: "435px",
+      zIndex: "-1",
+    },
+    "&::before": {
+      top: "-24px",
+      right: "-24px",
+    },
+    "&::after": {
+      bottom: "-24px",
+      left: "-24px",
+    },
+  },
   "@bp3": {
     justify: "center",
     align: "center",
