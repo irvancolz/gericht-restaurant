@@ -16,11 +16,6 @@ export const Containerstyles = styled(Section, {
   },
 });
 
-export const BodyStyles = css({
-  mt: "$3",
-  mb: "$6",
-});
-
 export const FormStyles = css({
   display: "flex",
   align: "center",
