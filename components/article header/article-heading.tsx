@@ -1,12 +1,12 @@
-import React, { ElementType, forwardRef, ReactNode } from "react";
-import { HeaderStyles, HeaderVariants } from "./artice-header.style";
+import React, { forwardRef, ReactNode } from "react";
 import spoon from "../../public/assets/global/spoon-logo.png";
 import Image from "next/image";
+import { Heading } from "../../ui";
+import { ComponentProps } from "@stitches/react";
 
-interface ArticleHeadingConfig extends HeaderVariants {
+interface ArticleHeadingConfig extends ComponentProps<typeof Heading> {
   clasName?: string;
   imageClass?: string;
-  as?: ElementType;
   children?: ReactNode;
 }
 
@@ -15,21 +15,15 @@ const heading_class = "custom_article_heading";
 export const ArticleHeading = forwardRef<
   HTMLHeadingElement,
   ArticleHeadingConfig
->(({ className, imageClass, children, fCol, size, ...rest }, ref) => {
+>(({ className, imageClass, children, ...rest }, ref) => {
   function classes() {
     return `${className ? className : ""} ${heading_class}`;
   }
   return (
     <>
-      <HeaderStyles
-        fcol={fCol}
-        size={size}
-        ref={ref}
-        className={classes()}
-        {...rest}
-      >
+      <Heading ref={ref} className={classes()} {...rest}>
         {children}
-      </HeaderStyles>
+      </Heading>
       <Image
         className={imageClass}
         src={spoon}

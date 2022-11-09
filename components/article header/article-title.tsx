@@ -1,7 +1,8 @@
 import React, { ElementType, forwardRef, ReactNode } from "react";
-import { TitleStyles, TitleVariants } from "./artice-header.style";
+import { Text } from "../../ui";
+import { ComponentProps } from "@stitches/react";
 
-interface ArticleTitleConfig extends TitleVariants {
+interface ArticleTitleConfig extends ComponentProps<typeof Text> {
   className?: string;
   as?: ElementType;
   children?: ReactNode;
@@ -17,9 +18,9 @@ export const ArticleTitle = forwardRef<
     return `${className ? className : ""} ${title_class}`;
   }
   return (
-    <TitleStyles ref={ref} className={classes()} {...rest}>
+    <Text ref={ref} className={classes()} {...rest}>
       {children}
-    </TitleStyles>
+    </Text>
   );
 });
 

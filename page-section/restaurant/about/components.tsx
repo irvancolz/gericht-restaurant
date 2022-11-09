@@ -1,10 +1,17 @@
-import React from 'react'
-import { Box, Heading } from '../../../ui'
+import React from "react";
+import { ArticleHeader, ArticleHeading, ArticleTitle } from "../../../components";
+import { Box, Section } from "../../../ui";
 
 export function HeroAbout() {
   return (
     <Box paddingSide="lg">
-        <Heading>Hello from About</Heading>
+      <Section>
+        <ArticleHeader content="right">
+          <ArticleHeading as="h2" fCol="gold" size="lg">
+            About Us
+          </ArticleHeading>
+        </ArticleHeader>
+      </Section>
     </Box>
-  )
+  );
 }

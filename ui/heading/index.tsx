@@ -18,7 +18,7 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
     }
 
     return (
-      <HeadingComp ref={ref} className={classes()} as={as} css={css} {...rest}>
+      <HeadingComp ref={ref} as={as} className={classes()} css={css} {...rest}>
         {children}
       </HeadingComp>
     );
