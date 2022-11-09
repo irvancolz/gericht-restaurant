@@ -1,5 +1,5 @@
 import { styled } from "../../../stitches.config";
-import { Box, Section } from "../../../ui";
+import { Box, Section, Wrapper } from "../../../ui";
 
 export const HeroAboutContainerStyles = styled(Box, {
   display: "flex",
@@ -18,4 +18,9 @@ export const AboutRestaurantsStyles = styled(Section, {
       },
     },
   },
+});
+
+export const AboutBgStyles = styled(Wrapper, {
+  position: "absolute",
+  zIndex: "-1",
 });

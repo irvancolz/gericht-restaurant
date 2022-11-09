@@ -5,7 +5,7 @@ import { Heading } from "../../ui";
 import { ComponentProps } from "@stitches/react";
 
 interface ArticleHeadingConfig extends ComponentProps<typeof Heading> {
-  clasName?: string;
+  className?: string;
   imageClass?: string;
   children?: ReactNode;
 }

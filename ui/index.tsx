@@ -5,3 +5,4 @@ export * from "./heading";
 export * from "./input";
 export * from "./signature";
 export * from "./box";
+export * from "./wrapper";

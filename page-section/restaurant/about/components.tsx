@@ -1,9 +1,14 @@
 import Image from "next/image";
 import React from "react";
 import { ArticleHeader, ArticleHeading } from "../../../components";
-import { Box, Section, Text, Button } from "../../../ui";
+import { Box, Text, Button } from "../../../ui";
 import knivesSrc from "../../../public/assets/restaurants/restaurant-knives-img.png";
-import { HeroAboutContainerStyles, AboutRestaurantsStyles } from "./components.style";
+import gSrc from "../../../public/assets/restaurants/restaurant-about-g-img.png";
+import {
+  HeroAboutContainerStyles,
+  AboutRestaurantsStyles,
+  AboutBgStyles,
+} from "./components.style";
 
 export function HeroAbout() {
   return (
@@ -56,6 +61,9 @@ export function HeroAbout() {
           <Button>Know More</Button>
         </Box>
       </AboutRestaurantsStyles>
+      <AboutBgStyles>
+        <Image src={gSrc} alt="g" layout="fixed" />
+      </AboutBgStyles>
     </HeroAboutContainerStyles>
   );
 }
