@@ -6,3 +6,4 @@ export * from "./layout";
 export * from "./layout nested";
 export * from "./topnav";
 export * from "./article header";
+export * from "./section-with-bg";

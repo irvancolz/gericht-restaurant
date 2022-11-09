@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { forwardRef, ReactNode } from "react";
 import {
   SectionWithBgContainer,
@@ -8,7 +8,7 @@ import {
 interface SectionWithBgConfig extends SectionWithBgContainerVariants {
   children?: ReactNode;
   className?: string;
-  imageSrc: string;
+  imageSrc: StaticImageData;
 }
 
 const section_with_bg_class = "section-with-bg";
@@ -21,7 +21,7 @@ export const SectionWithBg = forwardRef<HTMLDivElement, SectionWithBgConfig>(
     return (
       <SectionWithBgContainer ref={ref} className={classes()} {...rest}>
         {children}
-        <Image src={imageSrc} alt="background" layout="fixed" priority />
+        <Image src={imageSrc} className="section_with_bg_img" alt="background" layout="fill" priority />
       </SectionWithBgContainer>
     );
   }
