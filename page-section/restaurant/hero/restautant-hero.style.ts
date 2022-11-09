@@ -45,16 +45,18 @@ export const HeroRestaurantStyles = styled(Box, {
       left: "-24px",
     },
   },
-  "@bp3": {
-    justify: "center",
-    align: "center",
-  },
 
   "& .hero_content": {
     fBase: "45%",
     "&:first-of-type": {
       fBase: "35%",
     },
+  },
+
+  "@bp2" :{
+    "& > .hero_content" :{
+      fBase: "30%",
+    }
   },
 });
 

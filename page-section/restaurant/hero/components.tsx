@@ -79,13 +79,17 @@ export function HeroRestaurantSection({
           },
           "-=1"
         )
-        .from(".switch-section-btn", {
-          opacity: 0,
-          y: "10px",
-          duration: 0.5,
-          stagger: 0.1,
-          ease: "none",
-        },">");
+        .from(
+          ".switch-section-btn",
+          {
+            opacity: 0,
+            y: "10px",
+            duration: 0.5,
+            stagger: 0.1,
+            ease: "none",
+          },
+          "<+=1"
+        );
     }, container);
     return () => ctx.revert();
   });
