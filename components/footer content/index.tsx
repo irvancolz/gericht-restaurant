@@ -45,7 +45,7 @@ export function FooterContent() {
         defaults: {
           opacity: 0,
           duration: 0.5,
-          ease: "power1.out",
+          ease: "power1.ease-out",
         },
         scrollTrigger: {
           start: "bottom bottom",
@@ -53,23 +53,23 @@ export function FooterContent() {
       });
 
       tl.from(".content:nth-child(2)", {
-        yPercent: 50,
+        y: 10,
       })
         .from(".image", {
-          yPercent: 50,
+          y: 10,
         })
         .from(".main-text", {
-          yPercent: 100,
-        })
+          y: 10,
+        },"<+=0.2")
         .from(".content:not(:nth-child(2))", {
-          yPercent: 50,
-          stagger: 0.2,
+          y: 10,
+          stagger: 0.1,
         })
         .from(".side-text", {
-          yPercent: 50,
+          y: 50,
           duration: 0.75,
-          stagger: 0.2,
-        });
+          stagger: 0.1,
+        },"<");
     }, containerRef);
     return () => animation.revert();
   }, []);
@@ -112,7 +112,7 @@ export function FooterContent() {
             &ldquo; The best way to find yourself is to lose yourself in the
             service of others. &rdquo;
           </Text>
-          <Box as ="span">
+          <Box as="span">
             <Image src={spoon} layout="fixed" alt="spoon" priority />
           </Box>
           <ImageLinkStyles>
