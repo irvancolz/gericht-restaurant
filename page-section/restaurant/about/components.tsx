@@ -25,7 +25,14 @@ export function HeroAbout() {
               About Us
             </ArticleHeading>
           </ArticleHeader>
-          <Box>
+          <Box
+            css={{
+              display: "flex",
+              justifyContent: "flex-end",
+              flexDirection: "column",
+              alignItems: "end",
+            }}
+          >
             <Text
               css={{
                 my: "$4",
