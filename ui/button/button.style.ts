@@ -15,15 +15,15 @@ function createButtonColorVariant(props: ButtonVariantConfig) {
 }
 
 const pulse = keyframes({
-  "0%" :{
+  "0%": {
     transform: "scale(0)",
     opacity: "1",
   },
-  "100%" :{
+  "100%": {
     transform: "scale(1)",
     opacity: "0",
-  }
-})
+  },
+});
 
 export const ButtonStyles = styled("button", {
   lineCol: "transparent",
@@ -36,7 +36,6 @@ export const ButtonStyles = styled("button", {
   letterSpacing: "0.04em",
 
   // properties to create ripple effect
-
 
   variants: {
     variant: {
@@ -70,24 +69,29 @@ export const ButtonStyles = styled("button", {
         cursor: "not-allowed",
       },
     },
+    font: {
+      bold: {
+        fontWeight: "$bold",
+      },
+      regular: {
+        fontWeight: "$normal",
+      },
+    },
   },
   defaultVariants: {
     padding: "sm",
     variant: "primary",
+    font: "bold",
   },
 });
 
 export type ButtonStylesVariants = ComponentProps<typeof ButtonStyles>;
 
-export const RippleVariants = styled("div",{
-  variants:{
+export const RippleVariants = styled("div", {
+  variants: {
     show: {
-      true:{
-
-      },
-      false:{
-        
-      }
-    }
-  }
-})
+      true: {},
+      false: {},
+    },
+  },
+});
